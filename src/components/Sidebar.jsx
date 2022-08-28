@@ -1,7 +1,7 @@
 import React from "react";
 
 const Sidebar = () => {
-  // auth
+  
   // achievement
   // main
   // history - graph
@@ -11,6 +11,7 @@ const Sidebar = () => {
     <div>
       Sidebar
       <aside>
+        {/* auth */}
         login
         <button>➡️</button>
         <nav>
@@ -32,7 +33,6 @@ const Sidebar = () => {
             </li>
           </ul>
         </nav>
-
         Settings
       </aside>
     </div>
