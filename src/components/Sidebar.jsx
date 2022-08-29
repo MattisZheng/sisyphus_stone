@@ -1,3 +1,5 @@
+import { DoubleRightOutlined } from "@ant-design/icons";
+
 const Sidebar = () => {
   // achievement
   // main
@@ -5,30 +7,30 @@ const Sidebar = () => {
   // calendar
   // settings
   return (
-    <div>
-      Sidebar
-      <aside>
-        login
-        <button>➡️</button>
-        <nav>
-          <ul>
-            <li>
-              <a href="">Main</a>
-            </li>
-            <li>
-              <a href="">Graphs</a>
-            </li>
-            <li>
-              <a href="">Rewards</a>
-            </li>
-            <li>
-              <a href="">Calendar</a>
-            </li>
-          </ul>
-        </nav>
-        Settings
-      </aside>
-    </div>
+    <aside>
+      login
+      {/* icon anchor auth*/}
+      <button>
+        <DoubleRightOutlined />
+      </button>
+      <nav>
+        <ul>
+          <li>
+            <a href="">Main</a>
+          </li>
+          <li>
+            <a href="">Graphs</a>
+          </li>
+          <li>
+            <a href="">Rewards</a>
+          </li>
+          <li>
+            <a href="">Calendar</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="">Settings</a>
+    </aside>
   );
 };
 
