@@ -1,14 +1,7 @@
 import { useState } from "react";
-
+// class tasks
 class Task {
-  constructor(
-    taskId,
-    taskTitle,
-    taskDeadline,
-    taskDetail,
-    taskStatus,
-    taskType
-  ) {
+  constructor(taskId, taskTitle, taskDeadline, taskDetail, taskStatus, taskType) {
     this.taskId = taskId;
     this.taskTitle = taskTitle;
     this.taskDeadline = taskDeadline;
@@ -18,12 +11,11 @@ class Task {
   }
 }
 
-let daily1 = new Task(1,"daily1", 10, "daily1 detail", false, "default");
-let daily2 = new Task(2,"daily2", 100, "daily2 detail", true, "special");
+let daily1 = new Task(1, "daily1", 10, "daily1 detail", false, "default");
+let daily2 = new Task(2, "daily2", 100, "daily2 detail", true, "special");
+let dailyTasks = [daily1, daily2];
 
 const Daily = () => {
-  // class tasks
-
   // time count
 
   // get history
@@ -35,9 +27,9 @@ const Daily = () => {
 
   // render Daily
   return (
-    
     <div>
       <h1>Daily Tasks</h1>
+
       {daily1.taskTitle}
       {daily2.taskTitle}
     </div>
