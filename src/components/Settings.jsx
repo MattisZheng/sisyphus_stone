@@ -1,4 +1,5 @@
 const Settings = () => {
+  // theme
   return <div>Settings</div>;
 };
 
