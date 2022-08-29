@@ -1,7 +1,6 @@
 import React from "react";
 
 const Sidebar = () => {
-  
   // achievement
   // main
   // history - graph
@@ -20,16 +19,10 @@ const Sidebar = () => {
               <a href="">Main</a>
             </li>
             <li>
-              <a href=""></a>
+              <a href="">Graphs</a>
             </li>
             <li>
-              <a href=""></a>
-            </li>
-            <li>
-              <a href=""></a>
-            </li>
-            <li>
-              <a href=""></a>
+              <a href="">Rewards</a>
             </li>
           </ul>
         </nav>
