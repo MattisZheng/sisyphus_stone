@@ -10,7 +10,6 @@ const Sidebar = () => {
     <div>
       Sidebar
       <aside>
-        {/* auth */}
         login
         <button>➡️</button>
         <nav>
