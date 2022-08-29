@@ -1,7 +1,9 @@
 import React from "react";
 
+import Sidebar from "./Sidebar";
+
 const Layout = () => {
-  return <div>Layout</div>;
+  return <div><Sidebar/></div>;
 };
 
 export default Layout;
