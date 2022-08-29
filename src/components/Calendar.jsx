@@ -9,7 +9,6 @@ const Calenda = () => {
   // 1 month
   return (
     <div>
-      Calendar
       <Calendar />
     </div>
   );

@@ -17,6 +17,7 @@ const Header = () => {
   // date counter
   // achievement
   // hints
+  // notification
 
   return <div>{time}</div>;
 };
