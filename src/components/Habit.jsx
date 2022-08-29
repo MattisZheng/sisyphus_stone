@@ -1,5 +1,3 @@
-import React from "react";
-
 const Habit = () => {
   // get habit
   // render habit 

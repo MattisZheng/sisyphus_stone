@@ -1,5 +1,3 @@
-import React from "react";
-
 const Sidebar = () => {
   // achievement
   // main
@@ -22,6 +20,9 @@ const Sidebar = () => {
             </li>
             <li>
               <a href="">Rewards</a>
+            </li>
+            <li>
+              <a href="">Calendar</a>
             </li>
           </ul>
         </nav>
