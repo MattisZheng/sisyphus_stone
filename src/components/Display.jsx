@@ -1,9 +1,12 @@
-import React from 'react'
+import Daily from "./Daily";
 
 const Display = () => {
   return (
-    <div>Display</div>
-  )
-}
+    <div>
+      display
+      <Daily />
+    </div>
+  );
+};
 
-export default Display
+export default Display;
