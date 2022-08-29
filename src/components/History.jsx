@@ -1,6 +1,6 @@
 import { Calendar } from "antd";
 
-const Calenda = () => {
+const History = () => {
   // get history
   // get weather
 
@@ -9,9 +9,9 @@ const Calenda = () => {
   // 1 month
   return (
     <div>
-      <Calendar />
+      <Calendar/>
     </div>
   );
 };
 
-export default Calendar;
+export default History;

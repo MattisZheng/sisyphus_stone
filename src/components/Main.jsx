@@ -1,8 +1,8 @@
-import Calendar from "./Calendar";
+import History from "./History";
 
 const Main = () => {
   return <div>Main
-    <Calendar/>
+    <History/>
   </div>;
 };
 
