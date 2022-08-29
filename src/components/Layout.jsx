@@ -1,13 +1,13 @@
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import Main from "./Main";
+import Overview from "./Overview";
 
 const Layout = () => {
   return (
     <div>
       <Header />
       <Sidebar />
-      <Main />
+      <Overview />
     </div>
   );
 };
