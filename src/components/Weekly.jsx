@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
+import TaskBox from "./TaskBox";
+
 const Weekly = () => {
   // week count
 
@@ -15,7 +17,12 @@ const Weekly = () => {
   // sort
 
   // render Weekly
-  return <div>Weekly</div>;
+  return (
+    <div>
+      Weekly
+      <TaskBox />
+    </div>
+  );
 };
 
 export default Weekly;
