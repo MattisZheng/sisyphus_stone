@@ -13,7 +13,6 @@ class Task {
 
 let daily1 = new Task(1, "daily1", 10, "daily1 detail", false, "default");
 let daily2 = new Task(2, "daily2", 100, "daily2 detail", true, "special");
-let dailyTasks = [daily1, daily2];
 
 const Daily = () => {
   // time count

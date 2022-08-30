@@ -1,10 +1,18 @@
-import "./App.css";
-import Display from "./components/Display";
+import { Layout } from "antd";
+
+const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
   return (
     <div>
-      <Display />
+      <Layout>
+        <Sider>Sider</Sider>
+        <Layout>
+          <Header>Header</Header>
+          <Content>Content</Content>
+          <Footer>Footer</Footer>
+        </Layout>
+      </Layout>
     </div>
   );
 }
