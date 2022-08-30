@@ -6,7 +6,9 @@ function App() {
   return (
     <div>
       <Layout>
-        <Sider>Sider</Sider>
+        <Sider>
+          Sider
+        </Sider>
         <Layout>
           <Header>Header</Header>
           <Content>Content</Content>
