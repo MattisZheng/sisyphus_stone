@@ -1,23 +1,31 @@
 import { useState } from "react";
-
-import TaskBox from "./TaskBox";
+// class tasks
+class Task {
+  constructor(id, title,deadline, description, reward, status) {
+    this.id = id;
+    this.title = title;
+    thiis.deadline = deadline;
+    this.description = description;
+    this.reward = reward;
+    this.status = status;
+  }
+}
 
 const Daily = () => {
-  // time count
+  // time
 
   // get history
 
   // setState
-  let [dailyTasks, setDailyTasks] = useState(["daily1", "daily2"]);
 
   // sort button
 
-  // render Daily
   return (
     <div>
       <h1>Daily Tasks</h1>
 
-      <TaskBox />
+      {daily1.taskTitle}
+      {daily2.taskTitle}
     </div>
   );
 };

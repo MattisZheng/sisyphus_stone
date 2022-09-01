@@ -1,25 +1,12 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 const Header = () => {
   // clock
-  const [time, setTime] = useState();
-  // update clock
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date().toLocaleString());
-    }, 1000);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
   // date counter
   // achievement
   // hints
   // notification
-
-  return <div>{time}</div>;
+  return <div>Header</div>;
 };
 
 export default Header;
