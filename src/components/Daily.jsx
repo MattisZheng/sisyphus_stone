@@ -1,30 +1,25 @@
 import { useState } from "react";
 // class tasks
 class Task {
-  constructor(taskId, taskTitle, taskDeadline, taskDetail, taskStatus, taskType) {
-    this.taskId = taskId;
-    this.taskTitle = taskTitle;
-    this.taskDeadline = taskDeadline;
-    this.taskDetail = taskDetail;
-    this.taskStatus = taskStatus;
-    this.taskType = taskType;
+  constructor(id, title,deadline, description, reward, status) {
+    this.id = id;
+    this.title = title;
+    thiis.deadline = deadline;
+    this.description = description;
+    this.reward = reward;
+    this.status = status;
   }
 }
 
-let daily1 = new Task(1, "daily1", 10, "daily1 detail", false, "default");
-let daily2 = new Task(2, "daily2", 100, "daily2 detail", true, "special");
-
 const Daily = () => {
-  // time count
+  // time
 
   // get history
 
   // setState
-  let [dailyTasks, setDailyTasks] = useState(daily1);
 
   // sort button
 
-  // render Daily
   return (
     <div>
       <h1>Daily Tasks</h1>

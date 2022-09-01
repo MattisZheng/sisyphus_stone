@@ -1,6 +1,7 @@
-import { LayoutOutlined, TrophyOutlined, UserOutlined, TableOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
+import { UserOutlined, LayoutOutlined, TrophyOutlined, CalendarOutlined, SettingOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import React, { useState } from "react";
+
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -22,15 +23,28 @@ const items = [
 ];
 
 function App() {
-  const [collapsed, setCollapsed] = useState(true);
+  // set collapse setting to local storage if it do not exists
+  if (localStorage.getItem("collapsed") === null) {
+    localStorage.setItem("collapsed", true);
+  }
+
+  // read collapse setting from local storage
+  const [collapsed, setCollapsed] = useState(localStorage.getItem("collapsed"));
+
+  // on collapse change
+  const handleCollapse = (value) => {
+    setCollapsed(value);
+    localStorage.setItem("collapsed", value);
+  };
+
   return (
     <Layout
       style={{
         minHeight: "100vh",
       }}
     >
-      <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={(value) => setCollapsed(value)}>
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline" items={items} inlineIndent="16" />
+      <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
+        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline" items={items} />
       </Sider>
       <Layout className="site-layout">
         <Header
