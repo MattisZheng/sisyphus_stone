@@ -1,6 +1,7 @@
-import { LayoutOutlined, TrophyOutlined, UserOutlined, TableOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
+import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import React, { useState } from "react";
+import FooterContent from "./components/FooterContent";
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -22,7 +23,7 @@ const items = [
 ];
 
 function App() {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout
       style={{
@@ -42,6 +43,7 @@ function App() {
         <Content
           style={{
             margin: "0 16px",
+            border: "1px solid black",
           }}
         ></Content>
         <Footer
@@ -49,7 +51,7 @@ function App() {
             textAlign: "center",
           }}
         >
-          Ant Design ©2018 Created by Ant UED
+          <FooterContent />
         </Footer>
       </Layout>
     </Layout>
