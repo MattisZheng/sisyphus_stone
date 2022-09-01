@@ -7,7 +7,7 @@ const FooterContent = () => {
   return (
     <footer>
       <p>
-        Designed by <a href="https://mattiszheng.com">Mattis Zheng</a>
+        Developed by <a href="https://mattiszheng.com">Mattis Zheng</a>
       </p>
       <a href="https://github.com/mattiszheng">
         <GithubOutlined />
