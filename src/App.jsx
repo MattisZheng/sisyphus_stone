@@ -24,6 +24,12 @@ const items = [
 
 function App() {
   const [collapsed, setCollapsed] = useState(true);
+
+  // handleCollapse
+  const handleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
     <Layout
       style={{

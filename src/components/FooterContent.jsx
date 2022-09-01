@@ -1,4 +1,5 @@
 import { GithubOutlined, InfoCircleOutlined } from "@ant-design/icons";
+
 const FooterContent = () => {
   // copyright
   // external links
