@@ -1,5 +1,5 @@
-import { DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu } from "antd";
+import { LayoutOutlined, TrophyOutlined, UserOutlined, TableOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
+import { Layout, Menu } from "antd";
 import React, { useState } from "react";
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -15,21 +15,22 @@ function getItem(label, key, icon, children) {
 const items = [
   // auth
   getItem("登入", "0", <UserOutlined />),
-  getItem("计划", "1", <PieChartOutlined />),
-  getItem("奖励", "2", <DesktopOutlined />),
-  getItem("历史记录", "3", <TeamOutlined />),
+  getItem("计划", "1", <LayoutOutlined />),
+  getItem("奖励", "2", <TrophyOutlined />),
+  getItem("历史记录", "3", <CalendarOutlined />),
+  getItem("设置", "4", <SettingOutlined />),
 ];
 
 function App() {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   return (
     <Layout
       style={{
         minHeight: "100vh",
       }}
     >
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline" items={items} />
+      <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={(value) => setCollapsed(value)}>
+        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline" items={items} inlineIndent="16" />
       </Sider>
       <Layout className="site-layout">
         <Header
