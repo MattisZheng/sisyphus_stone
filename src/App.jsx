@@ -23,15 +23,15 @@ const items = [
 ];
 
 function App() {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   return (
     <Layout
       style={{
         minHeight: "100vh",
       }}
     >
-      <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={(value) => setCollapsed(value)}>
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline" items={items} inlineIndent="16" />
+      <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
+        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline" items={items} />
       </Sider>
       <Layout className="site-layout">
         <Header
