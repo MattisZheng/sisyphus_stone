@@ -1,9 +1,16 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import React, { useState } from "react";
-import { BrowserRouter , Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HeaderContent from "./components/HeaderContent";
 import FooterContent from "./components/FooterContent";
+
+import Login from "./components/Login";
+import Tasks from "./components/Tasks";
+import History from "./components/History";
+import Reward from "./components/Reward";
+import Settings from "./components/Settings";
+
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -56,7 +63,13 @@ function App() {
             style={{
               margin: "0 16px",
             }}
-          ></Content>
+          >
+            {/* 
+
+            
+            */}
+
+          </Content>
           <Footer
             style={{
               textAlign: "center",
