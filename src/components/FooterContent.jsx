@@ -12,6 +12,7 @@ const FooterContent = () => {
       <a href="https://github.com/mattiszheng">
         <GithubOutlined />
       </a>
+      
       <a href="">
         <InfoCircleOutlined />
       </a>
