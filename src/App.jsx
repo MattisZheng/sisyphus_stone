@@ -15,22 +15,12 @@ const { Header, Content, Footer, Sider } = Layout;
 
 // menu items
 const items = [
-  // auth
-  getItem("Login", "0", <UserOutlined />),
-  getItem("Tasks", "1", <LayoutOutlined />),
-  getItem("Rewards", "2", <TrophyOutlined />),
-  getItem("History", "3", <CalendarOutlined />),
-  getItem("Settings", "4", <SettingOutlined />),
+  { label: "Login", key: "1", icon: <UserOutlined />, path: "/login" },
+  { label: "Tasks", key: "2", icon: <LayoutOutlined />, path: "/tasks" },
+  { label: "History", key: "3", icon: <CalendarOutlined />, path: "/history" },
+  { label: "Reward", key: "4", icon: <TrophyOutlined />, path: "/reward" },
+  { label: "Settings", key: "5", icon: <SettingOutlined />, path: "/settings" },
 ];
-
-function getItem(label, key, icon, children) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  };
-}
 
 function App() {
   const [collapsed, setCollapsed] = useState(true);
@@ -40,6 +30,8 @@ function App() {
     setCollapsed(!collapsed);
   };
 
+  
+
   return (
     <BrowserRouter>
       <Layout
@@ -48,7 +40,8 @@ function App() {
         }}
       >
         <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
-          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} />
+          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} selectedKeys>
+          </Menu>
         </Sider>
         <Layout className="site-layout">
           <Header
