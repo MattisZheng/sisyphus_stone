@@ -1,6 +1,7 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import React, { useState } from "react";
+import HeaderContent from "./components/HeaderContent";
 import FooterContent from "./components/FooterContent";
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -47,7 +48,7 @@ function App() {
             color: "white",
           }}
         >
-          Header
+          <HeaderContent />
         </Header>
         <Content
           style={{
