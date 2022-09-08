@@ -15,11 +15,11 @@ function getItem(label, key, icon, children) {
 
 const items = [
   // auth
-  getItem("登入", "0", <UserOutlined />),
-  getItem("计划", "1", <LayoutOutlined />),
-  getItem("奖励", "2", <TrophyOutlined />),
-  getItem("历史记录", "3", <CalendarOutlined />),
-  getItem("设置", "4", <SettingOutlined />),
+  getItem("Login", "0", <UserOutlined />),
+  getItem("Tasks", "1", <LayoutOutlined />),
+  getItem("Rewards", "2", <TrophyOutlined />),
+  getItem("History", "3", <CalendarOutlined />),
+  getItem("Settings", "4", <SettingOutlined />),
 ];
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
       }}
     >
       <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline" items={items} />
+        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} />
       </Sider>
       <Layout className="site-layout">
         <Header
