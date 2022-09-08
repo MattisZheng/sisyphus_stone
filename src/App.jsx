@@ -13,15 +13,7 @@ import Settings from "./components/Settings";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-function getItem(label, key, icon, children) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  };
-}
-
+// menu items
 const items = [
   // auth
   getItem("Login", "0", <UserOutlined />),
@@ -30,6 +22,15 @@ const items = [
   getItem("History", "3", <CalendarOutlined />),
   getItem("Settings", "4", <SettingOutlined />),
 ];
+
+function getItem(label, key, icon, children) {
+  return {
+    key,
+    icon,
+    children,
+    label,
+  };
+}
 
 function App() {
   const [collapsed, setCollapsed] = useState(true);
@@ -68,12 +69,12 @@ function App() {
 
             
             */}
-
           </Content>
           <Footer
             style={{
               textAlign: "center",
               backgroundColor: "lightgray",
+              fontSize: "large",
             }}
           >
             <FooterContent />
