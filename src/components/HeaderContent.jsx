@@ -1,13 +1,13 @@
-import moment from "moment";
+
 import React from "react";
 import { useState } from "react";
 
 const HeaderContent = () => {
   // clock
-  const [time, setTime] = useState(moment().format("hh:mm:ss a"));
+  const [time, setTime] = useState(Date());
   // update clock
   setInterval(() => {
-    setTime(moment().format("hh:mm:ss a"));
+    setTime(Date());
   }, 1000);
 
   return <div>{time}</div>;
