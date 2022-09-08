@@ -1,6 +1,7 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import React, { useState } from "react";
+import { BrowserRouter , Routes, Route, Link } from "react-router-dom";
 import HeaderContent from "./components/HeaderContent";
 import FooterContent from "./components/FooterContent";
 const { Header, Content, Footer, Sider } = Layout;
@@ -32,39 +33,41 @@ function App() {
   };
 
   return (
-    <Layout
-      style={{
-        minHeight: "100vh",
-      }}
-    >
-      <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} />
-      </Sider>
-      <Layout className="site-layout">
-        <Header
-          className="site-layout-background"
-          style={{
-            padding: 0,
-            color: "white",
-          }}
-        >
-          <HeaderContent />
-        </Header>
-        <Content
-          style={{
-            margin: "0 16px",
-          }}
-        ></Content>
-        <Footer
-          style={{
-            textAlign: "center",
-            backgroundColor: "lightgray",
-          }}
-        >
-          <FooterContent />
-        </Footer>
+    <BrowserRouter>
+      <Layout
+        style={{
+          minHeight: "100vh",
+        }}
+      >
+        <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
+          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} />
+        </Sider>
+        <Layout className="site-layout">
+          <Header
+            className="site-layout-background"
+            style={{
+              padding: 0,
+              color: "white",
+            }}
+          >
+            <HeaderContent />
+          </Header>
+          <Content
+            style={{
+              margin: "0 16px",
+            }}
+          ></Content>
+          <Footer
+            style={{
+              textAlign: "center",
+              backgroundColor: "lightgray",
+            }}
+          >
+            <FooterContent />
+          </Footer>
+        </Layout>
       </Layout>
-    </Layout>
+    </BrowserRouter>
   );
 }
 
