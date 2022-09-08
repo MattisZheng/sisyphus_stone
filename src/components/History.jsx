@@ -3,7 +3,7 @@ import { Calendar } from "antd";
 const History = () => {
   return (
     <div>
-      <Calendar />
+      History
     </div>
   );
 };
