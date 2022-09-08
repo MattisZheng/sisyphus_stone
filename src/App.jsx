@@ -44,17 +44,20 @@ function App() {
           className="site-layout-background"
           style={{
             padding: 0,
+            color: "white",
           }}
-        />
+        >
+          Header
+        </Header>
         <Content
           style={{
             margin: "0 16px",
-            border: "1px solid black",
           }}
         ></Content>
         <Footer
           style={{
             textAlign: "center",
+            backgroundColor: "lightgray",
           }}
         >
           <FooterContent />
