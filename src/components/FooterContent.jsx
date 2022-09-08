@@ -1,9 +1,6 @@
 import { GithubOutlined, InfoCircleOutlined } from "@ant-design/icons";
 
 const FooterContent = () => {
-  // copyright
-  // external links
-
   return (
     <footer>
       <p>
@@ -12,7 +9,7 @@ const FooterContent = () => {
       <a href="https://github.com/mattiszheng">
         <GithubOutlined />
       </a>
-      
+
       <a href="">
         <InfoCircleOutlined />
       </a>
