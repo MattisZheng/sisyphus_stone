@@ -1,5 +1,5 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Switch } from "antd";
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HeaderContent from "./components/HeaderContent";
@@ -25,6 +25,12 @@ const items = [
 function App() {
   const [collapsed, setCollapsed] = useState(true);
 
+  const [theme, setTheme] = useState("dark");
+
+  const changeTheme = (value) => {
+    setTheme(value ? "dark" : "light");
+  };
+
   // handleCollapse
   const handleCollapse = () => {
     setCollapsed(!collapsed);
@@ -37,8 +43,9 @@ function App() {
           minHeight: "100vh",
         }}
       >
-        <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
-          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} selectedKeys></Menu>
+        <Sider theme={theme} collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
+          <Switch checked={theme === "dark"} onChange={changeTheme} checkedChildren="Dark" unCheckedChildren="Light" />
+          <Menu theme={theme} defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} selectedKeys></Menu>
         </Sider>
         <Layout className="site-layout">
           <Header
