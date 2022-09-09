@@ -30,8 +30,6 @@ function App() {
     setCollapsed(!collapsed);
   };
 
-  
-
   return (
     <BrowserRouter>
       <Layout
@@ -40,8 +38,7 @@ function App() {
         }}
       >
         <Sider collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
-          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} selectedKeys>
-          </Menu>
+          <Menu theme="dark" defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} selectedKeys></Menu>
         </Sider>
         <Layout className="site-layout">
           <Header
