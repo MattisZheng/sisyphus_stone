@@ -23,13 +23,13 @@ const items = [
 ];
 
 function App() {
-  const [collapsed, setCollapsed] = useState(true);
-
   const [theme, setTheme] = useState("dark");
 
   const changeTheme = (value) => {
     setTheme(value ? "dark" : "light");
   };
+
+  const [collapsed, setCollapsed] = useState(true);
 
   // handleCollapse
   const handleCollapse = () => {
