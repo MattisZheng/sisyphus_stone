@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 
 import { Layout, Menu, Switch } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HeaderContent from "./components/HeaderContent";
 
@@ -22,6 +22,24 @@ import Reward from "./routes/Reward";
 import Settings from "./routes/Settings";
 
 const { Header, Content, Footer, Sider } = Layout;
+
+// render main by selected keys
+const renderMain = (selectedKeys) => {
+  switch (selectedKeys) {
+    case "1":
+      return <Login />;
+    case "2":
+      return <Tasks />;
+    case "3":
+      return <History />;
+    case "4":
+      return <Reward />;
+    case "5":
+      return <Settings />;
+    default:
+      return <Tasks />;
+  }
+};
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -38,8 +56,8 @@ function App() {
     setCollapsed(!collapsed);
   };
 
-  // set selectedKeys
-  const [selectedKeys, setSelectedKeys] = useState(["1"]);
+  // set selectedKeys, default: 2
+  const [selectedKeys, setSelectedKeys] = useState();
 
   // handleSelect
   const handleSelect = (e) => {
@@ -57,7 +75,7 @@ function App() {
         <Sider theme={theme} collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
           <Menu
             theme={theme}
-            defaultSelectedKeys={["1"]}
+            defaultSelectedKeys={["2"]}
             selectedKeys={selectedKeys}
             onSelect={handleSelect}
             mode="vertical"
@@ -90,11 +108,7 @@ function App() {
               margin: "0 16px",
             }}
           >
-            {selectedKeys === "1" && <Login />}
-            {selectedKeys === "2" && <Tasks />}
-            {selectedKeys === "3" && <History />}
-            {selectedKeys === "4" && <Reward />}
-            {selectedKeys === "5" && <Settings />}
+            {renderMain(selectedKeys)}
           </Content>
           <Footer
             style={{
