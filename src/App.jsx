@@ -9,12 +9,10 @@ import {
 } from "@ant-design/icons";
 
 import { Layout, Menu, Switch } from "antd";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HeaderContent from "./components/HeaderContent";
-
-import Sidebar from "./components/Sidebar";
-
+// routes
 import Login from "./routes/Login";
 import Tasks from "./routes/Tasks";
 import History from "./routes/History";
