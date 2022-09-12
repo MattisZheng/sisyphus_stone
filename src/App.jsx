@@ -1,9 +1,17 @@
-import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
+import {
+  LayoutOutlined,
+  TrophyOutlined,
+  UserOutlined,
+  SettingOutlined,
+  CalendarOutlined,
+  GithubOutlined,
+  InfoCircleOutlined,
+} from "@ant-design/icons";
+
 import { Layout, Menu, Switch } from "antd";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HeaderContent from "./components/HeaderContent";
-import FooterContent from "./components/FooterContent";
 
 import Sidebar from "./components/Sidebar";
 
@@ -14,6 +22,24 @@ import Reward from "./routes/Reward";
 import Settings from "./routes/Settings";
 
 const { Header, Content, Footer, Sider } = Layout;
+
+// render main by selected keys
+const renderMain = (selectedKeys) => {
+  switch (selectedKeys) {
+    case "1":
+      return <Login />;
+    case "2":
+      return <Tasks />;
+    case "3":
+      return <History />;
+    case "4":
+      return <Reward />;
+    case "5":
+      return <Settings />;
+    default:
+      return <Tasks />;
+  }
+};
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -30,8 +56,8 @@ function App() {
     setCollapsed(!collapsed);
   };
 
-  // set selectedKeys
-  const [selectedKeys, setSelectedKeys] = useState(["1"]);
+  // set selectedKeys, default: 2
+  const [selectedKeys, setSelectedKeys] = useState();
 
   // handleSelect
   const handleSelect = (e) => {
@@ -49,16 +75,16 @@ function App() {
         <Sider theme={theme} collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
           <Menu
             theme={theme}
-            defaultSelectedKeys={["1"]}
+            defaultSelectedKeys={["2"]}
             selectedKeys={selectedKeys}
             onSelect={handleSelect}
             mode="vertical"
             items={[
-              { label: "Login", key: "1", icon: <UserOutlined />, path: "/login" },
-              { label: "Tasks", key: "2", icon: <LayoutOutlined />, path: "/tasks" },
-              { label: "History", key: "3", icon: <CalendarOutlined />, path: "/history" },
-              { label: "Rewards", key: "4", icon: <TrophyOutlined />, path: "/reward" },
-              { label: "Settings", key: "5", icon: <SettingOutlined />, path: "/settings" },
+              { label: "Login", key: "1", icon: <UserOutlined /> },
+              { label: "Tasks", key: "2", icon: <LayoutOutlined /> },
+              { label: "History", key: "3", icon: <CalendarOutlined /> },
+              { label: "Rewards", key: "4", icon: <TrophyOutlined /> },
+              { label: "Settings", key: "5", icon: <SettingOutlined /> },
             ]}
             style={{ fontSize: "16px" }}
           ></Menu>
@@ -67,7 +93,7 @@ function App() {
           <Header
             className="site-layout-background"
             style={{
-              padding: 0,
+              padding: "16px",
               color: "white",
               display: "flex",
               justifyContent: "space-between",
@@ -82,7 +108,7 @@ function App() {
               margin: "0 16px",
             }}
           >
-            {selectedKeys}
+            {renderMain(selectedKeys)}
           </Content>
           <Footer
             style={{
@@ -91,7 +117,19 @@ function App() {
               fontSize: "large",
             }}
           >
-            <FooterContent />
+            <footer style={{ display: "flex", justifyContent: "center" }}>
+              <p style={{ margin: "8px" }}>
+                Developed by <a href="https://mattiszheng.com">Mattis Zheng</a>
+              </p>
+              <p style={{ margin: "8px" }}>Copyright</p>
+              <a href="https://github.com/mattiszheng" style={{ margin: "8px" }}>
+                <GithubOutlined />
+              </a>
+
+              <a href="" style={{ margin: "8px" }}>
+                <InfoCircleOutlined />
+              </a>
+            </footer>
           </Footer>
         </Layout>
       </Layout>
