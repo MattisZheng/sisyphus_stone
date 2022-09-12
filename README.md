@@ -26,13 +26,14 @@
 
 ## Dev log
 
-v0.1.0 Main Structure and Layout
-v0.2.0 Main Page Routing
-v0.3.0 Tasks Layout
-v0.4.0 Daily Tasks
-v0.5.0 Weekly Tasks
-v0.6.0 Storage
-v0.6.0 Goals
-v0.7.0 Rewards
-v0.8.0 Settings
-v0.9.0 RWD
+- [x] v0.1.0 Main Structure and Layout
+- [x] v0.2.0 Main Page Routing
+- [ ] v0.3.0 Tasks Layout
+- [ ] v0.4.0 Daily Tasks
+- [ ] v0.5.0 Weekly Tasks
+- [ ] v0.6.0 Storage
+- [ ] v0.6.0 Storage
+- [ ] v0.7.0 Rewards
+- [ ] v0.8.0 Settings
+- [ ] v0.9.0 RWD
+- [ ] v1.0.0 Release
