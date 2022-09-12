@@ -5,22 +5,15 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HeaderContent from "./components/HeaderContent";
 import FooterContent from "./components/FooterContent";
 
-import Login from "./components/Login";
-import Tasks from "./components/Tasks";
-import History from "./components/History";
-import Reward from "./components/Reward";
-import Settings from "./components/Settings";
+import Sidebar from "./components/Sidebar";
+
+import Login from "./routes/Login";
+import Tasks from "./routes/Tasks";
+import History from "./routes/History";
+import Reward from "./routes/Reward";
+import Settings from "./routes/Settings";
 
 const { Header, Content, Footer, Sider } = Layout;
-
-// menu items
-const items = [
-  { label: "Login", key: "1", icon: <UserOutlined />, path: "/login" },
-  { label: "Tasks", key: "2", icon: <LayoutOutlined />, path: "/tasks" },
-  { label: "History", key: "3", icon: <CalendarOutlined />, path: "/history" },
-  { label: "Reward", key: "4", icon: <TrophyOutlined />, path: "/reward" },
-  { label: "Settings", key: "5", icon: <SettingOutlined />, path: "/settings" },
-];
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -29,11 +22,20 @@ function App() {
     setTheme(value ? "dark" : "light");
   };
 
-  const [collapsed, setCollapsed] = useState(true);
+  // set sider collapsed, desfault: false
+  const [collapsed, setCollapsed] = useState(false);
 
   // handleCollapse
   const handleCollapse = () => {
     setCollapsed(!collapsed);
+  };
+
+  // set selectedKeys
+  const [selectedKeys, setSelectedKeys] = useState(["1"]);
+
+  // handleSelect
+  const handleSelect = (e) => {
+    setSelectedKeys(e.key);
   };
 
   return (
@@ -43,9 +45,23 @@ function App() {
           minHeight: "100vh",
         }}
       >
+        {/* <Sidebar/> */}
         <Sider theme={theme} collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
-          <Switch checked={theme === "dark"} onChange={changeTheme} checkedChildren="Dark" unCheckedChildren="Light" />
-          <Menu theme={theme} defaultSelectedKeys={["1"]} mode="vertical" items={items} style={{ fontSize: "16px" }} selectedKeys></Menu>
+          <Menu
+            theme={theme}
+            defaultSelectedKeys={["1"]}
+            selectedKeys={selectedKeys}
+            onSelect={handleSelect}
+            mode="vertical"
+            items={[
+              { label: "Login", key: "1", icon: <UserOutlined />, path: "/login" },
+              { label: "Tasks", key: "2", icon: <LayoutOutlined />, path: "/tasks" },
+              { label: "History", key: "3", icon: <CalendarOutlined />, path: "/history" },
+              { label: "Rewards", key: "4", icon: <TrophyOutlined />, path: "/reward" },
+              { label: "Settings", key: "5", icon: <SettingOutlined />, path: "/settings" },
+            ]}
+            style={{ fontSize: "16px" }}
+          ></Menu>
         </Sider>
         <Layout className="site-layout">
           <Header
@@ -53,19 +69,20 @@ function App() {
             style={{
               padding: 0,
               color: "white",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
             <HeaderContent />
+            <Switch checked={theme === "dark"} onChange={changeTheme} checkedChildren="Dark" unCheckedChildren="Light" />
           </Header>
           <Content
             style={{
               margin: "0 16px",
             }}
           >
-            {/* 
-
-            
-            */}
+            {selectedKeys}
           </Content>
           <Footer
             style={{
