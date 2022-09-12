@@ -1,9 +1,17 @@
-import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
+import {
+  LayoutOutlined,
+  TrophyOutlined,
+  UserOutlined,
+  SettingOutlined,
+  CalendarOutlined,
+  GithubOutlined,
+  InfoCircleOutlined,
+} from "@ant-design/icons";
+
 import { Layout, Menu, Switch } from "antd";
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HeaderContent from "./components/HeaderContent";
-import FooterContent from "./components/FooterContent";
 
 import Sidebar from "./components/Sidebar";
 
@@ -54,11 +62,11 @@ function App() {
             onSelect={handleSelect}
             mode="vertical"
             items={[
-              { label: "Login", key: "1", icon: <UserOutlined />, path: "/login" },
-              { label: "Tasks", key: "2", icon: <LayoutOutlined />, path: "/tasks" },
-              { label: "History", key: "3", icon: <CalendarOutlined />, path: "/history" },
-              { label: "Rewards", key: "4", icon: <TrophyOutlined />, path: "/reward" },
-              { label: "Settings", key: "5", icon: <SettingOutlined />, path: "/settings" },
+              { label: "Login", key: "1", icon: <UserOutlined /> },
+              { label: "Tasks", key: "2", icon: <LayoutOutlined /> },
+              { label: "History", key: "3", icon: <CalendarOutlined /> },
+              { label: "Rewards", key: "4", icon: <TrophyOutlined /> },
+              { label: "Settings", key: "5", icon: <SettingOutlined /> },
             ]}
             style={{ fontSize: "16px" }}
           ></Menu>
@@ -67,7 +75,7 @@ function App() {
           <Header
             className="site-layout-background"
             style={{
-              padding: 0,
+              padding: "16px",
               color: "white",
               display: "flex",
               justifyContent: "space-between",
@@ -82,7 +90,11 @@ function App() {
               margin: "0 16px",
             }}
           >
-            {selectedKeys}
+            {selectedKeys === "1" && <Login />}
+            {selectedKeys === "2" && <Tasks />}
+            {selectedKeys === "3" && <History />}
+            {selectedKeys === "4" && <Reward />}
+            {selectedKeys === "5" && <Settings />}
           </Content>
           <Footer
             style={{
@@ -91,7 +103,19 @@ function App() {
               fontSize: "large",
             }}
           >
-            <FooterContent />
+            <footer style={{ display: "flex", justifyContent: "center" }}>
+              <p style={{ margin: "8px" }}>
+                Developed by <a href="https://mattiszheng.com">Mattis Zheng</a>
+              </p>
+              <p style={{ margin: "8px" }}>Copyright</p>
+              <a href="https://github.com/mattiszheng" style={{ margin: "8px" }}>
+                <GithubOutlined />
+              </a>
+
+              <a href="" style={{ margin: "8px" }}>
+                <InfoCircleOutlined />
+              </a>
+            </footer>
           </Footer>
         </Layout>
       </Layout>
