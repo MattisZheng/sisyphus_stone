@@ -25,20 +25,44 @@
 ```json
 {
   "tasks": {
-    "daily": [],
-    "weekly": [],
-    "goal":[],
-    "habit"[],
-    "routine":[]
+    "daily": [
+      {
+        "name": "name 1",
+        "description": "description",
+        "status": true
+      }
+    ],
+    "weekly": [
+      {
+        "name": "weekly 1",
+        "description": "description",
+        "status": true
+      }
+    ],
+    "goal": [
+      {
+        "name": "goal 1",
+        "deadline": "2049-01-01",
+        "description": "goal 1 description"
+      }
+    ],
+    "habit": [
+      {
+        "name": "habit 1",
+        "startdate": "1970-01-01",
+        "description": "habit 1 description"
+      }
+    ],
+    "routine": [
+      {
+        "time": "routine 1",
+        "description": "routine 1 description"
+      }
+    ]
   },
-  "history":[
-  ],
-  "reward":[
-
-  ],
-  "settings":[
-
-  ]
+  "history": [],
+  "reward": [],
+  "settings": []
 }
 ```
 
