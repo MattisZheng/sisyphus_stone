@@ -20,6 +20,28 @@
 
 ## Doc
 
+### JSON
+
+```json
+{
+  "tasks": {
+    "daily": [],
+    "weekly": [],
+    "goal":[],
+    "habit"[],
+    "routine":[]
+  },
+  "history":[
+  ],
+  "reward":[
+
+  ],
+  "settings":[
+
+  ]
+}
+```
+
 ## License
 
 ## Contribution Guide
@@ -59,7 +81,6 @@ v3.0.0 Google
 
 - [ ] v3.1 OAuth
 - [ ] v3.2 Sync Calendar
-
 
 v4.0.0 Google
 
