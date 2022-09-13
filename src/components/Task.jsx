@@ -1,19 +1,16 @@
-import React from 'react'
-import { DeleteOutlined } from '@ant-design/icons';
-
-// todo
-// title
-// description
-// date
-
+import React from "react";
+import file from "../../mock/dailymock.json";
+import { DeleteOutlined } from "@ant-design/icons";
 
 const Task = () => {
+
+  
   return (
     <div>
-      Taskbox
+      checkbox name description(hidden) deadline 分类
       <DeleteOutlined />
     </div>
   );
-}
+};
 
-export default Task
+export default Task;

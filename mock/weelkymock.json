@@ -1,0 +1,12 @@
+[
+  {
+    "name": "weekly 1",
+    "description": "weekly 1 description",
+    "status": true
+  },
+  {
+    "name": "weelky 2",
+    "description": "weekly 2 description",
+    "status": true
+  }
+]

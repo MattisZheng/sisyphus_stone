@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Routine = () => {
-  return (
-    <div>Routine</div>
-  )
-}
+  return <div>Routine</div>;
+};
 
-export default Routine
+export default Routine;
