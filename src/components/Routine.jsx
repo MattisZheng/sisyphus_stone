@@ -1,8 +1,9 @@
 import React from 'react'
+import Draggable from './Draggable'
 
 const Routine = () => {
   return (
-    <div>Routine</div>
+    <Draggable title="Routine">Routine</Draggable>
   )
 }
 
