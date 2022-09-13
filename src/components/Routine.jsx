@@ -1,10 +1,7 @@
-import React from 'react'
-import Draggable from './Draggable'
+import React from "react";
 
 const Routine = () => {
-  return (
-    <Draggable title="Routine">Routine</Draggable>
-  )
-}
+  return <div>Routine</div>;
+};
 
-export default Routine
+export default Routine;

@@ -6,7 +6,7 @@ import Draggable from "./Draggable";
 
 const Daily = () => {
   return (
-    <Draggable title="Daily">
+    <Draggable title="Daily Task">
       <div>
         <Task />
       </div>
