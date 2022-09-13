@@ -1,4 +1,3 @@
-import React from "react";
 import { MoreOutlined } from "@ant-design/icons";
 
 const Draggable = ({ title }) => {
