@@ -1,16 +1,14 @@
-import Task from "./Task";
-import { MoreOutlined } from "@ant-design/icons";
 import Draggable from "./Draggable";
+import Task from "./Task";
 
 // render daily task
 
 const Daily = () => {
   return (
-    <Draggable title="Daily Task">
-      <div>
-        <Task />
-      </div>
-    </Draggable>
+    <div>
+      <Draggable title="Daily Task"/>
+      <Task />
+    </div>
   );
 };
 
