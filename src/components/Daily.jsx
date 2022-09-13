@@ -6,9 +6,13 @@ import { MoreOutlined } from "@ant-design/icons";
 const Daily = () => {
   return (
     <div>
-      Daily
-      
-      <MoreOutlined />
+      <h2>
+        Daily
+        <MoreOutlined />
+      </h2>
+      <div>
+        <Task />
+      </div>
     </div>
   );
 };

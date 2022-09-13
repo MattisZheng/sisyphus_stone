@@ -6,8 +6,14 @@ import { MoreOutlined } from "@ant-design/icons";
 const Weekly = () => {
   return (
     <div>
-      Weekly
-      <MoreOutlined />
+      <h2>
+        Weekly
+        <MoreOutlined />
+      </h2>
+
+      <div>
+        <Task />
+      </div>
     </div>
   );
 };

@@ -10,7 +10,11 @@ import { DeleteOutlined } from '@ant-design/icons';
 const Task = () => {
   return (
     <div>
-      Taskbox
+      checkbox
+      name
+      description(hidden)
+      deadline
+      分类
       <DeleteOutlined />
     </div>
   );
