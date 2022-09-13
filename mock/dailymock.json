@@ -1,25 +1,21 @@
 [
   {
     "name": "daily 1",
-    "deadline": "20220915",
     "description": "daily 1",
     "status": true
   },
   {
     "name": "daily 2",
-    "deadline": "20220915",
     "description": "daily 1",
     "status": true
   },
   {
     "name": "daily 3",
-    "type": "da",
     "description": "daily 1",
     "status": false
   },
   {
     "name": "daily 1",
-    "type": "daily",
     "description": "daily 1",
     "status": false
   }

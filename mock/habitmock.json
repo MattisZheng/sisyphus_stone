@@ -1,26 +1,12 @@
 [
   {
-    "name": "daily 1",
-    "deadline": "20220915",
-    "description": "daily 1",
-    "status": true
+    "name": "routine 1",
+    "startdate": "20220831",
+    "description": "routine 1 description"
   },
   {
-    "name": "daily 2",
-    "deadline": "20220915",
-    "description": "daily 1",
-    "status": true
-  },
-  {
-    "name": "daily 3",
-    "type": "da",
-    "description": "daily 1",
-    "status": false
-  },
-  {
-    "name": "daily 1",
-    "type": "daily",
-    "description": "daily 1",
-    "status": false
+    "name": "routine 2",
+    "startdate": "20220831",
+    "description": "routine 2 description"
   }
 ]
