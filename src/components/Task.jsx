@@ -1,5 +1,4 @@
 import React from "react";
-import file from "../../mock/dailymock.json";
 import { DeleteOutlined } from "@ant-design/icons";
 
 const Task = () => {
