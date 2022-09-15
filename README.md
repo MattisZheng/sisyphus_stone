@@ -74,10 +74,10 @@
 
 v0.0.0
 
-- [x] v0.1 Main Structure and Layout 22.09.01
-- [x] v0.2 Routing 22.09.12
-- [x] v0.3 Tasks Layout 22.09.13
-- [x] v0.4 Render Tasks 22.09.13
+- [x] v0.1 Main Structure and Layout
+- [x] v0.2 Routing
+- [x] v0.3 Tasks Layout
+- [x] v0.4 Render Tasks
 - [ ] v0.6 Local Storage
 - [ ] v0.7 Rewards
 - [ ] v0.8 Settings
