@@ -86,9 +86,9 @@ v0.0.0
 v1.0.0 Main Feature
 
 - [ ] v1.1 Clock
-- [ ] v1.2 Auth
+- [ ] v1.2 OAuth
 - [ ] v1.3 Sync
-- [ ] v1.4 Database
+- [ ] v1.4 Server
 - [ ] v1.5 History
 - [ ] v1.6 Calendar
 - [ ] v1.7 Weather
@@ -100,13 +100,9 @@ v2.0.0 Side Features
 - [ ] v2.1 Mobile
 - [ ] v2.2 Desktop
 - [ ] v2.2 PWA
+- [ ] v2.3 Sync Calendar
 
-v3.0.0 Cross-platform
-
-- [ ] v3.1 OAuth
-- [ ] v3.2 Sync Calendar
-
-v4.0.0 Google
+v3.0.0 Google
 
 - [ ] Themes
 - [ ] i18n
