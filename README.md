@@ -93,7 +93,7 @@ v1.0.0 Main Feature
 - [ ] v1.6 Calendar
 - [ ] v1.7 Weather
 - [ ] v1.8 Visualization
-- [ ] v1.9 Count down
+- [ ] v1.9 Countdown
 
 v2.0.0 Side Features
 
@@ -101,7 +101,7 @@ v2.0.0 Side Features
 - [ ] v2.2 Desktop
 - [ ] v2.2 PWA
 
-v3.0.0 Google
+v3.0.0 Cross-platform
 
 - [ ] v3.1 OAuth
 - [ ] v3.2 Sync Calendar
