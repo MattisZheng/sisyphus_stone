@@ -21,5 +21,18 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
     "vite": "^3.0.7"
-  }
+  },
+  "description": "> Task Manager is built for task management, goal tracking, and reward setting.",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattisZheng/task_manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattisZheng/task_manager/issues"
+  },
+  "homepage": "https://github.com/MattisZheng/task_manager#readme"
 }
