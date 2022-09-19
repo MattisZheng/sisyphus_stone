@@ -79,8 +79,9 @@ v0.0.0
 - [x] v0.3 Tasks Layout
 - [x] v0.4 Render Tasks
 - [ ] v0.6 Local Storage
-- [ ] v0.7 Rewards
-- [ ] v0.8 Settings
+- [ ] v0.7 Routine
+- [ ] v0.8 Rewards
+- [ ] v0.9 Settings
 
 v1.0.0 Main Feature
 
