@@ -11,6 +11,7 @@
 - React Router
 - Ant Design
 - Node.js
+- react-beautiful-dnd
 
 ## Screen Shot
 
@@ -82,19 +83,19 @@ v0.0.0
 - [x] v0.6 Routine
 - [x] v0.7 Rewards
 - [ ] v0.8 Local Storage
-- [ ] v0.9 Drag and Drop
 
 v1.0.0 Main Feature
 
-- [ ] v1.1 Clock
-- [ ] v1.2 OAuth
-- [ ] v1.3 Sync
-- [ ] v1.4 Server
-- [ ] v1.5 History
-- [ ] v1.6 Calendar
-- [ ] v1.7 Weather
-- [ ] v1.8 Visualization
-- [ ] v1.9 Countdown
+- [ ] v1.1 Drag and Drop
+- [ ] v1.2 Clock
+- [ ] v1.3 OAuth
+- [ ] v1.4 Sync
+- [ ] v1.5 Server
+- [ ] v1.6 History
+- [ ] v1.7 Calendar
+- [ ] v1.8 Weather
+- [ ] v1.9 Visualization
+- [ ] v1.10 Countdown
 
 v2.0.0 Side Features
 
