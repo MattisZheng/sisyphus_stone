@@ -79,9 +79,9 @@ v0.0.0
 - [x] v0.3 Tasks Layout
 - [x] v0.4 Render Tasks
 - [x] v0.5 Settings
-- [ ] v0.6 Local Storage
-- [ ] v0.7 Routine
-- [ ] v0.8 Rewards
+- [x] v0.6 Routine
+- [x] v0.7 Rewards
+- [ ] v0.8 Local Storage
 - [ ] v0.9 Drag and Drop
 
 v1.0.0 Main Feature
