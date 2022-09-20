@@ -50,7 +50,7 @@
     "habit": [
       {
         "name": "habit 1",
-        "startdate": "1970-01-01",
+        "startDate": "1970-01-01",
         "description": "habit 1 description"
       }
     ],

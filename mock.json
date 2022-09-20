@@ -29,7 +29,7 @@
         "status": true
       },
       {
-        "name": "weelky 2",
+        "name": "weekly 2",
         "description": "weekly 2 description",
         "status": true
       }
@@ -54,12 +54,12 @@
     "habit": [
       {
         "name": "habit 1",
-        "startdate": "20220831",
+        "startDate": "20220831",
         "description": "habit 1 description"
       },
       {
         "name": "habit 2",
-        "startdate": "20220831",
+        "startDate": "20220831",
         "description": "habit 2 description"
       }
     ],
