@@ -1,5 +1,9 @@
 const Reward = () => {
-  return <div>Reward</div>;
+  return (
+    <>
+      <h1>Reward</h1>
+    </>
+  );
 };
 
 export default Reward;

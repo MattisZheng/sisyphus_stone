@@ -2,9 +2,9 @@ import { Calendar } from "antd";
 
 const History = () => {
   return (
-    <div>
-      History
-    </div>
+    <>
+      <h1>History</h1>
+    </>
   );
 };
 
