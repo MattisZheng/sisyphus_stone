@@ -6,13 +6,13 @@ import Goals from "../components/Goals";
 
 const Tasks = () => {
   return (
-    <div>
+    <>
       <Daily />
       <Weekly />
       <Routines />
       <Habits />
       <Goals />
-    </div>
+    </>
   );
 };
 
