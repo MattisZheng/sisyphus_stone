@@ -21,6 +21,33 @@
 
 ## Doc
 
+- loading
+- 404
+
+- header
+  - clock
+  - points
+
+- user
+  - register
+  - login
+  - plan
+- tasks
+  - daily
+  - weekly
+  - goals
+  - habits
+  - routines
+- rewards
+  - reward
+- history
+  - calendar
+  - stats
+  - charts
+- settings
+  - themes
+  - preferences
+
 ### JSON
 
 ```json

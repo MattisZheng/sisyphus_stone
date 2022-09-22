@@ -3,22 +3,17 @@
     "daily": [
       {
         "name": "daily 1",
-        "description": "daily 1",
+        "description": "daily 1 description",
         "status": true
       },
       {
         "name": "daily 2",
-        "description": "daily 1",
+        "description": "daily 2 description",
         "status": true
       },
       {
         "name": "daily 3",
-        "description": "daily 1",
-        "status": false
-      },
-      {
-        "name": "daily 1",
-        "description": "daily 1",
+        "description": "daily 3 description",
         "status": false
       }
     ],
@@ -54,13 +49,13 @@
     "habit": [
       {
         "name": "habit 1",
-        "startDate": "20220831",
-        "description": "habit 1 description"
+        "description": "habit 1 description",
+        "startDate": "20220831"
       },
       {
         "name": "habit 2",
-        "startDate": "20220831",
-        "description": "habit 2 description"
+        "description": "habit 2 description",
+        "startDate": "20220831"
       }
     ],
     "routine": [
