@@ -21,6 +21,13 @@
 
 ## Doc
 
+- loading
+- 404
+
+- header
+  - clock
+  - points
+
 - user
   - register
   - login
