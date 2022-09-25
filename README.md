@@ -8,9 +8,8 @@
 
 - React
 - Redux
-- React Router
+
 - Ant Design
-- Node.js
 - react-beautiful-dnd
 
 ## Screen Shot
@@ -22,6 +21,9 @@
 ## Doc
 
 - loading
+check api then local storage
+if empty, load demo files
+start tutorial
 - 404
 
 - header
@@ -29,21 +31,37 @@
   - points
 
 - user
+check if logged in
   - register
-  - login
-  - plan
+  - login/logout
+    - user settings
 - tasks
+load layout settings
+load tasks
   - daily
+    - daily component
   - weekly
+    - weekly component
   - goals
+  load goals
+    - goal component
   - habits
+  load habits
+    - habit component
   - routines
+  load routines
+    - routine component
 - rewards
   - reward
+    - reward component
 - history
+load history
   - calendar
+    - calendar component
   - stats
+    - stats component
   - charts
+    - charts component
 - settings
   - themes
   - preferences
@@ -110,6 +128,7 @@ v0.0.0
 - [x] v0.6 Routine
 - [x] v0.7 Rewards
 - [ ] v0.8 Local Storage
+- [ ] v0.9 RWD
 
 v1.0.0 Main Feature
 
@@ -123,14 +142,14 @@ v1.0.0 Main Feature
 - [ ] v1.8 Weather
 - [ ] v1.9 Visualization
 - [ ] v1.10 Countdown
+- [ ] v1.11 Tutorial
 
 v2.0.0 Side Features
 
-- [ ] v2.1 RWD
-- [ ] v2.2 Mobile
-- [ ] v2.3 Desktop
-- [ ] v2.4 PWA
-- [ ] v2.5 Sync Calendar
+- [ ] v2.1 Mobile
+- [ ] v2.2 Desktop
+- [ ] v2.3 PWA
+- [ ] v2.4 Sync Calendar
 
 v3.0.0 Google
 
