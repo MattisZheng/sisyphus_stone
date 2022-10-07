@@ -116,10 +116,6 @@ function App() {
             }}
           >
             <footer style={{ display: "flex", justifyContent: "center" }}>
-              <p style={{ margin: "8px" }}>
-                Developed by <a href="https://mattiszheng.com">Mattis Zheng</a>
-              </p>
-              <p style={{ margin: "8px" }}>Copyright</p>
               <a href="https://github.com/mattiszheng" style={{ margin: "8px" }}>
                 <GithubOutlined />
               </a>
