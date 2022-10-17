@@ -128,7 +128,8 @@ v0.0.0
 - [x] v0.6 Routine
 - [x] v0.7 Rewards
 - [ ] v0.8 Local Storage
-- [ ] v0.9 RWD
+- [ ] v0.9 State Management
+- [ ] v0.10 RWD
 
 v1.0.0 Main Feature
 
@@ -140,9 +141,14 @@ v1.0.0 Main Feature
 - [ ] v1.6 History
 - [ ] v1.7 Calendar
 - [ ] v1.8 Weather
+  - [ ] Locale
+  - [ ] Settings
 - [ ] v1.9 Visualization
 - [ ] v1.10 Countdown
 - [ ] v1.11 Tutorial
+- [ ] v1.12 Notification
+  - [ ] Info icon
+  - [ ] Banner
 
 v2.0.0 Side Features
 
