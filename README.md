@@ -128,7 +128,8 @@ v0.0.0
 - [x] v0.6 Routine
 - [x] v0.7 Rewards
 - [ ] v0.8 Local Storage
-- [ ] v0.9 RWD
+- [ ] v0.9 State Management
+- [ ] v0.10 RWD
 
 v1.0.0 Main Feature
 
