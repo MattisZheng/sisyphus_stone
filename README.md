@@ -141,7 +141,7 @@ v1.0.0 Main Feature
 - [ ] v1.6 History
 - [ ] v1.7 Calendar
 - [ ] v1.8 Weather
-  - [ ] Locale
+  - [ ] Get locale
   - [ ] Settings
 - [ ] v1.9 Visualization
 - [ ] v1.10 Countdown
