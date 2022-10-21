@@ -18,6 +18,11 @@
 
 ## Installation
 
+```bash
+git clone https://github.com/MattisZheng/task_manager.git
+npm install
+```
+
 ## Doc
 
 - loading
