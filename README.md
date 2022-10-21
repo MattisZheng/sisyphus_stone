@@ -18,53 +18,12 @@
 
 ## Installation
 
-## Doc
+```bash
+git clone https://github.com/MattisZheng/task_manager.git
+npm install
+```
 
-- loading
-check api then local storage
-if empty, load demo files
-start tutorial
-- 404
-
-- header
-  - clock
-  - points
-
-- user
-check if logged in
-  - register
-  - login/logout
-    - user settings
-- tasks
-load layout settings
-load tasks
-  - daily
-    - daily component
-  - weekly
-    - weekly component
-  - goals
-  load goals
-    - goal component
-  - habits
-  load habits
-    - habit component
-  - routines
-  load routines
-    - routine component
-- rewards
-  - reward
-    - reward component
-- history
-load history
-  - calendar
-    - calendar component
-  - stats
-    - stats component
-  - charts
-    - charts component
-- settings
-  - themes
-  - preferences
+## Documentation
 
 ### JSON
 
@@ -141,7 +100,7 @@ v1.0.0 Main Feature
 - [ ] v1.6 History
 - [ ] v1.7 Calendar
 - [ ] v1.8 Weather
-  - [ ] Locale
+  - [ ] Get locale
   - [ ] Settings
 - [ ] v1.9 Visualization
 - [ ] v1.10 Countdown
