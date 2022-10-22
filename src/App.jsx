@@ -145,10 +145,15 @@ function App() {
     setSelectedKeys(e.key);
   };
 
-  // set initFile
   // check local storage
   // if !local storage, set initFile
   // if local storage, load local storage
+
+  // set initFile to localStorage
+
+  localStorage.setItem("initFile", JSON.stringify(initFile));
+
+  const [file, setFile] = useState(JSON.parse(localStorage.getItem("initFile")));
 
   return (
     <Layout
@@ -186,6 +191,7 @@ function App() {
           }}
         >
           <HeaderContent />
+
           <Switch checked={theme === "dark"} onChange={changeTheme} checkedChildren="Dark" unCheckedChildren="Light" />
         </Header>
         <Content

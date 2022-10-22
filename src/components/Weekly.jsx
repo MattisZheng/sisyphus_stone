@@ -6,7 +6,7 @@ import { MoreOutlined } from "@ant-design/icons";
 
 const Weekly = () => {
   return (
-    <Draggable title="Weelky Task">
+    <Draggable title="Weekly Task">
       <div>
         <Task />
       </div>
