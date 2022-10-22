@@ -7,6 +7,7 @@ const Settings = () => {
         <li>Local Storage / Online Storage</li>
         <li>Notification</li>
         <li>Dark Mode</li>
+        <li>clear history warning</li>
       </ul>
     </>
   );
