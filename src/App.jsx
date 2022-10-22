@@ -17,6 +17,7 @@ import Tasks from "./routes/Tasks";
 import History from "./routes/History";
 import Reward from "./routes/Reward";
 import Settings from "./routes/Settings";
+import FooterContent from "./components/FooterContent";
 
 const initFile = {
   tasks: {
@@ -208,15 +209,7 @@ function App() {
             fontSize: "large",
           }}
         >
-          <footer style={{ display: "flex", justifyContent: "center" }}>
-            <a href="https://github.com/mattiszheng" style={{ margin: "8px" }}>
-              <GithubOutlined />
-            </a>
-
-            <a href="" style={{ margin: "8px" }}>
-              <InfoCircleOutlined />
-            </a>
-          </footer>
+          <FooterContent />
         </Footer>
       </Layout>
     </Layout>
