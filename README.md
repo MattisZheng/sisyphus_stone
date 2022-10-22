@@ -84,7 +84,7 @@ v0.0.0
 - [x] v0.5 Settings
 - [x] v0.6 Routine
 - [x] v0.7 Rewards
-- [ ] v0.8 Local Storage
+- [x] v0.8 Local Storage
 - [ ] v0.9 State Management
 - [ ] v0.10 RWD
 
