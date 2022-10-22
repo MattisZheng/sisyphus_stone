@@ -1,18 +1,13 @@
 import { GithubOutlined, InfoCircleOutlined } from "@ant-design/icons";
 
 const FooterContent = () => {
-  // copyright
-  // external links
-
   return (
-    <footer>
-      <p>
-        Developed by <a href="https://mattiszheng.com">Mattis Zheng</a>
-      </p>
-      <a href="https://github.com/mattiszheng">
+    <footer style={{ display: "flex", justifyContent: "center" }}>
+      <a href="https://github.com/mattiszheng" style={{ margin: "8px" }}>
         <GithubOutlined />
       </a>
-      <a href="">
+
+      <a href="" style={{ margin: "8px" }}>
         <InfoCircleOutlined />
       </a>
     </footer>

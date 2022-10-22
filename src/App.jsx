@@ -4,8 +4,6 @@ import {
   UserOutlined,
   SettingOutlined,
   CalendarOutlined,
-  GithubOutlined,
-  InfoCircleOutlined,
 } from "@ant-design/icons";
 
 import { Layout, Menu, Switch } from "antd";
@@ -17,6 +15,7 @@ import Tasks from "./routes/Tasks";
 import History from "./routes/History";
 import Reward from "./routes/Reward";
 import Settings from "./routes/Settings";
+import FooterContent from "./components/FooterContent";
 
 const initFile = {
   tasks: {
@@ -104,25 +103,25 @@ const initFile = {
 
 const { Header, Content, Footer, Sider } = Layout;
 
-// render main by selected keys
-const renderMainNav = (selectedKeys) => {
-  switch (selectedKeys) {
-    case "1":
-      return <Login />;
-    case "2":
-      return <Tasks />;
-    case "3":
-      return <History />;
-    case "4":
-      return <Reward />;
-    case "5":
-      return <Settings />;
-    default:
-      return <Tasks />;
-  }
-};
+// render main content by selected keys
 
 function App() {
+  const renderMainNav = (selectedKeys) => {
+    switch (selectedKeys) {
+      case "1":
+        return <Login />;
+      case "2":
+        return <Tasks />;
+      case "3":
+        return <History />;
+      case "4":
+        return <Reward />;
+      case "5":
+        return <Settings />;
+      default:
+        return <Tasks />;
+    }
+  };
   const [theme, setTheme] = useState("dark");
 
   const changeTheme = (value) => {
@@ -154,6 +153,8 @@ function App() {
   localStorage.setItem("initFile", JSON.stringify(initFile));
 
   const [file, setFile] = useState(JSON.parse(localStorage.getItem("initFile")));
+
+  console.log(file);
 
   return (
     <Layout
@@ -201,22 +202,8 @@ function App() {
         >
           {renderMainNav(selectedKeys)}
         </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-            backgroundColor: "lightgray",
-            fontSize: "large",
-          }}
-        >
-          <footer style={{ display: "flex", justifyContent: "center" }}>
-            <a href="https://github.com/mattiszheng" style={{ margin: "8px" }}>
-              <GithubOutlined />
-            </a>
-
-            <a href="" style={{ margin: "8px" }}>
-              <InfoCircleOutlined />
-            </a>
-          </footer>
+        <Footer>
+          <FooterContent />
         </Footer>
       </Layout>
     </Layout>
