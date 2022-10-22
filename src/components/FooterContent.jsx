@@ -1,3 +1,5 @@
+import { GithubOutlined, InfoCircleOutlined } from "@ant-design/icons";
+
 const FooterContent = () => {
   return (
     <footer style={{ display: "flex", justifyContent: "center" }}>
