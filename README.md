@@ -7,8 +7,6 @@
 ## Build with
 
 - React
-- Redux
-
 - Ant Design
 - react-beautiful-dnd
 
@@ -25,7 +23,7 @@ npm install
 
 ## Documentation
 
-### JSON
+### JSON Format
 
 ```json
 {

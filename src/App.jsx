@@ -22,7 +22,7 @@ import Settings from "./routes/Settings";
 const { Header, Content, Footer, Sider } = Layout;
 
 // render main by selected keys
-const renderMain = (selectedKeys) => {
+const renderMainNav = (selectedKeys) => {
   switch (selectedKeys) {
     case "1":
       return <Login />;
@@ -106,7 +106,7 @@ function App() {
               margin: "0 16px",
             }}
           >
-            {renderMain(selectedKeys)}
+            {renderMainNav(selectedKeys)}
           </Content>
           <Footer
             style={{
