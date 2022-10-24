@@ -106,6 +106,8 @@ v1.0.0 Main Feature
 - [ ] v1.12 Notification
   - [ ] Info icon
   - [ ] Banner
+  - [ ] Announcement
+- [ ] v1.13 Reward History
 
 v2.0.0 Side Features
 
