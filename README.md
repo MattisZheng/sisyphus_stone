@@ -23,6 +23,8 @@ npm install
 
 ## Documentation
 
+### Work Flow
+
 ```mermaid
 graph LR
 
@@ -30,6 +32,7 @@ load[Load]
 get[Check Local Storage]
 init[Init Local Storage]
 render[Render]
+
 load --> get --> init --> render
 get --> render
 
@@ -38,13 +41,20 @@ add_new_task --> save_to_local
 
 ```
 
-```
+```mermaid
 graph LR
-Tasks --> Daily_Task --> Task
-Tasks --> Weekly_Task --> Task
-Tasks --> Routines --> Routine
-Tasks --> Habits --> Habit
-Tasks --> Goals --> Goal
+
+tasks[(Task List)]
+task[Task]
+daily[Daily Task]
+routine[Routine]
+
+
+tasks --> daily --> task
+tasks --> weekly --> task
+tasks --> Routines --> routine
+tasks --> Goals --> Goal
+tasks --> Habits --> Habit
 ```
 
 ### JSON Format
