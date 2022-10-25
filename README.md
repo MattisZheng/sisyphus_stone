@@ -23,6 +23,30 @@ npm install
 
 ## Documentation
 
+```mermaid
+graph LR
+
+load[Load]
+get[Check Local Storage]
+init[Init Local Storage]
+render[Render]
+load --> get --> init --> render
+get --> render
+
+
+add_new_task --> save_to_local
+
+```
+
+```
+graph LR
+Tasks --> Daily_Task --> Task
+Tasks --> Weekly_Task --> Task
+Tasks --> Routines --> Routine
+Tasks --> Habits --> Habit
+Tasks --> Goals --> Goal
+```
+
 ### JSON Format
 
 ```json
