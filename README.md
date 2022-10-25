@@ -26,36 +26,57 @@ npm install
 ### Work Flow
 
 ```mermaid
-graph LR
+flowchart LR
 
-load[Load]
-get[Check Local Storage]
-init[Init Local Storage]
-render[Render]
+  load[Load]
+  get[Check Local Storage]
+  init[Init Local Storage]
+  render[Render]
 
-load --> get --> init --> render
-get --> render
+  load --> get --> init --> render
+  get --> render
 
 
-add_new_task --> save_to_local
+  add_new_task --> save_to_local
 
 ```
 
 ```mermaid
-graph LR
+flowchart TD
 
-tasks[(Task List)]
-task[Task]
-daily[Daily Task]
-routine[Routine]
+  layout[Layout]
+  header[Header]
+  content[Content]
+  footer[Footer]
+  sidebar[Side Bar]
 
-
-tasks --> daily --> task
-tasks --> weekly --> task
-tasks --> Routines --> routine
-tasks --> Goals --> Goal
-tasks --> Habits --> Habit
+  layout --> header & content & footer & sidebar
 ```
+
+```mermaid
+flowchart LR
+
+  tasks[(Task List)]
+  task[Task]
+  daily[Daily Task]
+  routine[Routine]
+
+  tasks --> daily --> task
+  tasks --> weekly --> task
+  tasks --> Routines --> routine
+  tasks --> Goals --> Goal
+  tasks --> Habits --> Habit
+```
+### Data Flow
+
+```mermaid
+flowchart LR
+  local_storage[Local Storage]
+  task_list[Task List]
+  
+
+```
+
 
 ### JSON Format
 
