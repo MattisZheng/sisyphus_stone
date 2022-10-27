@@ -13,7 +13,7 @@ import History from "./Routes/History";
 import Reward from "./Routes/Reward";
 import Settings from "./Routes/Settings";
 
-// initial local storage
+// initial file 初始文件
 const initFile = {
   tasks: {
     daily: [
@@ -103,6 +103,9 @@ const { Header, Content, Footer, Sider } = Layout;
 // render main content by selected keys
 
 function App() {
+  // set selectedKeys, default: 2
+  const [selectedKeys, setSelectedKeys] = useState();
+
   const renderMainNav = (selectedKeys) => {
     switch (selectedKeys) {
       case "1":
@@ -119,10 +122,6 @@ function App() {
         return <Tasks />;
     }
   };
-
-  // set selectedKeys, default: 2
-  const [selectedKeys, setSelectedKeys] = useState();
-
   // check local storage
   // if !local storage, set initFile
   // if local storage, load local storage
@@ -140,7 +139,7 @@ function App() {
       }}
     >
       <Sider theme="dark" collapsible collapsedWidth="64">
-        <Sidebar theme="dark" selectKeys={selectedKeys} />
+        <Sidebar theme="dark" />
       </Sider>
       <Layout>
         <Header
@@ -154,15 +153,37 @@ function App() {
         >
           <HeaderContent />
         </Header>
-        <DataContext.Provider value={{ data, setData }}>
-          <Content
-            style={{
-              margin: "0 16px",
-            }}
+        <Content
+          style={{
+            margin: "0 16px",
+          }}
+        >
+          {renderMainNav(2)}
+          {data.tasks.daily.map((item) => (
+            <div>{item.name}</div>
+          ))}
+          <button
+            onClick={() =>
+              setData({
+                ...data,
+                tasks: {
+                  ...data.tasks,
+                  daily: [
+                    ...data.tasks.daily,
+                    {
+                      name: "daily 4",
+                      description: "daily 4 description",
+                      status: false,
+                    },
+                  ],
+                },
+              })
+            }
           >
-            {renderMainNav(selectedKeys)}
-          </Content>
-        </DataContext.Provider>
+            Add New Task
+          </button>
+        </Content>
+
         <Footer>
           <FooterContent />
         </Footer>

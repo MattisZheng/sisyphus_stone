@@ -1,10 +1,11 @@
 import { useContext } from "react";
 
 const Tasks = () => {
-  const { tasks, setTasks } = useContext(DataContext);
+  // const { tasks, setTasks } = useContext(DataContext);
   
   return <div>
-    {tasks}
+    tasks
+    {/* {tasks} */}
   </div>;
 };
 

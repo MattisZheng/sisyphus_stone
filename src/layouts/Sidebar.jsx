@@ -1,7 +1,7 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Sidebar = () => {
   // set selectedKeys, default: 2
