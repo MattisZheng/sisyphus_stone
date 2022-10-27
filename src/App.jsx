@@ -4,6 +4,7 @@ import { Layout, Menu, Switch } from "antd";
 import { useState, useEffect } from "react";
 
 import HeaderContent from "./Layouts/HeaderContent";
+import MainContent from "./Layouts/MainContent";
 import FooterContent from "./Layouts/FooterContent";
 import Sidebar from "./Layouts/Sidebar";
 
@@ -106,22 +107,6 @@ function App() {
   // set selectedKeys, default: 2
   const [selectedKeys, setSelectedKeys] = useState();
 
-  const renderMainNav = (selectedKeys) => {
-    switch (selectedKeys) {
-      case "1":
-        return <Login />;
-      case "2":
-        return <Tasks />;
-      case "3":
-        return <History />;
-      case "4":
-        return <Reward />;
-      case "5":
-        return <Settings />;
-      default:
-        return <Tasks />;
-    }
-  };
   // check local storage
   // if !local storage, set initFile
   // if local storage, load local storage
@@ -155,10 +140,10 @@ function App() {
         </Header>
         <Content
           style={{
-            margin: "0 16px",
+            margin: "16px",
           }}
         >
-          {renderMainNav(2)}
+          <MainContent />
           {data.tasks.daily.map((item) => (
             <div>{item.name}</div>
           ))}
@@ -183,7 +168,6 @@ function App() {
             Add New Task
           </button>
         </Content>
-
         <Footer>
           <FooterContent />
         </Footer>

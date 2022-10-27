@@ -7,7 +7,6 @@ const Sidebar = () => {
   // set selectedKeys, default: 2
   const [selectedKeys, setSelectedKeys] = useState();
 
-  
   // handleSelect
   const handleSelect = (e) => {
     setSelectedKeys(e.key);

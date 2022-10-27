@@ -77,8 +77,12 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+  app[App]
   local_storage[Local Storage]
   task_list[Task List]
+  selected_key[Selected Key]
+  nav[Nav]
+
 ```
 
 ### JSON Format
