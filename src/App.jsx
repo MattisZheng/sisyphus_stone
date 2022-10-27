@@ -8,14 +8,16 @@ import {
 
 import { Layout, Menu, Switch } from "antd";
 import { useState, useEffect } from "react";
-import HeaderContent from "./components/layouts/HeaderContent";
+import HeaderContent from "./layouts/HeaderContent";
+import FooterContent from "./layouts/FooterContent";
+import Sidebar from "./layouts/Sidebar";
 // routes
 import Login from "./routes/Login";
 import Tasks from "./routes/Tasks";
 import History from "./routes/History";
 import Reward from "./routes/Reward";
 import Settings from "./routes/Settings";
-import FooterContent from "./components/layouts/FooterContent";
+import FooterContent from "./layouts/FooterContent";
 
 const initFile = {
   tasks: {
