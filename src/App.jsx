@@ -1,19 +1,14 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 
-import { Layout, Menu, Switch } from "antd";
-import { useState, useEffect } from "react";
+import { Layout } from "antd";
+import { useState } from "react";
 
 import HeaderContent from "./Layouts/HeaderContent";
+import MainContent from "./Layouts/MainContent";
 import FooterContent from "./Layouts/FooterContent";
-import Sidebar from "./Layouts/Sidebar";
+import SiderContent from "./Layouts/SiderContent";
 
-import Login from "./Routes/Login";
-import Tasks from "./Routes/Tasks";
-import History from "./Routes/History";
-import Reward from "./Routes/Reward";
-import Settings from "./Routes/Settings";
-
-// initial local storage
+// initial file 初始文件
 const initFile = {
   tasks: {
     daily: [
@@ -103,43 +98,20 @@ const { Header, Content, Footer, Sider } = Layout;
 // render main content by selected keys
 
 function App() {
-  const renderMainNav = (selectedKeys) => {
-    switch (selectedKeys) {
-      case "1":
-        return <Login />;
-      case "2":
-        return <Tasks />;
-      case "3":
-        return <History />;
-      case "4":
-        return <Reward />;
-      case "5":
-        return <Settings />;
-      default:
-        return <Tasks />;
-    }
-  };
+  // set selectedKeys 设定选中的keys
+  const [selectedKey, setSelectedKey] = useState(2);
 
-  const [theme, setTheme] = useState("dark");
+  console.log(selectedKey);
 
-  const changeTheme = (value) => {
-    setTheme(value ? "dark" : "light");
-  };
-
-  // set selectedKeys, default: 2
-  const [selectedKeys, setSelectedKeys] = useState();
-
-  // check local storage
-  // if !local storage, set initFile
-  // if local storage, load local storage
+  // check local storage 检查本地存储
+  // if !local storage, set initFile 设定初始文件
+  // if local storage, load local storage 加载本地存储
 
   // set initFile to localStorage
 
   localStorage.setItem("initFile", JSON.stringify(initFile));
 
-  const [file, setFile] = useState(JSON.parse(localStorage.getItem("initFile")));
-
-  console.log(file);
+  const [data, setData] = useState(JSON.parse(localStorage.getItem("initFile")));
 
   return (
     <Layout
@@ -147,9 +119,8 @@ function App() {
         minHeight: "100vh",
       }}
     >
-      {/* <Sidebar/> */}
-      <Sider theme={theme} collapsible collapsedWidth="64">
-        <Sidebar theme={theme} selectKeys={selectedKeys} />
+      <Sider theme="dark" collapsible collapsedWidth="64">
+        <SiderContent theme="dark" selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
       </Sider>
       <Layout>
         <Header
@@ -162,14 +133,34 @@ function App() {
           }}
         >
           <HeaderContent />
-          <Switch checked={theme === "dark"} onChange={changeTheme} checkedChildren="Dark" unCheckedChildren="Light" />
         </Header>
-        <Content
-          style={{
-            margin: "0 16px",
-          }}
-        >
-          {renderMainNav(selectedKeys)}
+        <Content>
+          <MainContent selectedKey={selectedKey} />
+          {data.tasks.daily.map((item) => (
+            <div>{item.name}</div>
+          ))}
+          <button
+            onClick={() =>
+              // add new task to local storage
+
+              setData({
+                ...data,
+                tasks: {
+                  ...data.tasks,
+                  daily: [
+                    ...data.tasks.daily,
+                    {
+                      name: "daily 4",
+                      description: "daily 4 description",
+                      status: false,
+                    },
+                  ],
+                },
+              })
+            }
+          >
+            Add New Task
+          </button>
         </Content>
         <Footer>
           <FooterContent />
