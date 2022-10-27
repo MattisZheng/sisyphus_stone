@@ -72,16 +72,14 @@ flowchart LR
   tasks --> Goals --> Goal
   tasks --> Habits --> Habit
 ```
+
 ### Data Flow
 
 ```mermaid
 flowchart LR
   local_storage[Local Storage]
   task_list[Task List]
-  
-
 ```
-
 
 ### JSON Format
 
@@ -145,7 +143,7 @@ v0.0.0
 - [x] v0.6 Routine
 - [x] v0.7 Rewards
 - [x] v0.8 Local Storage
-- [ ] v0.9 State Management
+- [X] v0.9 State Management
 - [ ] v0.10 RWD
 
 v1.0.0 Main Feature
