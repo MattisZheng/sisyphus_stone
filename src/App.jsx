@@ -1,22 +1,19 @@
-import {
-  LayoutOutlined,
-  TrophyOutlined,
-  UserOutlined,
-  SettingOutlined,
-  CalendarOutlined,
-} from "@ant-design/icons";
+import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 
 import { Layout, Menu, Switch } from "antd";
 import { useState, useEffect } from "react";
-import HeaderContent from "./components/HeaderContent";
-// routes
-import Login from "./routes/Login";
-import Tasks from "./routes/Tasks";
-import History from "./routes/History";
-import Reward from "./routes/Reward";
-import Settings from "./routes/Settings";
-import FooterContent from "./components/FooterContent";
 
+import HeaderContent from "./Layouts/HeaderContent";
+import FooterContent from "./Layouts/FooterContent";
+import Sidebar from "./Layouts/Sidebar";
+
+import Login from "./Routes/Login";
+import Tasks from "./Routes/Tasks";
+import History from "./Routes/History";
+import Reward from "./Routes/Reward";
+import Settings from "./Routes/Settings";
+
+// initial local storage
 const initFile = {
   tasks: {
     daily: [
@@ -122,27 +119,15 @@ function App() {
         return <Tasks />;
     }
   };
+
   const [theme, setTheme] = useState("dark");
 
   const changeTheme = (value) => {
     setTheme(value ? "dark" : "light");
   };
 
-  // set sider collapsed, desfault: false
-  const [collapsed, setCollapsed] = useState(false);
-
-  // handleCollapse
-  const handleCollapse = () => {
-    setCollapsed(!collapsed);
-  };
-
   // set selectedKeys, default: 2
   const [selectedKeys, setSelectedKeys] = useState();
-
-  // handleSelect
-  const handleSelect = (e) => {
-    setSelectedKeys(e.key);
-  };
 
   // check local storage
   // if !local storage, set initFile
@@ -163,26 +148,11 @@ function App() {
       }}
     >
       {/* <Sidebar/> */}
-      <Sider theme={theme} collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
-        <Menu
-          theme={theme}
-          defaultSelectedKeys={["2"]}
-          selectedKeys={selectedKeys}
-          onSelect={handleSelect}
-          mode="vertical"
-          items={[
-            { label: "Login", key: "1", icon: <UserOutlined /> },
-            { label: "Tasks", key: "2", icon: <LayoutOutlined /> },
-            { label: "History", key: "3", icon: <CalendarOutlined /> },
-            { label: "Rewards", key: "4", icon: <TrophyOutlined /> },
-            { label: "Settings", key: "5", icon: <SettingOutlined /> },
-          ]}
-          style={{ fontSize: "16px" }}
-        ></Menu>
+      <Sider theme={theme} collapsible collapsedWidth="64">
+        <Sidebar theme={theme} selectKeys={selectedKeys} />
       </Sider>
-      <Layout className="site-layout">
+      <Layout>
         <Header
-          className="site-layout-background"
           style={{
             padding: "16px",
             color: "white",
@@ -192,7 +162,6 @@ function App() {
           }}
         >
           <HeaderContent />
-
           <Switch checked={theme === "dark"} onChange={changeTheme} checkedChildren="Dark" unCheckedChildren="Light" />
         </Header>
         <Content

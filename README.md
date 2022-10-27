@@ -1,6 +1,6 @@
 # Task Manager
 
-> Task Manager is built for task management, goal tracking, and reward setting.
+> A single page application for managing daily tasks, setting up goals, and tracking progress.
 
 ## Table of Contents
 
@@ -22,6 +22,64 @@ npm install
 ```
 
 ## Documentation
+
+### Work Flow
+
+```mermaid
+flowchart TD
+
+  load[Load]
+  get[Check Local Storage]
+  init[Init Local Storage]
+  render[Render]
+
+  load --> get --> init --> render
+  get --> render
+
+
+  add_new_task --> save_to_local
+
+```
+
+```mermaid
+flowchart LR
+
+  layout[Layout]
+  header[Header]
+  main[Main]
+    daily[Daily]
+    weekly[Weekly]
+    routine[Routine]
+    habit[Habit]
+  footer[Footer]
+  sidebar[Side Bar]
+
+  layout --> header & main & footer & sidebar
+  main --> daily & weekly & routine & habit
+```
+
+```mermaid
+flowchart LR
+
+  tasks[(Task List)]
+  task[Task]
+  daily[Daily Task]
+  routine[Routine]
+
+  tasks --> daily --> task
+  tasks --> weekly --> task
+  tasks --> Routines --> routine
+  tasks --> Goals --> Goal
+  tasks --> Habits --> Habit
+```
+
+### Data Flow
+
+```mermaid
+flowchart LR
+  local_storage[Local Storage]
+  task_list[Task List]
+```
 
 ### JSON Format
 
@@ -77,15 +135,15 @@ npm install
 
 v0.0.0
 
-- [x] v0.1 Main Structure and Layout
-- [x] v0.2 Routing
-- [x] v0.3 Tasks Layout
-- [x] v0.4 Render Tasks
-- [x] v0.5 Settings
-- [x] v0.6 Routine
-- [x] v0.7 Rewards
-- [x] v0.8 Local Storage
-- [ ] v0.9 State Management
+- [x] v0.01 Main Structure
+- [x] v0.02 Layout
+- [x] v0.03 Routing
+- [x] v0.04 Tasks
+- [x] v0.05 Routine
+- [x] v0.06 Rewards
+- [x] v0.07 Local Storage
+- [X] v0.08 State Management
+- [x] v0.09 Settings
 - [ ] v0.10 RWD
 
 v1.0.0 Main Feature
@@ -106,6 +164,8 @@ v1.0.0 Main Feature
 - [ ] v1.12 Notification
   - [ ] Info icon
   - [ ] Banner
+  - [ ] Announcement
+- [ ] v1.13 Reward History
 
 v2.0.0 Side Features
 
