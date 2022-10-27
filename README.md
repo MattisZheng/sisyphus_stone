@@ -135,15 +135,15 @@ flowchart LR
 
 v0.0.0
 
-- [x] v0.1 Main Structure and Layout
-- [x] v0.2 Routing
-- [x] v0.3 Tasks Layout
-- [x] v0.4 Render Tasks
-- [x] v0.5 Settings
-- [x] v0.6 Routine
-- [x] v0.7 Rewards
-- [x] v0.8 Local Storage
-- [X] v0.9 State Management
+- [x] v0.01 Main Structure
+- [x] v0.02 Layout
+- [x] v0.03 Routing
+- [x] v0.04 Tasks
+- [x] v0.05 Routine
+- [x] v0.06 Rewards
+- [x] v0.07 Local Storage
+- [X] v0.08 State Management
+- [x] v0.09 Settings
 - [ ] v0.10 RWD
 
 v1.0.0 Main Feature
