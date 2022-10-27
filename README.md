@@ -1,6 +1,6 @@
 # Task Manager
 
-> Task Manager is built for task management, goal tracking, and reward setting.
+> A single page application for managing daily tasks, setting up goals, and tracking progress.
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ npm install
 ### Work Flow
 
 ```mermaid
-flowchart LR
+flowchart TD
 
   load[Load]
   get[Check Local Storage]
@@ -42,22 +42,20 @@ flowchart LR
 ```
 
 ```mermaid
-flowchart TD
+flowchart LR
 
   layout[Layout]
   header[Header]
-  content[Content]
+  main[Main]
     daily[Daily]
     weekly[Weekly]
     routine[Routine]
     habit[Habit]
-    
   footer[Footer]
   sidebar[Side Bar]
 
-
-  layout --> header & content & footer & sidebar
-  content --> 
+  layout --> header & main & footer & sidebar
+  main --> daily & weekly & routine & habit
 ```
 
 ```mermaid
