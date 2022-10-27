@@ -1,18 +1,12 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 
-import { Layout, Menu, Switch } from "antd";
-import { useState, useEffect } from "react";
+import { Layout } from "antd";
+import { useState } from "react";
 
 import HeaderContent from "./Layouts/HeaderContent";
 import MainContent from "./Layouts/MainContent";
 import FooterContent from "./Layouts/FooterContent";
-import Sidebar from "./Layouts/Sidebar";
-
-import Login from "./Routes/Login";
-import Tasks from "./Routes/Tasks";
-import History from "./Routes/History";
-import Reward from "./Routes/Reward";
-import Settings from "./Routes/Settings";
+import SiderContent from "./Layouts/SiderContent";
 
 // initial file 初始文件
 const initFile = {
@@ -104,12 +98,14 @@ const { Header, Content, Footer, Sider } = Layout;
 // render main content by selected keys
 
 function App() {
-  // set selectedKeys, default: 2
-  const [selectedKeys, setSelectedKeys] = useState();
+  // set selectedKeys 设定选中的keys
+  const [selectedKey, setSelectedKey] = useState(2);
 
-  // check local storage
-  // if !local storage, set initFile
-  // if local storage, load local storage
+  console.log(selectedKey);
+
+  // check local storage 检查本地存储
+  // if !local storage, set initFile 设定初始文件
+  // if local storage, load local storage 加载本地存储
 
   // set initFile to localStorage
 
@@ -124,7 +120,7 @@ function App() {
       }}
     >
       <Sider theme="dark" collapsible collapsedWidth="64">
-        <Sidebar theme="dark" />
+        <SiderContent theme="dark" selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
       </Sider>
       <Layout>
         <Header
@@ -138,17 +134,15 @@ function App() {
         >
           <HeaderContent />
         </Header>
-        <Content
-          style={{
-            margin: "16px",
-          }}
-        >
-          <MainContent />
+        <Content>
+          <MainContent selectedKey={selectedKey} />
           {data.tasks.daily.map((item) => (
             <div>{item.name}</div>
           ))}
           <button
             onClick={() =>
+              // add new task to local storage
+
               setData({
                 ...data,
                 tasks: {

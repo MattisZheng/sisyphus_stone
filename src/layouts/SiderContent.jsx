@@ -12,11 +12,6 @@ const Sidebar = () => {
     setSelectedKeys(e.key);
   };
 
-  //pass selectedKeys to parent component on change
-  // useEffect(() => {
-  //   this.props.selectedKeys(selectedKeys);
-  // }, [selectedKeys]);
-
   return (
     <Menu
       theme="dark"

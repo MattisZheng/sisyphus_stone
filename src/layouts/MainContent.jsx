@@ -4,9 +4,9 @@ import History from "../Routes/History";
 import Reward from "../Routes/Reward";
 import Settings from "../Routes/Settings";
 
-// 渲染逻辑
+// 渲染MainContent
 function renderMainContent() {
-  switch (selectedKeys) {
+  switch (selectedKey) {
     case "1":
       return <Login />;
     case "2":
@@ -22,7 +22,7 @@ function renderMainContent() {
   }
 };
 
-const MainContent = ({selectedKeys}) => {
+const MainContent = ({selectedKey}) => {
   return <div></div>;
 };
 
