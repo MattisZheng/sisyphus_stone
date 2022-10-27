@@ -1,10 +1,9 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
 
-import {useState} from 'react';
+import { useState, useEffect } from "react";
 
-
-const Sidebar = () => {
+const Sidebar = ({ theme }) => {
   // set selectedKeys, default: 2
   const [selectedKeys, setSelectedKeys] = useState();
 
@@ -13,8 +12,14 @@ const Sidebar = () => {
     setSelectedKeys(e.key);
   };
 
+  //pass selectedKeys to parent component on change
+  // useEffect(() => {
+  //   this.props.selectedKeys(selectedKeys);
+  // }, [selectedKeys]);
+
   return (
     <Menu
+      theme={theme}
       defaultSelectedKeys={["2"]}
       selectedKeys={selectedKeys}
       onSelect={handleSelect}

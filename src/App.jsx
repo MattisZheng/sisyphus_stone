@@ -126,21 +126,8 @@ function App() {
     setTheme(value ? "dark" : "light");
   };
 
-  // set sider collapsed, desfault: false
-  const [collapsed, setCollapsed] = useState(false);
-
-  // handleCollapse
-  const handleCollapse = () => {
-    setCollapsed(!collapsed);
-  };
-
   // set selectedKeys, default: 2
   const [selectedKeys, setSelectedKeys] = useState();
-
-  // handleSelect
-  const handleSelect = (e) => {
-    setSelectedKeys(e.key);
-  };
 
   // check local storage
   // if !local storage, set initFile
@@ -161,25 +148,11 @@ function App() {
       }}
     >
       {/* <Sidebar/> */}
-      <Sider theme={theme} collapsible collapsed={collapsed} collapsedWidth="64" onCollapse={handleCollapse}>
-        <Menu
-          theme={theme}
-          defaultSelectedKeys={["2"]}
-          selectedKeys={selectedKeys}
-          onSelect={handleSelect}
-          items={[
-            { label: "Login", key: "1", icon: <UserOutlined /> },
-            { label: "Tasks", key: "2", icon: <LayoutOutlined /> },
-            { label: "History", key: "3", icon: <CalendarOutlined /> },
-            { label: "Rewards", key: "4", icon: <TrophyOutlined /> },
-            { label: "Settings", key: "5", icon: <SettingOutlined /> },
-          ]}
-        />
-        <Sidebar />
+      <Sider theme={theme} collapsible collapsedWidth="64">
+        <Sidebar theme={theme} selectKeys={selectedKeys} />
       </Sider>
-      <Layout className="site-layout">
+      <Layout>
         <Header
-          className="site-layout-background"
           style={{
             padding: "16px",
             color: "white",
@@ -189,7 +162,6 @@ function App() {
           }}
         >
           <HeaderContent />
-
           <Switch checked={theme === "dark"} onChange={changeTheme} checkedChildren="Dark" unCheckedChildren="Light" />
         </Header>
         <Content
@@ -197,7 +169,7 @@ function App() {
             margin: "0 16px",
           }}
         >
-          {/* {renderMainNav(selectedKeys)} */}
+          {renderMainNav(selectedKeys)}
         </Content>
         <Footer>
           <FooterContent />
