@@ -98,11 +98,6 @@ const { Header, Content, Footer, Sider } = Layout;
 // render main content by selected keys
 
 function App() {
-  // set selectedKeys 设定选中的keys
-  const [selectedKey, setSelectedKey] = useState(2);
-
-  console.log(selectedKey);
-
   // check local storage 检查本地存储
   // if !local storage, set initFile 设定初始文件
   // if local storage, load local storage 加载本地存储
@@ -120,7 +115,7 @@ function App() {
       }}
     >
       <Sider theme="dark" collapsible collapsedWidth="64">
-        <SiderContent theme="dark" selectedKey={selectedKey} setSelectedKey={setSelectedKey} />
+        <SiderContent theme="dark" />
       </Sider>
       <Layout>
         <Header
@@ -135,7 +130,7 @@ function App() {
           <HeaderContent />
         </Header>
         <Content>
-          <MainContent selectedKey={selectedKey} />
+          <MainContent />
           {data.tasks.daily.map((item) => (
             <div>{item.name}</div>
           ))}

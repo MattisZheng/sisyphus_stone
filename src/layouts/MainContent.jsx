@@ -23,7 +23,7 @@ function renderMainContent() {
 };
 
 const MainContent = ({selectedKey}) => {
-  return <div></div>;
+  return <div>{renderMainContent(selectedKey)}</div>;
 };
 
 export default MainContent;
