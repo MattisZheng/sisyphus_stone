@@ -120,12 +120,6 @@ function App() {
     }
   };
 
-  const [theme, setTheme] = useState("dark");
-
-  const changeTheme = (value) => {
-    setTheme(value ? "dark" : "light");
-  };
-
   // set selectedKeys, default: 2
   const [selectedKeys, setSelectedKeys] = useState();
 
@@ -137,9 +131,7 @@ function App() {
 
   localStorage.setItem("initFile", JSON.stringify(initFile));
 
-  const [file, setFile] = useState(JSON.parse(localStorage.getItem("initFile")));
-
-  console.log(file);
+  const [data, setData] = useState(JSON.parse(localStorage.getItem("initFile")));
 
   return (
     <Layout
@@ -147,9 +139,8 @@ function App() {
         minHeight: "100vh",
       }}
     >
-      {/* <Sidebar/> */}
-      <Sider theme={theme} collapsible collapsedWidth="64">
-        <Sidebar theme={theme} selectKeys={selectedKeys} />
+      <Sider theme="dark" collapsible collapsedWidth="64">
+        <Sidebar theme="dark" selectKeys={selectedKeys} />
       </Sider>
       <Layout>
         <Header
@@ -162,15 +153,16 @@ function App() {
           }}
         >
           <HeaderContent />
-          <Switch checked={theme === "dark"} onChange={changeTheme} checkedChildren="Dark" unCheckedChildren="Light" />
         </Header>
-        <Content
-          style={{
-            margin: "0 16px",
-          }}
-        >
-          {renderMainNav(selectedKeys)}
-        </Content>
+        <DataContext.Provider value={{ data, setData }}>
+          <Content
+            style={{
+              margin: "0 16px",
+            }}
+          >
+            {renderMainNav(selectedKeys)}
+          </Content>
+        </DataContext.Provider>
         <Footer>
           <FooterContent />
         </Footer>
