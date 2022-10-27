@@ -1,24 +1,19 @@
-import {
-  LayoutOutlined,
-  TrophyOutlined,
-  UserOutlined,
-  SettingOutlined,
-  CalendarOutlined,
-} from "@ant-design/icons";
+import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 
 import { Layout, Menu, Switch } from "antd";
 import { useState, useEffect } from "react";
-import HeaderContent from "./layouts/HeaderContent";
-import FooterContent from "./layouts/FooterContent";
-import Sidebar from "./layouts/Sidebar";
-// routes
-import Login from "./routes/Login";
-import Tasks from "./routes/Tasks";
-import History from "./routes/History";
-import Reward from "./routes/Reward";
-import Settings from "./routes/Settings";
-import FooterContent from "./layouts/FooterContent";
 
+import HeaderContent from "./Layouts/HeaderContent";
+import FooterContent from "./Layouts/FooterContent";
+import Sidebar from "./Layouts/Sidebar";
+
+import Login from "./Routes/Login";
+import Tasks from "./Routes/Tasks";
+import History from "./Routes/History";
+import Reward from "./Routes/Reward";
+import Settings from "./Routes/Settings";
+
+// initial local storage
 const initFile = {
   tasks: {
     daily: [
@@ -124,6 +119,7 @@ function App() {
         return <Tasks />;
     }
   };
+
   const [theme, setTheme] = useState("dark");
 
   const changeTheme = (value) => {
@@ -171,7 +167,6 @@ function App() {
           defaultSelectedKeys={["2"]}
           selectedKeys={selectedKeys}
           onSelect={handleSelect}
-          mode="vertical"
           items={[
             { label: "Login", key: "1", icon: <UserOutlined /> },
             { label: "Tasks", key: "2", icon: <LayoutOutlined /> },
@@ -179,8 +174,8 @@ function App() {
             { label: "Rewards", key: "4", icon: <TrophyOutlined /> },
             { label: "Settings", key: "5", icon: <SettingOutlined /> },
           ]}
-          style={{ fontSize: "16px" }}
-        ></Menu>
+        />
+        <Sidebar />
       </Sider>
       <Layout className="site-layout">
         <Header
@@ -202,7 +197,7 @@ function App() {
             margin: "0 16px",
           }}
         >
-          {renderMainNav(selectedKeys)}
+          {/* {renderMainNav(selectedKeys)} */}
         </Content>
         <Footer>
           <FooterContent />
