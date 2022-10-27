@@ -47,10 +47,17 @@ flowchart TD
   layout[Layout]
   header[Header]
   content[Content]
+    daily[Daily]
+    weekly[Weekly]
+    routine[Routine]
+    habit[Habit]
+    
   footer[Footer]
   sidebar[Side Bar]
 
+
   layout --> header & content & footer & sidebar
+  content --> 
 ```
 
 ```mermaid
