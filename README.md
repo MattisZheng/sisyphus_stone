@@ -41,36 +41,41 @@ flowchart TD
 
 ```
 
+### UI Flow
+
 ```mermaid
 flowchart LR
-
-  layout[Layout]
+layout[Layout]
   header[Header]
   main[Main]
-    daily[Daily]
-    weekly[Weekly]
-    routine[Routine]
-    habit[Habit]
+    user[User]
+      auth[Auth]
+      account_setting[Account Setting]
+    overview[Overview]
+      daily[Daily]
+      weekly[Weekly]
+        task[Task]
+      routine[Routine]
+      habit[Habit]
+      goal[Goal]
+    history[History]
+      calendar[Calendar]
+      stats[Stats]
+    rewards[Rewards]
+    settings[Settings]
   footer[Footer]
+    info[Info]
+    guide[Guide]
+    links[Links]
   sidebar[Side Bar]
 
   layout --> header & main & footer & sidebar
-  main --> daily & weekly & routine & habit
-```
-
-```mermaid
-flowchart LR
-
-  tasks[(Task List)]
-  task[Task]
-  daily[Daily Task]
-  routine[Routine]
-
-  tasks --> daily --> task
-  tasks --> weekly --> task
-  tasks --> Routines --> routine
-  tasks --> Goals --> Goal
-  tasks --> Habits --> Habit
+    header
+    main --> user & overview & history & rewards & settings
+      user --> auth & account_setting
+      overview --> daily & weekly & routine & habit & goal
+        daily & weekly --> task
+    footer --> info & guide & links
 ```
 
 ### Data Flow

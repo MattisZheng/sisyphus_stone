@@ -3,30 +3,43 @@ import { Menu } from "antd";
 
 import { useState } from "react";
 
-const Sidebar = () => {
-  // set selectedKeys, default: 2
-  const [selectedKeys, setSelectedKeys] = useState();
+const menuItems = [
+  {
+    key: "1",
+    label: "User",
+    icon: <UserOutlined />,
+  },
+  {
+    key: "2",
+    label: "Tasks",
+    icon: <LayoutOutlined />,
+  },
+  {
+    key: "3",
+    label: "History",
+    icon: <CalendarOutlined />,
+  },
+  {
+    key: "4",
+    label: "Reward",
+    icon: <TrophyOutlined />,
+  },
+  {
+    key: "5",
+    label: "Settings",
+    icon: <SettingOutlined />,
+  },
+];
 
-  // handleSelect
+const SiderContent = () => {
+  const [selectedKeys, setSelectedKeys] = useState("1");
+
   const handleSelect = (e) => {
     setSelectedKeys(e.key);
+    console.log("click ", e);
   };
 
-  return (
-    <Menu
-      theme="dark"
-      defaultSelectedKeys={["2"]}
-      selectedKeys={selectedKeys}
-      onSelect={handleSelect}
-      items={[
-        { label: "User", key: "1", icon: <UserOutlined /> },
-        { label: "Tasks", key: "2", icon: <LayoutOutlined /> },
-        { label: "History", key: "3", icon: <CalendarOutlined /> },
-        { label: "Rewards", key: "4", icon: <TrophyOutlined /> },
-        { label: "Settings", key: "5", icon: <SettingOutlined /> },
-      ]}
-    />
-  );
+  return <Menu theme="dark" defaultSelectedKeys={["2"]} selectedKeys={selectedKeys} onSelect={handleSelect} items={menuItems} />;
 };
 
-export default Sidebar;
+export default SiderContent;
