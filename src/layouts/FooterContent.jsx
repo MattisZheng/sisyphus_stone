@@ -6,7 +6,6 @@ const FooterContent = () => {
       <a href="https://github.com/mattiszheng" target="_blank" style={{ margin: "8px" }}>
         <GithubOutlined />
       </a>
-
       <a href="" target="_blank" style={{ margin: "8px" }}>
         <InfoCircleOutlined />
       </a>

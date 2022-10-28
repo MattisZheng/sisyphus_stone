@@ -1,6 +1,5 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
-
 import { useState } from "react";
 
 const menuItems = [
