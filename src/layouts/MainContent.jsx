@@ -1,5 +1,5 @@
 import Login from "../Routes/Login";
-import Tasks from "../Routes/Tasks";
+import Overview from "../routes/Overview";
 import History from "../Routes/History";
 import Reward from "../Routes/Reward";
 import Settings from "../Routes/Settings";
@@ -10,7 +10,7 @@ function renderMainContent() {
     case "1":
       return <Login />;
     case "2":
-      return <Tasks />;
+      return <Overview />;
     case "3":
       return <History />;
     case "4":
@@ -18,7 +18,7 @@ function renderMainContent() {
     case "5":
       return <Settings />;
     default:
-      return <Tasks />;
+      return <Overview />;
   }
 };
 

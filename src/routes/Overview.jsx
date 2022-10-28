@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-const Tasks = () => {
+const Overview = () => {
   // const { tasks, setTasks } = useContext(DataContext);
   
   return <div>
@@ -9,4 +9,4 @@ const Tasks = () => {
   </div>;
 };
 
-export default Tasks;
+export default Overview;

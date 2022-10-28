@@ -20,7 +20,7 @@ const Sidebar = () => {
       onSelect={handleSelect}
       items={[
         { label: "User", key: "1", icon: <UserOutlined /> },
-        { label: "Tasks", key: "2", icon: <LayoutOutlined /> },
+        { label: "Overview", key: "2", icon: <LayoutOutlined /> },
         { label: "History", key: "3", icon: <CalendarOutlined /> },
         { label: "Rewards", key: "4", icon: <TrophyOutlined /> },
         { label: "Settings", key: "5", icon: <SettingOutlined /> },
