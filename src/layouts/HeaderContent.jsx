@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const date = new Date();
 let month = date.getMonth() + 1;
@@ -9,17 +9,16 @@ let seconds = date.getSeconds();
 
 const HeaderContent = () => {
   // clock
-  const [time, setTime] = useState(Date().toLocaleString());
-  // update clock
-  setInterval(() => {
-    setTime(Date());
-  }, 1000);
+  // const [time, setTime] = useState(Date().toLocaleString());
+  // // update clock
 
-  return (
-    <div>
-      {time}
-    </div>
-  );
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setTime(Date());
+  //   }, 1000);
+  // }, []);
+
+  return <div></div>;
 };
 
 export default HeaderContent;
