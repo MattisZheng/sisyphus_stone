@@ -35,7 +35,6 @@ const SiderContent = () => {
 
   const handleSelect = (e) => {
     setSelectedKeys(e.key);
-    console.log("click ", e);
   };
 
   return <Menu theme="dark" defaultSelectedKeys={["2"]} selectedKeys={selectedKeys} onSelect={handleSelect} items={menuItems} />;

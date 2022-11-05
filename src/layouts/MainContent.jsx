@@ -1,8 +1,4 @@
-import Login from "../Routes/Login";
-import Overview from "../routes/Overview";
-import History from "../Routes/History";
-import Reward from "../Routes/Reward";
-import Settings from "../Routes/Settings";
+import { Routes, Route } from "react-router-dom";
 
 // 渲染MainContent
 
@@ -24,7 +20,15 @@ import Settings from "../Routes/Settings";
 // };
 
 const MainContent = () => {
-  return <div>Main</div>;
+  return (
+    <Routes>
+      <Route path="/user" element={<Login />} />
+      <Route path="/overview" element={<Overview />} />
+      <Route path="/history" element={<History />} />
+      <Route path="/reward" element={<Reward />} />
+      <Route path="/settings" element={<Settings />} />
+    </Routes>
+  );
 };
 
 export default MainContent;

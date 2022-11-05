@@ -188,3 +188,4 @@ v3.0.0 Google
 - [ ] Themes
 - [ ] i18n
 - [ ] Lite Version
+- [ ] Tutorial
