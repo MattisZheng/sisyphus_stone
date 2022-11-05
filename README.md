@@ -1,6 +1,6 @@
-# Task Manager
+# Sisyphus’s Stone
 
-> A single page application for managing daily tasks, setting up goals, and tracking progress.
+> A react application for managing daily tasks, setting up goals, and tracking progress.
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ npm install
 
 ## Documentation
 
-### Work Flow
+### Logic Flow
 
 ```mermaid
 flowchart TD
@@ -36,6 +36,10 @@ flowchart TD
   load --> get --> init --> render
   get --> render
 
+  sidebar[Side Bar]
+  main[Main]
+  app[App]
+  sidebar -->|selectedKey| app -->|selectedRoute| main
 
   add_new_task --> save_to_local
 
@@ -151,7 +155,7 @@ v0.0.0
 - [x] v0.05 Routine
 - [x] v0.06 Rewards
 - [x] v0.07 Local Storage
-- [X] v0.08 State Management
+- [x] v0.08 State Management
 - [x] v0.09 Settings
 - [ ] v0.10 RWD
 

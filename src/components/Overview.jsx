@@ -1,5 +1,9 @@
+import Routine from './Routine';
+
 const Overview = () => {
-  return <div>Overview</div>;
+  return <div>
+    <Routine/>
+  </div>;
 };
 
 export default Overview;

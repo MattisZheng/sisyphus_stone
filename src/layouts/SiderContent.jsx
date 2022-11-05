@@ -35,6 +35,26 @@ const SiderContent = () => {
 
   const handleSelect = (e) => {
     setSelectedKeys(e.key);
+    switch (e.key) {
+      case "1":
+        location.href = "/user";
+        break;
+      case "2":
+        location.href = "/";
+        break;
+      case "3":
+        location.href = "/history";
+        break;
+      case "4":
+        location.href = "/reward";
+        break;
+      case "5":
+        location.href = "/settings";
+        break;
+      default:
+        break;
+    }
+    console.log(e);
   };
 
   return <Menu theme="dark" defaultSelectedKeys={["2"]} selectedKeys={selectedKeys} onSelect={handleSelect} items={menuItems} />;
