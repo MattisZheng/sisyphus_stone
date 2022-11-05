@@ -1,6 +1,5 @@
 import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Menu } from "antd";
-
 import { useState } from "react";
 
 const menuItems = [
@@ -36,7 +35,26 @@ const SiderContent = () => {
 
   const handleSelect = (e) => {
     setSelectedKeys(e.key);
-    console.log("click ", e);
+    switch (e.key) {
+      case "1":
+        location.href = "/user";
+        break;
+      case "2":
+        location.href = "/";
+        break;
+      case "3":
+        location.href = "/history";
+        break;
+      case "4":
+        location.href = "/reward";
+        break;
+      case "5":
+        location.href = "/settings";
+        break;
+      default:
+        break;
+    }
+    console.log(e);
   };
 
   return <Menu theme="dark" defaultSelectedKeys={["2"]} selectedKeys={selectedKeys} onSelect={handleSelect} items={menuItems} />;
