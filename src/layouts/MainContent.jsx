@@ -6,6 +6,8 @@ import Reward from '../routes/Reward';
 import Settings from '../routes/Settings';
 
 const MainContent = () => {
+  
+  
   return (
     <Routes>
       <Route path="/user" element={<Login />} />
