@@ -1,33 +1,37 @@
-import Login from "../routes/Login";
+import { useState, useEffect } from "react";
+
+import User from "../routes/User";
 import Overview from "../routes/Overview";
 import History from "../routes/History";
 import Reward from "../routes/Reward";
 import Settings from "../routes/Settings";
 
 const MainContent = ({ selectedKeys }) => {
-  function renderMain(selectedKeys) {
+  const [content, setContent] = useState(<Overview />);
+  useEffect(() => {
     switch (selectedKeys) {
       case "1":
-        return <Login />;
+        setContent(<User />);
+        break;
       case "2":
-        return <Overview />;
+        setContent(<Overview />);
+        break;
       case "3":
-        return <History />;
+        setContent(<History />);
+        break;
       case "4":
-        return <Reward />;
+        setContent(<Reward />);
+        break;
       case "5":
-        return <Settings />;
+        setContent(<Settings />);
+        break;
       default:
-        return <Overview />;
+        setContent(<Login />);
+        break;
     }
-    console.log(selectedKeys);
-  }
+  }, [selectedKeys]);
 
-  return (
-    <div>
-      <div>{renderMain(selectedKeys)}</div>
-    </div>
-  );
+  return <div>{content}</div>;
 };
 
 export default MainContent;

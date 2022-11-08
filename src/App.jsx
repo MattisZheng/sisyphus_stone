@@ -1,17 +1,10 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "antd";
 import HeaderContent from "./Layouts/HeaderContent";
 import MainContent from "./Layouts/MainContent";
 import FooterContent from "./Layouts/FooterContent";
 import SiderContent from "./Layouts/SiderContent";
 import initFile from "/initFile";
-
-import Login from "./routes/Login";
-import Overview from "./routes/Overview";
-import History from "./routes/History";
-import Reward from "./routes/Reward";
-import Settings from "./routes/Settings";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -39,10 +32,10 @@ function App() {
       </Sider>
       <Layout>
         <Header>
-          <HeaderContent selectedKeys={selectedKeys} />
+          <HeaderContent />
         </Header>
         <Content>
-          <MainContent />
+          <MainContent selectedKeys={selectedKeys} />
         </Content>
         <Footer>
           <FooterContent />
