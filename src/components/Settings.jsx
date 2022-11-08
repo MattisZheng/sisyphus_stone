@@ -2,7 +2,7 @@ const Settings = () => {
   return (
     <div>
       <form action="">
-        <p>clear local storage</p>
+        <p>Clear local storage</p>
         <button>Clear</button>
       </form>
     </div>
