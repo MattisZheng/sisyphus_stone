@@ -26,43 +26,29 @@ function App() {
 
   const [data, setData] = useState(JSON.parse(localStorage.getItem("initFile")));
 
+  const [selectedKeys, setSelectedKeys] = useState(["2"]);
+
   return (
-    <BrowserRouter>
-      <Layout
-        style={{
-          minHeight: "100vh",
-        }}
-      >
-        <Sider theme="dark" collapsible collapsedWidth="64">
-          <SiderContent theme="dark" />
-        </Sider>
-        <Layout>
-          <Header
-            style={{
-              padding: "16px",
-              color: "white",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <HeaderContent />
-          </Header>
-          <Content>
-            <Routes>
-              <Route path="/user" element={<Login />} />
-              <Route path="/" element={<Overview />} />
-              <Route path="/history" element={<History />} />
-              <Route path="/reward" element={<Reward />} />
-              <Route path="/settings" element={<Settings />} />
-            </Routes>
-          </Content>
-          <Footer>
-            <FooterContent />
-          </Footer>
-        </Layout>
+    <Layout
+      style={{
+        minHeight: "100vh",
+      }}
+    >
+      <Sider theme="dark" collapsible collapsedWidth="64">
+        <SiderContent theme="dark" selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} />
+      </Sider>
+      <Layout>
+        <Header>
+          <HeaderContent selectedKeys={selectedKeys} />
+        </Header>
+        <Content>
+          <MainContent />
+        </Content>
+        <Footer>
+          <FooterContent />
+        </Footer>
       </Layout>
-    </BrowserRouter>
+    </Layout>
   );
 }
 
