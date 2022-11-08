@@ -1,4 +1,4 @@
-# Sisyphus’s Stone
+# Sisyphus’ Stone
 
 > A react application for managing daily tasks, setting up goals, and tracking progress.
 
