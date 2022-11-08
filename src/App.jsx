@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState} from "react";
 import { Layout } from "antd";
 import HeaderContent from "./Layouts/HeaderContent";
 import MainContent from "./Layouts/MainContent";
@@ -39,10 +38,10 @@ function App() {
       </Sider>
       <Layout>
         <Header>
-          <HeaderContent selectedKeys={selectedKeys} />
+          <HeaderContent/>
         </Header>
         <Content>
-          <MainContent />
+          <MainContent selectedKeys={selectedKeys}/>
         </Content>
         <Footer>
           <FooterContent />
