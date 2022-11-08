@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Login from "../routes/Login";
+import User from "../routes/User";
 import Overview from "../routes/Overview";
 import History from "../routes/History";
 import Reward from "../routes/Reward";
@@ -9,9 +9,9 @@ import Settings from "../routes/Settings";
 const MainContent = ({ selectedKeys }) => {
   const [content, setContent] = useState(<Overview />);
   useEffect(() => {
-    switch (selectedKeys[0]) {
+    switch (selectedKeys) {
       case "1":
-        setContent(<Login />);
+        setContent(<User />);
         break;
       case "2":
         setContent(<Overview />);

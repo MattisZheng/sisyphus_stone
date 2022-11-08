@@ -18,7 +18,7 @@ const HeaderContent = () => {
   //   }, 1000);
   // }, []);
 
-  return <header>Header</header>;
+  return <header></header>;
 };
 
 export default HeaderContent;
