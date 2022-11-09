@@ -18,8 +18,9 @@ const Settings = () => {
           <input type="checkbox" />
         </div>
         <div>
-          <label htmlFor="">Dark Mode</label>
-          <input type="checkbox" />
+          <select name="Theme" id="">
+            <option value=""></option>
+          </select>
         </div>
         <div>
           <label htmlFor="">Clear History</label>

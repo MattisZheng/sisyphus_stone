@@ -30,7 +30,7 @@ const menuItems = [
 ];
 
 const SiderContent = ({ selectedKeys, setSelectedKeys }) => {
-  const handleSelect = (e) => {
+  const handleClick = (e) => {
     switch (e.key) {
       case "1":
         setSelectedKeys(["1"]);
@@ -52,7 +52,7 @@ const SiderContent = ({ selectedKeys, setSelectedKeys }) => {
     }
   };
 
-  return <Menu theme="dark" defaultSelectedKeys={["2"]} selectedKeys={selectedKeys} onSelect={handleSelect} items={menuItems} />;
+  return <Menu theme="dark" defaultSelectedKeys={["2"]} selectedKeys={selectedKeys} onClick={handleClick} items={menuItems} />;
 };
 
 export default SiderContent;
