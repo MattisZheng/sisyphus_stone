@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Layout } from "antd";
 import HeaderContent from "./Layouts/HeaderContent";
 import MainContent from "./Layouts/MainContent";
@@ -19,7 +19,11 @@ function App() {
 
   const [data, setData] = useState(JSON.parse(localStorage.getItem("initFile")));
 
+  // navigation keys
   const [selectedKeys, setSelectedKeys] = useState(["2"]);
+  useEffect(() => {
+    console.log("app", selectedKeys);
+  }, [selectedKeys]);
 
   return (
     <Layout
