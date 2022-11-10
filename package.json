@@ -1,12 +1,15 @@
 {
   "name": "task_manager",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.09.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test":"vitest",
+    "coverage":"vitest --coverage",
+    "ui": "vitepress --ui"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
