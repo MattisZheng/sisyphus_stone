@@ -10,6 +10,7 @@ specifiers:
   normalize.css: ^8.0.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  typescript: ^4.8.4
   vite: ^3.0.7
   vitest: ^0.25.0
 
@@ -25,6 +26,7 @@ devDependencies:
   '@types/react': 18.0.25
   '@types/react-dom': 18.0.8
   '@vitejs/plugin-react': 2.2.0_vite@3.2.3
+  typescript: 4.8.4
   vite: 3.2.3
   vitest: 0.25.0
 
@@ -1683,6 +1685,12 @@ packages:
   /type-detect/4.0.8:
     resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
     engines: {node: '>=4'}
+    dev: true
+
+  /typescript/4.8.4:
+    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /update-browserslist-db/1.0.10_browserslist@4.21.4:
