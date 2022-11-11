@@ -42,12 +42,8 @@ flowchart TD
   load --> get --> init --> render
   get --> render
 
-  sidebar[Side Bar]
-  main[Main]
-  app[App]
-  sidebar -->|selectedKey| app -->|selectedRoute| main
-
-  add_new_task --> save_to_local
+  read
+  local[Local Storage] --> string --> array -->|map| render
 
 ```
 

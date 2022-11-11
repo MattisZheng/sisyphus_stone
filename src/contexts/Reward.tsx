@@ -1,8 +1,8 @@
 const Reward = () => {
   return (
-    <>
+    <main>
       <h1>Reward</h1>
-    </>
+    </main>
   );
 };
 

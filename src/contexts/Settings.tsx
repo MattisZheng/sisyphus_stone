@@ -32,7 +32,7 @@ const handleCascaderChange = (e: any): void => {};
 function handleClearHistory(e: any) {
   // clear history in local storage
   e.preventDefault();
-  setInitFile('history', 'history');
+  localStorage.clear();
 }
 
 const Settings = () => {
