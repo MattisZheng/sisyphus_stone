@@ -4,7 +4,6 @@ import Habits from './Overview/Habits';
 const Overview = () => {
   return (
     <main>
-      <Habits />
       <Routines />
     </main>
   );

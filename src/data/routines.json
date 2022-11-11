@@ -1,11 +1,9 @@
 [
   {
-    "id":1,
     "time": "00:00",
     "title": "routine_1"
   },
   {
-    "id":2,
     "time": "12:00",
     "title": "routine_2"
   }

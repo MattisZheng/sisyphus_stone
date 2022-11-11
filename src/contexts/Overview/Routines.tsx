@@ -1,21 +1,33 @@
 import { useState, useEffect } from 'react';
+import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
+import EditableInput from '../../components/EditableInput';
 
-// default routine object
-const defaultRoutine = {
-  time: '00:00',
-  title: 'routine',
+const Routine = {
+  id: 1,
+  time: '12:00',
+  title: 'title',
+};
+
+const defaultColumn = {
+  cell: ({ getValue, row: { index }, column: { id }, table }) => {
+    const initialValue = getValue();
+    const [value, setValue] = useState(initialValue);
+
+    const onBlur = () => {
+      console.log('onBlur', value);
+    };
+
+    useEffect(() => {
+      setValue(initialValue);
+    }, [initialValue]);
+
+    return <input value={value} onChange={(e) => setValue(e.target.value)} onBlur={onBlur} />;
+  },
 };
 
 const Routines = () => {
   const [routineList, setRoutineList] = useState<string[]>([]);
-
-  const localstorage: string | null = localStorage.getItem('routines');
-  console.log(localstorage);
-  // parse routine list
-  if (localstorage) {
-    setRoutineList(JSON.parse(localstorage));
-    console.log('routine list loaded');
-  }
+  const [value, setValue] = useState();
 
   // read from local storage
   function getRoutineList() {
@@ -24,35 +36,47 @@ const Routines = () => {
     // parse routine list
     if (localstorage) {
       setRoutineList(JSON.parse(localstorage));
-      console.log('routine list loaded');
     }
   }
 
-  // create new routine
-  function addRoutine() {
-    const newRoutineList = [...routineList, JSON.stringify(defaultRoutine)];
-    localStorage.setItem('routines', JSON.stringify(newRoutineList));
+  // create new routine when clicks add button
+  function handleClick() {
+    let newArr = [...routineList, { time: '12:00', title: 'routine' }];
+    // save to local storage
+    localStorage.setItem('routines', JSON.stringify(newArr));
+    // re-render routine list
+    getRoutineList();
   }
 
-  // update routine to local storage
-  function updateRoutine(index: number, newRoutine: string) {
-    const newRoutineList = [...routineList];
-    newRoutineList[index] = newRoutine;
-    localStorage.setItem('routines', JSON.stringify(newRoutineList));
-    setRoutineList(newRoutineList);
+  // update input value
+  function handleEdit(e) {
+    console.log(e);
+  }
+  // read input value
+  // save to local storage
+  // re-render routine list
+
+  // save to local storage onBlur
+  function saveEdit() {
+    console.log('save');
   }
 
   // delete routine
   function deleteRoutine(index: number) {
+    // create new routine list
     const newRoutineList = [...routineList];
     newRoutineList.splice(index, 1);
+    // save to local storage
     localStorage.setItem('routineList', JSON.stringify(newRoutineList));
     setRoutineList(newRoutineList);
   }
 
+  function handleDelete(index: number) {
+    deleteRoutine(index);
+  }
+
   useEffect(() => {
     getRoutineList();
-    console.log('routineList', routineList);
   }, []);
 
   return (
@@ -64,15 +88,30 @@ const Routines = () => {
             <th>Title</th>
           </tr>
         </thead>
-        {routineList.map((routine) => {
-          return (
-            <tr key={routine.id}>
-              <th>{routine.time}</th>
-              <td>{routine.title}</td>
-            </tr>
-          );
-        })}
+        <tbody>
+          {routineList.map((routine) => {
+            return (
+              <tr key={routine.id}>
+                {typeof routine.time}
+                <th>
+                  <EditableInput type="time" value={routine.time} onChange={handleEdit} onBlur={saveEdit} />
+                </th>
+                <td>
+                  <EditableInput type="time" value={routine.time} onChange={handleEdit} onBlur={saveEdit} />
+                </td>
+                <td>
+                  <button onClick={handleDelete}>
+                    <DeleteOutlined />
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
+      <button onClick={handleClick}>
+        <PlusOutlined />
+      </button>
     </div>
   );
 };
