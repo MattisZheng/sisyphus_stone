@@ -8,7 +8,7 @@ import Settings from "../routes/Settings";
 const MainContent = ({ selectedKeys }) => {
   console.log(selectedKeys);
 
-  const [content, setContent] = useState(<Overview />);
+  const [content, setContent] = useState();
 
   useEffect(() => {
     switch (selectedKeys[0]) {

@@ -52,7 +52,7 @@ const SiderContent = ({ selectedKeys, setSelectedKeys }) => {
     }
   };
 
-  return <Menu theme="dark" defaultSelectedKeys={["2"]} selectedKeys={selectedKeys} onClick={handleClick} items={menuItems} />;
+  return <Menu theme="dark" selectedKeys={selectedKeys} onClick={handleClick} items={menuItems} />;
 };
 
 export default SiderContent;

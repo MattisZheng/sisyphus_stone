@@ -1,4 +1,32 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { Cascader, Switch } from 'antd';
+
+interface Option {
+  value: string;
+  label: string;
+  children?: Option[];
+}
+
+const options: Option[] = [
+  {
+    value: 'light',
+    label: 'Light',
+  },
+  {
+    value: 'dark',
+    label: 'Dark',
+  },
+  {
+    value: 'system',
+    label: 'System',
+  },
+];
+
+function onCheckboxChange(checked: boolean) {
+  // update settings in local storage
+}
+
+const onCascaderChange = (value: string[]) => {};
 
 const Settings = () => {
   // load settings from local storage
@@ -11,20 +39,18 @@ const Settings = () => {
       <form action="">
         <div>
           <label htmlFor="">Auto Collapse after select</label>
-          <input type="checkbox" />
+          <Switch onChange={onCheckboxChange} />
         </div>
         <div>
           <label htmlFor="">Notification</label>
-          <input type="checkbox" />
+          <Switch onChange={onCheckboxChange} />
         </div>
         <div>
-          <select name="Theme" id="">
-            <option value=""></option>
-          </select>
+          <Cascader options={options} onChange={onCascaderChange} defaultValue={[1]} allowClear={false} />
         </div>
         <div>
           <label htmlFor="">Clear History</label>
-          <button>Clear</button>
+          <button onClick={localStorage.clear()}>Clear</button>
         </div>
       </form>
     </main>

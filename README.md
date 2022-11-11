@@ -82,64 +82,6 @@ layout[Layout]
     footer --> info & guide & links
 ```
 
-### Data Flow
-
-```mermaid
-flowchart LR
-  app[App]
-  local_storage[Local Storage]
-  task_list[Task List]
-  selected_key[Selected Key]
-  nav[Nav]
-
-```
-
-### JSON Format
-
-```json
-{
-  "tasks": {
-    "daily": [
-      {
-        "name": "name 1",
-        "description": "description",
-        "status": true
-      }
-    ],
-    "weekly": [
-      {
-        "name": "weekly 1",
-        "description": "description",
-        "status": true
-      }
-    ],
-    "goal": [
-      {
-        "name": "goal 1",
-        "deadline": "2049-01-01",
-        "description": "goal 1 description"
-      }
-    ],
-    "habit": [
-      {
-        "name": "habit 1",
-        "startDate": "1970-01-01",
-        "description": "habit 1 description"
-      }
-    ],
-    "routine": [
-      {
-        "time": "routine 1",
-        "description": "routine 1 description"
-      }
-    ]
-  },
-  "history": [],
-  "reward": [],
-  "settings": []
-}
-```
-
 ## License
 
 ## Contribution Guide
@@ -157,27 +99,26 @@ v0.0.0
 - [x] v0.07 Local Storage
 - [x] v0.08 State Management
 - [x] v0.09 Settings
-- [ ] v0.10 RWD
 
 v1.0.0 Main Feature
 
-- [ ] v1.1 Drag and Drop
-- [ ] v1.2 Clock
-- [ ] v1.3 OAuth
-- [ ] v1.4 Sync
-- [ ] v1.5 Server
-- [ ] v1.6 History
-- [ ] v1.7 Calendar
-- [ ] v1.8 Weather
+- [ ] v1.01 Drag and Drop
+- [ ] v1.02 Clock
+- [ ] v1.03 Countdown
+- [ ] v1.04 Tutorial
+- [ ] v1.05 Notification
+- [ ] v1.06 Visualization
+
+v2.0.0 User Experience
+
+- [ ] v2.01 OAuth
+- [ ] v2.02 Sync
+- [ ] v2.03 Server
+- [ ] v2.04 History
+- [ ] v2.05 Calendar
+- [ ] v2.06 Weather
   - [ ] Get locale
   - [ ] Settings
-- [ ] v1.9 Visualization
-- [ ] v1.10 Countdown
-- [ ] v1.11 Tutorial
-- [ ] v1.12 Notification
-  - [ ] Info icon
-  - [ ] Banner
-  - [ ] Announcement
 - [ ] v1.13 Reward History
 
 v2.0.0 Side Features
@@ -187,7 +128,7 @@ v2.0.0 Side Features
 - [ ] v2.3 PWA
 - [ ] v2.4 Sync Calendar
 
-v3.0.0 Google
+v3.0.0 Backend
 
 - [ ] Themes
 - [ ] i18n
