@@ -57,7 +57,7 @@ const Routines = () => {
   // re-render routine list
 
   // save to local storage onBlur
-  function saveEdit() {
+  function handleSave() {
     console.log('save');
   }
 
@@ -91,13 +91,14 @@ const Routines = () => {
         <tbody>
           {routineList.map((routine) => {
             return (
-              <tr key={routine.id}>
-                {typeof routine.time}
+              <tr>
+                {routine.time}
+                {routine.title}
                 <th>
-                  <EditableInput type="time" value={routine.time} onChange={handleEdit} onBlur={saveEdit} />
+                  <EditableInput type="time" value={routine.time} onChange={handleEdit} onBlur={handleSave} />
                 </th>
                 <td>
-                  <EditableInput type="time" value={routine.time} onChange={handleEdit} onBlur={saveEdit} />
+                  <EditableInput type="text" value={routine.time} onChange={handleEdit} onBlur={handleSave} />
                 </td>
                 <td>
                   <button onClick={handleDelete}>

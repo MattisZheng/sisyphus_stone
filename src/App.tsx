@@ -23,7 +23,7 @@ function App() {
         minHeight: '100vh',
       }}
     >
-      <Sider theme="dark" collapsible collapsedWidth="64">
+      <Sider theme="dark" collapsible collapsed="true" collapsedWidth="64">
         <SiderContent selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} />
       </Sider>
       <Layout>
