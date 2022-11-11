@@ -1,6 +1,6 @@
-import Task from "../components/Task";
-import Routine from "../components/Routine";
-import Habits from "../components/Habits";
+import Task from '../components/Task';
+import Routine from '../components/Routines';
+import Habits from '../components/Habits';
 
 const Overview = () => {
   return (

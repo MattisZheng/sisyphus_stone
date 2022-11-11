@@ -1,53 +1,54 @@
-import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from "@ant-design/icons";
-import { Menu } from "antd";
+import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from '@ant-design/icons';
+import { Menu } from 'antd';
 
 const menuItems = [
   {
-    key: "1",
-    label: "User",
+    key: '1',
+    label: 'User',
     icon: <UserOutlined />,
   },
   {
-    key: "2",
-    label: "Overview",
+    key: '2',
+    label: 'Overview',
     icon: <LayoutOutlined />,
   },
   {
-    key: "3",
-    label: "History",
+    key: '3',
+    label: 'History',
     icon: <CalendarOutlined />,
   },
   {
-    key: "4",
-    label: "Reward",
+    key: '4',
+    label: 'Reward',
     icon: <TrophyOutlined />,
   },
   {
-    key: "5",
-    label: "Settings",
+    key: '5',
+    label: 'Settings',
     icon: <SettingOutlined />,
   },
 ];
 
-const SiderContent = ({ selectedKeys, setSelectedKeys }) => {
-  const handleClick = (e) => {
+const SiderContent = ({ selectedKeys, setSelectedKeys }: { selectedKeys: string[]; setSelectedKeys: (selectedKeys: string[]) => void }) => {
+  const handleClick = (e: any) => {
     switch (e.key) {
-      case "1":
-        setSelectedKeys(["1"]);
+      case '1':
+        setSelectedKeys(['1']);
         break;
-      case "2":
-        setSelectedKeys(["2"]);
+      case '2':
+        setSelectedKeys(['2']);
         break;
-      case "3":
-        setSelectedKeys(["3"]);
+      case '3':
+        setSelectedKeys(['3']);
         break;
-      case "4":
-        setSelectedKeys(["4"]);
+      case '4':
+        setSelectedKeys(['4']);
         break;
-      case "5":
-        setSelectedKeys(["5"]);
+      case '5':
+        setSelectedKeys(['5']);
         break;
       default:
+        setSelectedKeys(['2']);
         break;
     }
   };

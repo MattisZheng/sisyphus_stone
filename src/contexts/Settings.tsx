@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Cascader, Switch } from 'antd';
+import setInitFile from '../utils/setInitFile';
 
 interface Option {
   value: string;
@@ -22,11 +23,17 @@ const options: Option[] = [
   },
 ];
 
-function onCheckboxChange(checked: boolean) {
+function handleCheckboxChange(checked: boolean) {
   // update settings in local storage
 }
 
-const onCascaderChange = (value: string[]) => {};
+const handleCascaderChange = (e: any): void => {};
+
+function handleClearHistory(e: any) {
+  // clear history in local storage
+  e.preventDefault();
+  setInitFile('history', 'history');
+}
 
 const Settings = () => {
   // load settings from local storage
@@ -39,18 +46,18 @@ const Settings = () => {
       <form action="">
         <div>
           <label htmlFor="">Auto Collapse after select</label>
-          <Switch onChange={onCheckboxChange} />
+          <Switch onChange={handleCheckboxChange} />
         </div>
         <div>
           <label htmlFor="">Notification</label>
-          <Switch onChange={onCheckboxChange} />
+          <Switch onChange={handleCheckboxChange} />
         </div>
         <div>
-          <Cascader options={options} onChange={onCascaderChange} defaultValue={[1]} allowClear={false} />
+          <Cascader options={options} onChange={handleCascaderChange} defaultValue={[1]} allowClear={false} />
         </div>
         <div>
           <label htmlFor="">Clear History</label>
-          <button onClick={localStorage.clear()}>Clear</button>
+          <button onClick={handleClearHistory}>Clear</button>
         </div>
       </form>
     </main>

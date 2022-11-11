@@ -1,14 +1,20 @@
 # Sisyphus’ Stone
 
-> A react application for managing daily tasks, setting up goals, and tracking progress.
-
-## Table of Contents
+1. [Build with](#build-with)
+2. [Screen Shot](#screen-shot)
+3. [Usage](#usage)
+4. [Installation](#installation)
+5. [Documentation](#documentation)
+6. [License](#license)
+7. [Dev log](#dev-log)
 
 ## Build with
 
+- Vite
+- Vitest
 - React
-- Ant Design
-- react-beautiful-dnd
+- TypeScript
+- Ant Design (https://ant.design)
 
 ## Screen Shot
 
@@ -53,18 +59,8 @@ layout[Layout]
   header[Header]
   main[Main]
     user[User]
-      auth[Auth]
-      account_setting[Account Setting]
     overview[Overview]
-      daily[Daily]
-      weekly[Weekly]
-        task[Task]
-      routine[Routine]
-      habit[Habit]
-      goal[Goal]
     history[History]
-      calendar[Calendar]
-      stats[Stats]
     rewards[Rewards]
     settings[Settings]
   footer[Footer]
@@ -73,18 +69,16 @@ layout[Layout]
     links[Links]
   sidebar[Side Bar]
 
-  layout --> header & main & footer & sidebar
-    header
-    main --> user & overview & history & rewards & settings
-      user --> auth & account_setting
-      overview --> daily & weekly & routine & habit & goal
-        daily & weekly --> task
-    footer --> info & guide & links
+layout --> header & main & footer & sidebar
+  header
+  main --> user & overview & history & rewards & settings
+    user --> auth & account_setting
+    overview --> daily & weekly & routine & habit & goal
+      daily & weekly --> task
+  footer --> info & guide & links
 ```
 
 ## License
-
-## Contribution Guide
 
 ## Dev log
 

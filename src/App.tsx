@@ -4,20 +4,17 @@ import HeaderContent from "./layouts/HeaderContent";
 import MainContent from "./layouts/MainContent";
 import FooterContent from "./layouts/FooterContent";
 import SiderContent from "./layouts/SiderContent";
-import initFiles from "./utils/initFiles";
+import setInitFile from "./utils/setInitFile";
+import routines from "./data/routines.json";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 function App() {
-  // check local storage 检查本地存储
-  // if !local storage, set initFile 设定初始文件
-  // if local storage, load local storage 加载本地存储
+
+  setInitFile("routines", routines);
 
   // navigation keys
   const [selectedKeys, setSelectedKeys] = useState(["2"]);
-  useEffect(() => {
-    console.log("app", selectedKeys);
-  }, [selectedKeys]);
 
   return (
     <Layout
