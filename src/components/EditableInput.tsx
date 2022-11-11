@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const EditableInput = (type: string, value: string, onChange:any, onBlur:any) => {
-  const initvalue = value;
-  console.log(initvalue);
-  const [inputValue, setInputValue] = useState(value);
   
+  const [inputValue, setInputValue] = useState();
+
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };

@@ -74,6 +74,13 @@ layout --> header & main & footer & sidebar
   footer --> info & guide & links
 ```
 
+```mermaid
+flowchart LR
+local[Local Storage]
+  local--> table --> item & editable
+  editable --> item
+```
+
 ## License
 
 ## Dev log
