@@ -1,13 +1,11 @@
-import Task from '../components/Task';
-import Routine from '../components/Routines';
-import Habits from '../components/Habits';
+import Routines from './Overview/Routines';
+import Habits from './Overview/Habits';
 
 const Overview = () => {
   return (
     <div>
-      <Task />
-      <Routine />
       <Habits />
+      <Routines />
     </div>
   );
 };

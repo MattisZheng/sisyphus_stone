@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Cascader, Switch } from 'antd';
+import { Button, Cascader, Switch } from 'antd';
 import setInitFile from '../utils/setInitFile';
 
 interface Option {
@@ -36,13 +36,16 @@ function handleClearHistory(e: any) {
 }
 
 const Settings = () => {
+  const [config, setConfig] = useState({})
+
   // load settings from local storage
 
-  const [settings, setSettings] = useState();
+  const test = localStorage.getItem('settings');
+  
 
   return (
     <main>
-      <h1>Settings</h1>
+      {test}
       <form action="">
         <div>
           <label htmlFor="">Auto Collapse after select</label>
@@ -57,7 +60,7 @@ const Settings = () => {
         </div>
         <div>
           <label htmlFor="">Clear History</label>
-          <button onClick={handleClearHistory}>Clear</button>
+          <Button onClick={handleClearHistory} type="primary" danger>Clear</Button>
         </div>
       </form>
     </main>
