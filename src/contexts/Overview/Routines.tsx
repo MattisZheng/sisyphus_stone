@@ -12,8 +12,6 @@ const Routines = () => {
     let getData = localStorage.getItem('routines');
     // parse routine list to array
     let parsedData = JSON.parse(getData);
-    console.log(getData)
-    console.log(parsedData);
     setRoutineList(parsedData);
   }
 

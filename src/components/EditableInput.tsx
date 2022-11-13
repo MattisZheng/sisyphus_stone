@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const EditableInput = ({ index, col, type, value, onBlur }) => {
   // set initial value
+  
   const [inputValue, setInputValue] = useState(value);
 
   // update input value
@@ -13,6 +14,11 @@ const EditableInput = ({ index, col, type, value, onBlur }) => {
   const handleBlur = () => {
     onBlur(index, col, inputValue);
   };
+
+  // 
+  useEffect(() => {
+    setInputValue(value);
+  }, [value]);
 
   return <input type={type} value={inputValue} onChange={handleChange} onBlur={handleBlur} />;
 };
