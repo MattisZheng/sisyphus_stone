@@ -7,16 +7,16 @@ const Routines = () => {
 
   // get routine list
   // read data from storage, parse it, and set it to state
-  function getRoutineList() {
+  function getLocalStorage() {
     // get routine list from local storage
-    const getData: string | null = localStorage.getItem('routines');
+    let getData = localStorage.getItem('routines');
     // parse routine list to array
-    
-      setRoutineList(JSON.parse(getData));
-    
+    let parsedData = JSON.parse(getData);
+    console.log(getData)
+    console.log(parsedData);
+    setRoutineList(parsedData);
   }
 
-  // add
   // add new when user clicks the add button
   function handleAdd() {
     // create new routine list, add new routine to list
@@ -24,14 +24,8 @@ const Routines = () => {
     // save to local storage
     localStorage.setItem('routines', JSON.stringify(newRoutineList));
     // re-render routine list
-    getRoutineList();
+    getLocalStorage();
   }
-
-  // read input value
-  // save to local storage
-  // set new routine list
-  // save to local storage
-  // re-render routine list
 
   // save updated value to local storage onBlur
   function handleUpdate(index, col, value) {
@@ -41,9 +35,8 @@ const Routines = () => {
     newRoutineList[index][col] = value;
     // save to local storage
     localStorage.setItem('routines', JSON.stringify(newRoutineList));
-    console.log(newRoutineList);
     // re-render routine list
-    getRoutineList();
+    getLocalStorage();
   }
 
   // delete routine by index
@@ -51,17 +44,15 @@ const Routines = () => {
     // remove routine by index
     let newRoutineList = [...routineList];
     newRoutineList.splice(index, 1);
-    console.log(newRoutineList);
     // save to local storage
     localStorage.setItem('routines', JSON.stringify(newRoutineList));
     // re-render routine list
-    getRoutineList();
+    getLocalStorage();
   }
 
-  // initial rendering
+  // get routine list when component mounts
   useEffect(() => {
-    getRoutineList();
-    
+    getLocalStorage();
   }, []);
 
   return (
@@ -76,7 +67,7 @@ const Routines = () => {
         <tbody>
           {routineList.map((routine, index) => {
             return (
-              <tr id={index}>
+              <tr key={index}>
                 <th>
                   <EditableInput index={index} col="time" type="time" value={routine.time} onBlur={handleUpdate} />
                 </th>
@@ -84,7 +75,6 @@ const Routines = () => {
                   <EditableInput index={index} col="title" type="text" value={routine.title} onBlur={handleUpdate} />
                 </td>
                 <td>
-                  {index}
                   <button
                     onClick={() => {
                       handleDelete(index);
