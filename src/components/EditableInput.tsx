@@ -1,18 +1,20 @@
 import { useState } from 'react';
 
-const EditableInput = (type: string, value: string, onChange:any, onBlur:any) => {
-  
-  const [inputValue, setInputValue] = useState();
+const EditableInput = ({ index, col, type, value, onBlur }) => {
+  // set initial value
+  const [inputValue, setInputValue] = useState(value);
 
-  const handleChange = (e) => {
+  // update input value
+  const handleChange = (e: any) => {
     setInputValue(e.target.value);
   };
 
-  const updateValue = () => {
-    console.log('save');
+  // update inputValue to table when onBlur
+  const handleBlur = () => {
+    onBlur(index, col, inputValue);
   };
 
-  return <input type={type} value={inputValue} onChange={handleChange} onBlur={updateValue} />;
+  return <input type={type} value={inputValue} onChange={handleChange} onBlur={handleBlur} />;
 };
 
 export default EditableInput;

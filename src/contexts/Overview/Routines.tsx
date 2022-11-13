@@ -2,81 +2,66 @@ import { useState, useEffect } from 'react';
 import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import EditableInput from '../../components/EditableInput';
 
-const Routine = {
-  id: 1,
-  time: '12:00',
-  title: 'title',
-};
-
-const defaultColumn = {
-  cell: ({ getValue, row: { index }, column: { id }, table }) => {
-    const initialValue = getValue();
-    const [value, setValue] = useState(initialValue);
-
-    const onBlur = () => {
-      console.log('onBlur', value);
-    };
-
-    useEffect(() => {
-      setValue(initialValue);
-    }, [initialValue]);
-
-    return <input value={value} onChange={(e) => setValue(e.target.value)} onBlur={onBlur} />;
-  },
-};
-
 const Routines = () => {
   const [routineList, setRoutineList] = useState<string[]>([]);
-  const [value, setValue] = useState();
 
-  // read from local storage
+  // get routine list
+  // read data from storage, parse it, and set it to state
   function getRoutineList() {
     // get routine list from local storage
-    const localstorage: string | null = localStorage.getItem('routines');
-    // parse routine list
-    if (localstorage) {
-      setRoutineList(JSON.parse(localstorage));
-    }
+    const getData: string | null = localStorage.getItem('routines');
+    // parse routine list to array
+    
+      setRoutineList(JSON.parse(getData));
+    
   }
 
-  // create new routine when clicks add button
-  function handleClick() {
-    let newArr = [...routineList, { time: '12:00', title: 'routine' }];
+  // add
+  // add new when user clicks the add button
+  function handleAdd() {
+    // create new routine list, add new routine to list
+    let newRoutineList = [...routineList, { time: '12:00', title: 'routine' }];
     // save to local storage
-    localStorage.setItem('routines', JSON.stringify(newArr));
+    localStorage.setItem('routines', JSON.stringify(newRoutineList));
     // re-render routine list
     getRoutineList();
   }
 
-  // update input value
-  function handleEdit(e) {
-    console.log(e);
-  }
   // read input value
+  // save to local storage
+  // set new routine list
   // save to local storage
   // re-render routine list
 
-  // save to local storage onBlur
-  function handleSave() {
-    console.log('save');
-  }
-
-  // delete routine
-  function deleteRoutine(index: number) {
+  // save updated value to local storage onBlur
+  function handleUpdate(index, col, value) {
     // create new routine list
-    const newRoutineList = [...routineList];
-    newRoutineList.splice(index, 1);
+    let newRoutineList = [...routineList];
+    // update routine list
+    newRoutineList[index][col] = value;
     // save to local storage
-    localStorage.setItem('routineList', JSON.stringify(newRoutineList));
-    setRoutineList(newRoutineList);
+    localStorage.setItem('routines', JSON.stringify(newRoutineList));
+    console.log(newRoutineList);
+    // re-render routine list
+    getRoutineList();
   }
 
-  function handleDelete(index: number) {
-    deleteRoutine(index);
+  // delete routine by index
+  function handleDelete(index) {
+    // remove routine by index
+    let newRoutineList = [...routineList];
+    newRoutineList.splice(index, 1);
+    console.log(newRoutineList);
+    // save to local storage
+    localStorage.setItem('routines', JSON.stringify(newRoutineList));
+    // re-render routine list
+    getRoutineList();
   }
 
+  // initial rendering
   useEffect(() => {
     getRoutineList();
+    
   }, []);
 
   return (
@@ -89,19 +74,22 @@ const Routines = () => {
           </tr>
         </thead>
         <tbody>
-          {routineList.map((routine) => {
+          {routineList.map((routine, index) => {
             return (
-              <tr>
-                {routine.time}
-                {routine.title}
+              <tr id={index}>
                 <th>
-                  <EditableInput type="time" value={routine.time} onChange={handleEdit} onBlur={handleSave} />
+                  <EditableInput index={index} col="time" type="time" value={routine.time} onBlur={handleUpdate} />
                 </th>
                 <td>
-                  <EditableInput type="text" value={routine.time} onChange={handleEdit} onBlur={handleSave} />
+                  <EditableInput index={index} col="title" type="text" value={routine.title} onBlur={handleUpdate} />
                 </td>
                 <td>
-                  <button onClick={handleDelete}>
+                  {index}
+                  <button
+                    onClick={() => {
+                      handleDelete(index);
+                    }}
+                  >
                     <DeleteOutlined />
                   </button>
                 </td>
@@ -110,7 +98,7 @@ const Routines = () => {
           })}
         </tbody>
       </table>
-      <button onClick={handleClick}>
+      <button onClick={handleAdd}>
         <PlusOutlined />
       </button>
     </div>
