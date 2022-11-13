@@ -10,6 +10,8 @@ import tasks from './data/tasks.json'
 import routines from './data/routines.json';
 import habits from './data/habits.json';
 import missions from './data/missions.json';
+import rewards from './data/rewards.json';
+import goals from './data/goals.json';
 import settings from './data/settings.json';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -20,6 +22,8 @@ function App() {
   setInitFile('routines', routines);
   setInitFile('habits', habits);
   setInitFile('missions', missions);
+  setInitFile('rewards', rewards);
+  setInitFile('goals', goals);
   setInitFile('settings', settings);
 
   // navigation keys

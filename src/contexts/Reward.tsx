@@ -1,7 +1,11 @@
+import Rewards from './Reward/Rewards';
+import Goals from './Reward/Goals';
+
 const Reward = () => {
   return (
     <main>
-      <h1>Reward</h1>
+      <Rewards />
+      <Goals />
     </main>
   );
 };

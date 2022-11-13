@@ -3,7 +3,7 @@ import User from '../contexts/User';
 import Overview from '../contexts/Overview';
 import History from '../contexts/History';
 import Reward from '../contexts/Reward';
-import Settings from '../contexts/Settings';
+import Setting from '../contexts/Setting';
 
 const MainContent = ({ selectedKeys }: { selectedKeys: string[] }) => {
   const [content, setContent] = useState();
@@ -23,7 +23,7 @@ const MainContent = ({ selectedKeys }: { selectedKeys: string[] }) => {
         setContent(<Reward />);
         break;
       case '5':
-        setContent(<Settings />);
+        setContent(<Setting />);
         break;
       default:
         break;
