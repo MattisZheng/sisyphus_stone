@@ -5,13 +5,21 @@ import MainContent from './layouts/MainContent';
 import FooterContent from './layouts/FooterContent';
 import SiderContent from './layouts/SiderContent';
 import setInitFile from './utils/setInitFile';
+import plans from './data/plans.json'
+import tasks from './data/tasks.json'
 import routines from './data/routines.json';
+import habits from './data/habits.json';
+import missions from './data/missions.json';
 import settings from './data/settings.json';
 
 const { Header, Content, Footer, Sider } = Layout;
 
 function App() {
+  setInitFile('plans', plans);
+  setInitFile('tasks', tasks);
   setInitFile('routines', routines);
+  setInitFile('habits', habits);
+  setInitFile('missions', missions);
   setInitFile('settings', settings);
 
   // navigation keys

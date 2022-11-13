@@ -9,10 +9,9 @@ const Routines = () => {
   // read data from storage, parse it, and set it to state
   function getLocalStorage() {
     // get routine list from local storage
-    let getData = localStorage.getItem('routines');
+    let getData:string = localStorage.getItem('routines');
     // parse routine list to array
-    let parsedData = JSON.parse(getData);
-    setRoutineList(parsedData);
+    setRoutineList(JSON.parse(getData));
   }
 
   // add new when user clicks the add button
@@ -26,7 +25,7 @@ const Routines = () => {
   }
 
   // save updated value to local storage onBlur
-  function handleUpdate(index, col, value) {
+  function handleUpdate(index: number, col: string, value: any) {
     // create new routine list
     let newRoutineList = [...routineList];
     // update routine list

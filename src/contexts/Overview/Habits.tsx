@@ -1,5 +1,81 @@
+import { useState, useEffect } from 'react';
+import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
+import EditableInput from '../../components/EditableInput';
+
 const Habits = () => {
-  return <div>Habits</div>;
+  const [habitList, setHabitList] = useState<string[]>([]);
+
+  function getLocalStorage() {
+    let getData: string|null = localStorage.getItem('habits');
+    setHabitList(JSON.parse(getData));
+  }
+
+  function handleAdd() {
+    let newHabitList = [...habitList, { title: 'habit', description: 'habit', count: 0 }];
+    localStorage.setItem('habits', JSON.stringify(newHabitList));
+    getLocalStorage();
+  }
+
+  function handleUpdate(index: number, col: string, value: any) {
+    let newHabitList = [...habitList];
+    newHabitList[index][col] = value;
+    localStorage.setItem('habits', JSON.stringify(newHabitList));
+    getLocalStorage();
+  }
+
+  function handleDelete(index:number) {
+    let newHabitList = [...habitList];
+    newHabitList.splice(index, 1);
+    localStorage.setItem('habits', JSON.stringify(newHabitList));
+    getLocalStorage();
+  }
+
+  useEffect(() => {
+    getLocalStorage();
+  }, []);
+
+  return (
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {habitList.map((habit, index) => {
+            return (
+              <tr key={index}>
+                <td>
+                  <EditableInput index={index} col="title" type="text" value={habit.title} onBlur={handleUpdate} />
+                </td>
+                <td>
+                  <EditableInput index={index} col="description" type="text" value={habit.description} onBlur={handleUpdate} />
+                </td>
+                <td>
+                  <EditableInput index={index} col="count" type="number" value={habit.count} onBlur={handleUpdate} />
+                </td>
+                <td>
+                  <button
+                    onClick={() => {
+                      handleDelete(index);
+                    }}
+                  >
+                    <DeleteOutlined />
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <button onClick={handleAdd}>
+        <PlusOutlined />
+      </button>
+    </div>
+  );
 };
 
 export default Habits;

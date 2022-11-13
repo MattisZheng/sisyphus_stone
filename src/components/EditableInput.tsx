@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 
-const EditableInput = ({ index, col, type, value, onBlur }) => {
+const EditableInput = ({ index, col, type, value, onBlur }: {
+  index: number;
+  col: string;
+  type: string;
+  value: any;
+  onBlur: (index: number, col: string, value: any) => void;
+}) => {
   // set initial value
   
   const [inputValue, setInputValue] = useState(value);
