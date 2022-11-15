@@ -117,6 +117,7 @@ v2.0.0 User Experience
   - [ ] Get locale
   - [ ] Settings
 - [ ] v1.13 Reward History
+- [ ] Memory Control
 
 v2.0.0 Side Features
 
@@ -125,7 +126,7 @@ v2.0.0 Side Features
 - [ ] v2.3 PWA
 - [ ] v2.4 Sync Calendar
 
-v3.0.0 Backend
+v3.0.0 Sync
 
 - [ ] Themes
 - [ ] i18n

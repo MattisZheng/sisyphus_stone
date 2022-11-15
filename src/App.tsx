@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { Layout } from 'antd';
+// 
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
 import FooterContent from './layouts/FooterContent';
 import SiderContent from './layouts/SiderContent';
+// utils
 import setInitFile from './utils/setInitFile';
-import plans from './data/plans.json'
-import tasks from './data/tasks.json'
+// init file settings
+import plans from './data/plans.json';
+import tasks from './data/tasks.json';
 import routines from './data/routines.json';
 import habits from './data/habits.json';
 import missions from './data/missions.json';
@@ -36,10 +39,10 @@ function App() {
         minHeight: '100vh',
       }}
     >
-      <Sider theme="dark" collapsible collapsed={true} collapsedWidth="64">
+      <Sider theme="dark" collapsible collapsedWidth="64">
         <SiderContent selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} />
       </Sider>
-      <Layout>
+      <Layout style={{ height: '100vh' }}>
         <Header>
           <HeaderContent />
         </Header>

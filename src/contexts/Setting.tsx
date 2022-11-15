@@ -45,6 +45,17 @@ const themeOptions: Option[] = [
   },
 ];
 
+const languageOptions: Option[] = [
+  {
+    value: 'en',
+    label: 'English',
+  },
+  {
+    value: 'zh',
+    label: '中文',
+  },
+];
+
 function handleCheckboxChange(checked: boolean) {
   // update settings in local storage
 }
@@ -83,6 +94,7 @@ const Settings = () => {
           <Switch onChange={handleCheckboxChange} />
         </div>
         <div>
+          <label htmlFor="">Theme</label>
           <Cascader options={themeOptions} onChange={handleCascaderChange} defaultValue={[1]} allowClear={false} />
         </div>
         <div>
@@ -90,6 +102,10 @@ const Settings = () => {
           <Button onClick={handleClearHistory} type="primary" danger>
             Clear
           </Button>
+        </div>
+        <div>
+          <label htmlFor="">Language</label>
+          <Cascader options={languageOptions}/>
         </div>
       </form>
     </main>
