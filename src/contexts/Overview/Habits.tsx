@@ -6,8 +6,10 @@ const Habits = () => {
   const [habitList, setHabitList] = useState<string[]>([]);
 
   function getLocalStorage() {
-    let getData: string|null = localStorage.getItem('habits');
-    setHabitList(JSON.parse(getData));
+    let getData: string | null = localStorage.getItem('habits');
+    if (getData) {
+      setHabitList(JSON.parse(getData));
+    }
   }
 
   function handleAdd() {
@@ -23,7 +25,7 @@ const Habits = () => {
     getLocalStorage();
   }
 
-  function handleDelete(index:number) {
+  function handleDelete(index: number) {
     let newHabitList = [...habitList];
     newHabitList.splice(index, 1);
     localStorage.setItem('habits', JSON.stringify(newHabitList));

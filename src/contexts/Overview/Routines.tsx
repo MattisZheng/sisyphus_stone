@@ -9,9 +9,11 @@ const Routines = () => {
   // read data from storage, parse it, and set it to state
   function getLocalStorage() {
     // get routine list from local storage
-    let getData:string = localStorage.getItem('routines');
+    let getData: string | null = localStorage.getItem('routines');
     // parse routine list to array
-    setRoutineList(JSON.parse(getData));
+    if (getData) {
+      setRoutineList(JSON.parse(getData));
+    }
   }
 
   // add new when user clicks the add button
@@ -72,22 +74,18 @@ const Routines = () => {
                   <EditableInput index={index} col="title" type="text" value={routine.title} onBlur={handleUpdate} />
                 </td>
                 <td>
-                  <button
+                  <DeleteOutlined
                     onClick={() => {
                       handleDelete(index);
                     }}
-                  >
-                    <DeleteOutlined />
-                  </button>
+                  />
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <button onClick={handleAdd}>
-        <PlusOutlined />
-      </button>
+      <PlusOutlined onClick={handleAdd} />
     </div>
   );
 };
