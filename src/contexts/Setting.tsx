@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Button, Cascader, Switch } from 'antd';
+import { List, Form, Input, Switch, Select } from 'antd';
+import { ConsoleSqlOutlined } from '@ant-design/icons';
 
 interface Option {
   value: string;
@@ -56,11 +57,9 @@ const languageOptions: Option[] = [
   },
 ];
 
-function handleCheckboxChange(checked: boolean) {
-  // update settings in local storage
+function handleSave() {
+  console.log('save');
 }
-
-const handleCascaderChange = (e: any): void => {};
 
 // clear history
 function handleClearHistory(e: any) {
@@ -72,43 +71,45 @@ function handleClearHistory(e: any) {
 const Settings = () => {
   const [config, setConfig] = useState();
 
-  // load settings from local storage
+  // load config from local storage
+  const loadConfig = () => {
+    const data = localStorage.getItem('settings');
+    console.log(data);
+    if (data) {
+      setConfig(JSON.parse(data));
+    }
+    console.log(config);
+  };
 
   useEffect(() => {
-    // update settings in local storage
-    setConfig(localStorage.getItem('settings'));
+    loadConfig();
   }, []);
 
   return (
     <main>
-      <p>{config}</p>
-      <form onSubmit={() => console.log('submit')}>
-        <div>
-          <Cascader options={tabOptions} onChange={handleCascaderChange} defaultValue={[1]} allowClear={false} />
-        </div>
-        <div>
-          <label htmlFor="">Auto Collapse after select</label>
-          <Switch onChange={handleCheckboxChange} />
-        </div>
-        <div>
-          <label htmlFor="">Notification</label>
-          <Switch onChange={handleCheckboxChange} />
-        </div>
-        <div>
-          <label htmlFor="">Theme</label>
-          <Cascader options={themeOptions} onChange={handleCascaderChange} defaultValue={[1]} allowClear={false} />
-        </div>
-        <div>
-          <label htmlFor="">Clear History</label>
-          <Button onClick={handleClearHistory} type="primary" danger>
-            Clear
-          </Button>
-        </div>
-        <div>
-          <label htmlFor="">Language</label>
-          <Cascader options={languageOptions}/>
-        </div>
-      </form>
+      {localStorage.getItem('settings')}
+      {config && (
+        <Form
+          name="setting"
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 10 }}
+          initialValues={{ remember: true }}
+          onFinish={() => console.log('finished')}
+        >
+          <Form.Item label="Opens at" name="tab">
+            <Select options={tabOptions} />
+          </Form.Item>
+          <Form.Item label="Auto Collapse" name="tab">
+            <Switch />
+          </Form.Item>
+          <Form.Item label="Theme" name="theme">
+            <Select options={themeOptions} />
+          </Form.Item>
+          <Form.Item label="Language" name="language">
+            <Select options={languageOptions} />
+          </Form.Item>
+        </Form>
+      )}
     </main>
   );
 };
