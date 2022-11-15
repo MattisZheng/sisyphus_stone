@@ -62,6 +62,7 @@ function handleCheckboxChange(checked: boolean) {
 
 const handleCascaderChange = (e: any): void => {};
 
+// clear history
 function handleClearHistory(e: any) {
   // clear history in local storage
   e.preventDefault();
