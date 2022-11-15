@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Layout } from 'antd';
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
@@ -17,6 +17,7 @@ import settings from './data/settings.json';
 const { Header, Content, Footer, Sider } = Layout;
 
 function App() {
+  // init files
   setInitFile('plans', plans);
   setInitFile('tasks', tasks);
   setInitFile('routines', routines);
