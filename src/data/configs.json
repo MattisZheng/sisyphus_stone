@@ -1,6 +1,6 @@
 {
-  "opens_at": "start",
-  "auto_collapse": "checked",
+  "tab": "overview",
+  "auto_collapse": true,
   "theme": "dark",
-  "language": "en"
+  "lang": "en"
 }

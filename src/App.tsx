@@ -31,6 +31,8 @@ function App() {
   setInitFile('goals', goals);
   setInitFile('configs', configs);
 
+  const config = JSON.parse(localStorage.getItem('configs') || '{}');
+  const theme = config.theme || 'light';
   // navigation keys
   const [selectedKeys, setSelectedKeys] = useState(['5']);
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Form, Switch, Select } from 'antd';
+import { Form, Switch, Select, Button } from 'antd';
 // utils
 import setInitFile from '../utils/setInitFile';
 // init file settings
@@ -17,7 +17,6 @@ interface Option {
   label: string;
   children?: Option[];
 }
-
 const tabOptions: Option[] = [
   {
     value: 'user',
@@ -40,7 +39,6 @@ const tabOptions: Option[] = [
     label: 'Setting',
   },
 ];
-
 const themeOptions: Option[] = [
   {
     value: 'light',
@@ -55,7 +53,6 @@ const themeOptions: Option[] = [
     label: 'System',
   },
 ];
-
 const languageOptions: Option[] = [
   {
     value: 'en',
@@ -67,22 +64,14 @@ const languageOptions: Option[] = [
   },
 ];
 
-// clear history
-
 const Settings = () => {
   const [config, setConfig] = useState();
 
   const getLocalStorage = () => {
-    console.log('getLocalStorage');
     let getData: string | null = localStorage.getItem('configs');
     if (getData) {
-      console.log('getData', getData);
       let parsedData = JSON.parse(getData);
-      console.log('parsedData', parsedData);
       setConfig(parsedData);
-      setTimeout(() => {
-        console.log('config', config)
-      }, 1000);
     }
   };
 
@@ -91,9 +80,22 @@ const Settings = () => {
     getLocalStorage();
   };
 
+  const handleReset = (e:any) => {
+    e.preventDefault();
+    localStorage.removeItem('configs');
+    setInitFile('configs', configs);
+    getLocalStorage();
+  };
+
   const handleClearHistory = (e: any) => {
     e.preventDefault();
-    localStorage.clear();
+    localStorage.removeItem('plans');
+    localStorage.removeItem('tasks');
+    localStorage.removeItem('routines');
+    localStorage.removeItem('habits');
+    localStorage.removeItem('missions');
+    localStorage.removeItem('rewards');
+    localStorage.removeItem('goals');
     // init files
     setInitFile('plans', plans);
     setInitFile('tasks', tasks);
@@ -102,7 +104,6 @@ const Settings = () => {
     setInitFile('missions', missions);
     setInitFile('rewards', rewards);
     setInitFile('goals', goals);
-    setInitFile('configs', configs);
     getLocalStorage();
   };
 
@@ -111,33 +112,44 @@ const Settings = () => {
   }, []);
 
   return (
-    <Form
-      name="setting"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 10 }}
-      onValuesChange={(changedValues, allValues) => {
-        console.log(changedValues, allValues);
-      }}
-      onFinish={() => {
-        console.log('finish');
-      }}
-    >
-      <Form.Item label="Opens at" name="tab">
-        <Select options={tabOptions} />
-      </Form.Item>
-      <Form.Item label="Auto Collapse" valuePropName="checked" name="auto_collapse">
-        <Switch />
-      </Form.Item>
-      <Form.Item label="Theme" name="theme">
-        <Select options={themeOptions} />
-      </Form.Item>
-      <Form.Item label="Language" name="language">
-        <Select options={languageOptions} />
-      </Form.Item>
-      <Form.Item label="Clear History" name="clear_history">
-        <button onClick={handleClearHistory}>Reset</button>
-      </Form.Item>
-    </Form>
+    <div>
+      {config && (
+        <Form
+          name="config"
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 10 }}
+          onValuesChange={(changedValue, allValues) => {
+            console.log(changedValue, allValues);
+            saveConfig(allValues);
+          }}
+          initialValues={config}
+          onFinish={()=>console.log('finish')}
+        >
+          <Form.Item label="Opens at" name="tab">
+            <Select options={tabOptions} />
+          </Form.Item>
+          <Form.Item label="Auto Collapse" valuePropName="checked" name="auto_collapse">
+            <Switch />
+          </Form.Item>
+          <Form.Item label="Theme" name="theme">
+            <Select options={themeOptions} />
+          </Form.Item>
+          <Form.Item label="Language" name="lang">
+            <Select options={languageOptions} />
+          </Form.Item>
+          <Form.Item label="Clear History">
+            <Button type="primary" onClick={handleClearHistory} danger={true}>
+              Clear
+            </Button>
+          </Form.Item>
+          <Form.Item label="Reset to Default">
+            <Button type="default" onClick={handleReset} >
+              Reset
+            </Button>
+          </Form.Item>
+        </Form>
+      )}
+    </div>
   );
 };
 
