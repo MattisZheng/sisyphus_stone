@@ -6,8 +6,8 @@ const Tasks = () => {
   const [taskList, setTaskList] = useState<string[]>([]);
 
   function getLocalStorage() {
-    let getData: string = localStorage.getItem('tasks');
-    setTaskList(JSON.parse(getData));
+    let data: string = localStorage.getItem('tasks');
+    setTaskList(JSON.parse(data));
   }
 
   function handleAdd() {

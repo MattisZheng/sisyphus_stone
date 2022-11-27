@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Layout } from 'antd';
-import { GithubOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { ConfigProvider, Layout, theme } from 'antd';
 //
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
@@ -21,7 +20,7 @@ import history from './data/history.json';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-function App() {
+const App = () => {
   // init files
   setInitFile('plans', plans);
   setInitFile('tasks', tasks);
@@ -33,33 +32,31 @@ function App() {
   setInitFile('configs', configs);
   setInitFile('history', history);
 
-  const config = JSON.parse(localStorage.getItem('configs') || '{}');
-  const theme = config.theme || 'light';
-  // navigation keys
   const [selectedKeys, setSelectedKeys] = useState(['5']);
 
   return (
-    <Layout
-      style={{
-        minHeight: '100vh',
-      }}
-    >
-      <Sider theme="dark" collapsible collapsedWidth="64">
-        <SiderContent selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} />
-      </Sider>
-      <Layout style={{ height: '100vh' }}>
-        <Header>
-          <HeaderContent />
-        </Header>
-        <Content style={{ overflowY: 'scroll' }}>
-          <MainContent selectedKeys={selectedKeys} />
-        </Content>
-        <Footer>
-          <FooterContent />
-        </Footer>
+    
+      <Layout
+        style={{
+          minHeight: '100vh',
+        }}
+      >
+        <Sider collapsible collapsedWidth="64">
+          <SiderContent selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} />
+        </Sider>
+        <Layout style={{ height: '100vh' }}>
+          <Header>
+            <HeaderContent />
+          </Header>
+          <Content style={{ overflowY: 'scroll' }}>
+            <MainContent selectedKeys={selectedKeys} />
+          </Content>
+          <Footer>
+            <FooterContent />
+          </Footer>
+        </Layout>
       </Layout>
-    </Layout>
   );
-}
+};
 
 export default App;
