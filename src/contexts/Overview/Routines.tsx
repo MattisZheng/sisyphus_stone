@@ -55,7 +55,7 @@ const Routines = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ border: '1px solid black', margin: '2px' }}>
       <h2>Routines</h2>
       <table>
         <thead>

@@ -32,7 +32,7 @@ const App = () => {
   setInitFile('configs', configs);
   setInitFile('history', history);
 
-  const [selectedKeys, setSelectedKeys] = useState(['5']);
+  const [selectedKeys, setSelectedKeys] = useState(['2']);
 
   return (
     

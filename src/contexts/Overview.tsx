@@ -1,4 +1,3 @@
-// antd grid system
 import { Col, Row } from 'antd';
 import Plans from './Overview/Plans';
 import Tasks from './Overview/Tasks';

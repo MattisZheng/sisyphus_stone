@@ -35,8 +35,8 @@ const Missions = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Weekly</h2>
+    <div style={{ border: '1px solid black', margin: '2px' }}>
+      <h2>Missions</h2>
       <table>
         <thead>
           <tr>
@@ -62,9 +62,7 @@ const Missions = () => {
           })}
         </tbody>
       </table>
-      <button>
-        <PlusOutlined onClick={handleAdd} />
-      </button>
+      <PlusOutlined onClick={handleAdd} />
     </div>
   );
 };

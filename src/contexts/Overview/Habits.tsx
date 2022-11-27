@@ -37,7 +37,7 @@ const Habits = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ border: '1px solid black', margin: '2px' }}>
       <h2>Habits</h2>
       <table>
         <thead>

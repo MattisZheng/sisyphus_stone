@@ -35,8 +35,8 @@ const Tasks = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Todays</h2>
+    <div style={{ border: '1px solid black', margin:"2px" }}>
+      <h2>Tasks</h2>
       <table>
         <thead>
           <tr>

@@ -35,8 +35,8 @@ const Plans = () => {
   }, []);
 
   return (
-    <div>
-      <h2>To-do</h2>
+    <div style={{ border: '1px solid black', margin: '2px' }}>
+      <h2>Plans</h2>
       <table>
         <thead>
           <tr>
@@ -62,8 +62,9 @@ const Plans = () => {
           })}
         </tbody>
       </table>
-
-      <PlusOutlined onClick={handleAdd} />
+      <button>
+        <PlusOutlined onClick={handleAdd} />
+      </button>
     </div>
   );
 };
