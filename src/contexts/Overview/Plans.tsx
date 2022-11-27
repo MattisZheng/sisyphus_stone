@@ -36,6 +36,7 @@ const Plans = () => {
 
   return (
     <div>
+      <h2>To-do</h2>
       <table>
         <thead>
           <tr>

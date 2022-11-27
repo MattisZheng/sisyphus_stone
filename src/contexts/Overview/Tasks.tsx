@@ -36,6 +36,7 @@ const Tasks = () => {
 
   return (
     <div>
+      <h2>Todays</h2>
       <table>
         <thead>
           <tr>

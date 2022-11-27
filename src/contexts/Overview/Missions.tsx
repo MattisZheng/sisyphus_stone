@@ -36,6 +36,7 @@ const Missions = () => {
 
   return (
     <div>
+      <h2>Weekly</h2>
       <table>
         <thead>
           <tr>

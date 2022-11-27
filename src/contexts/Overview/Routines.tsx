@@ -56,6 +56,7 @@ const Routines = () => {
 
   return (
     <div>
+      <h2>Routines</h2>
       <table>
         <thead>
           <tr>
