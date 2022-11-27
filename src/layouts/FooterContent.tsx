@@ -1,16 +1,15 @@
-import { Anchor } from 'antd';
 import { GithubOutlined, InfoCircleOutlined } from '@ant-design/icons';
-
-const { Link } = Anchor;
 
 const FooterContent = () => {
   return (
-    <footer>
-      <Anchor style={{ display: 'flex', justifyContent: 'center' }}>
-        <Link href="https://github.com/mattiszheng" target="_blank" title={<GithubOutlined />} />
-        <Link href="https://github.com/mattiszheng" target="_blank" title={<InfoCircleOutlined />} />
-      </Anchor>
-    </footer>
+    <>
+      <a href="https://github.com/mattiszheng/task_manager" target="_blank" style={{ margin: '5px' }}>
+        {<GithubOutlined style={{ fontSize: '24px' }} />}
+      </a>
+      <a href="https://github.com/mattiszheng" target="_blank" style={{ margin: '5px' }}>
+        {<InfoCircleOutlined style={{ fontSize: '24px' }} />}
+      </a>
+    </>
   );
 };
 

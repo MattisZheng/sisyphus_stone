@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Layout } from 'antd';
-// 
+import { GithubOutlined, InfoCircleOutlined } from '@ant-design/icons';
+//
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
 import FooterContent from './layouts/FooterContent';
@@ -46,7 +47,7 @@ function App() {
         <Header>
           <HeaderContent />
         </Header>
-        <Content>
+        <Content style={{overflow:"scroll"}}>
           <MainContent selectedKeys={selectedKeys} />
         </Content>
         <Footer>

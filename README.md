@@ -121,10 +121,10 @@ v2.0.0 User Experience
 
 v2.0.0 Side Features
 
-- [ ] v2.1 Mobile
-- [ ] v2.2 Desktop
-- [ ] v2.3 PWA
-- [ ] v2.4 Sync Calendar
+- [ ] v3.01 PWA
+- [ ] v3.02 Mobile
+- [ ] v3.03 Desktop
+- [ ] v3.04 Sync Calendar
 
 v3.0.0 Sync
 

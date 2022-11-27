@@ -10,12 +10,14 @@
     "test": "vitest",
     "coverage": "vitest --coverage",
     "ui": "vitepress --ui",
-    "cypress":"cypress open"
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.22.8",
+    "dayjs": "^1.11.6",
     "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
