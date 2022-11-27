@@ -1,24 +1,19 @@
-import { useState, useEffect } from "react";
-
-const date = new Date();
-let month = date.getMonth() + 1;
-let day = date.getDate();
-let hours = date.getHours();
-let minutes = date.getMinutes();
-let seconds = date.getSeconds();
+import { useState } from 'react';
+import * as dayjs from 'dayjs';
 
 const HeaderContent = () => {
-  // clock
-  // const [time, setTime] = useState(Date().toLocaleString());
-  // // update clock
+  const [time, setTime] = useState(dayjs().format('YY.MM.DD HH : mm : ss ddd'));
 
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     setTime(Date());
-  //   }, 1000);
-  // }, []);
+  setTimeout(() => {
+    setTime(dayjs().format('YY.MM.DD HH : mm : ss ddd'));
+  }, 1000);
 
-  return <header></header>;
+  return (
+    <>
+      <h1 style={{ color: 'white' }}>{time}</h1>
+      <p></p>
+    </>
+  );
 };
 
 export default HeaderContent;
