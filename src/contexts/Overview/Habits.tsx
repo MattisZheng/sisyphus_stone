@@ -60,22 +60,18 @@ const Habits = () => {
                   <EditableInput index={index} col="count" type="number" value={habit.count} onBlur={handleUpdate} />
                 </td>
                 <td>
-                  <button
+                  <DeleteOutlined
                     onClick={() => {
                       handleDelete(index);
                     }}
-                  >
-                    <DeleteOutlined />
-                  </button>
+                  />
                 </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <button onClick={handleAdd}>
-        <PlusOutlined />
-      </button>
+      <PlusOutlined onClick={handleAdd} />
     </div>
   );
 };

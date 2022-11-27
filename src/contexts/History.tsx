@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import { Alert, Calendar } from 'antd';
+import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 
 const History = () => {
   const [selectedValue, setSelectedValue] = useState(() => dayjs(new Date()));
 
-  const onSelect = (newValue) => {
+  function handleSelect(newValue: Dayjs) {
     setSelectedValue(newValue);
-  };
+  }
 
   return (
-    <main>
-      <Alert message={`You selected date: ${selectedValue?.format('YYYY-MM-DD')}`} />
-      <Calendar onSelect={onSelect} />
-    </main>
+    <>
+      <Calendar onSelect={handleSelect} />
+    </>
   );
 };
 

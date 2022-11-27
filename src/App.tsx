@@ -16,7 +16,7 @@ import habits from './data/habits.json';
 import missions from './data/missions.json';
 import rewards from './data/rewards.json';
 import goals from './data/goals.json';
-import settings from './data/settings.json';
+import configs from './data/configs.json';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -29,10 +29,10 @@ function App() {
   setInitFile('missions', missions);
   setInitFile('rewards', rewards);
   setInitFile('goals', goals);
-  setInitFile('settings', settings);
+  setInitFile('configs', configs);
 
   // navigation keys
-  const [selectedKeys, setSelectedKeys] = useState(['2']);
+  const [selectedKeys, setSelectedKeys] = useState(['5']);
 
   return (
     <Layout
@@ -47,7 +47,7 @@ function App() {
         <Header>
           <HeaderContent />
         </Header>
-        <Content style={{overflow:"scroll"}}>
+        <Content style={{ overflowY: 'scroll' }}>
           <MainContent selectedKeys={selectedKeys} />
         </Content>
         <Footer>

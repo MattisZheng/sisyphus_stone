@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react';
 import { List, Form, Input, Switch, Select } from 'antd';
-import { ConsoleSqlOutlined } from '@ant-design/icons';
+// utils
+import setInitFile from '../utils/setInitFile';
+// init file settings
+import plans from '../data/plans.json';
+import tasks from '../data/tasks.json';
+import routines from '../data/routines.json';
+import habits from '../data/habits.json';
+import missions from '../data/missions.json';
+import rewards from '../data/rewards.json';
+import goals from '../data/goals.json';
+import configs from '../data/configs.json';
 
 interface Option {
   value: string;
@@ -57,60 +67,77 @@ const languageOptions: Option[] = [
   },
 ];
 
-function handleSave() {
-  console.log('save');
-}
-
 // clear history
-function handleClearHistory(e: any) {
-  // clear history in local storage
-  e.preventDefault();
-  localStorage.clear();
-}
 
 const Settings = () => {
-  const [config, setConfig] = useState();
+  const [config, setConfig] = useState<string[]>([]);
 
-  // load config from local storage
-  const loadConfig = () => {
-    const data = localStorage.getItem('settings');
-    console.log(data);
-    if (data) {
-      setConfig(JSON.parse(data));
+  const getLocalStorage = () => {
+    let getData: string | null = localStorage.getItem('configs');
+    console.log(getData);
+    if (getData) {
+      setConfig(JSON.parse(getData));
+      console.table(config);
     }
-    console.log(config);
+  };
+
+  const saveConfig = (data: any) => {
+    localStorage.setItem('settings', JSON.stringify(data));
+    getLocalStorage();
+  };
+
+  const handleClearHistory = (e: any) => {
+    e.preventDefault();
+    localStorage.clear();
+    // init files
+    setInitFile('plans', plans);
+    setInitFile('tasks', tasks);
+    setInitFile('routines', routines);
+    setInitFile('habits', habits);
+    setInitFile('missions', missions);
+    setInitFile('rewards', rewards);
+    setInitFile('goals', goals);
+    setInitFile('configs', configs);
+    getLocalStorage();
   };
 
   useEffect(() => {
-    loadConfig();
+    getLocalStorage();
   }, []);
 
   return (
-    <main>
-      {localStorage.getItem('settings')}
+    <>
       {config && (
         <Form
           name="setting"
           labelCol={{ span: 8 }}
           wrapperCol={{ span: 10 }}
-          initialValues={{ remember: true }}
-          onFinish={() => console.log('finished')}
+          onValuesChange={(changedValues, allValues) => {
+            console.log(changedValues, allValues);
+            saveConfig(allValues);
+          }}
+          onFinish={() => {
+            console.log('finish');
+          }}
         >
-          <Form.Item label="Opens at" name="tab">
+          <Form.Item label="Opens at" name="tab" initialValue={config.opens}>
             <Select options={tabOptions} />
           </Form.Item>
-          <Form.Item label="Auto Collapse" name="tab">
+          <Form.Item label="Auto Collapse" valuePropName="checked" initialValue={config.auto} name="auto_collapse">
             <Switch />
           </Form.Item>
-          <Form.Item label="Theme" name="theme">
+          <Form.Item label="Theme" name="theme" initialValue={config.theme}>
             <Select options={themeOptions} />
           </Form.Item>
-          <Form.Item label="Language" name="language">
+          <Form.Item label="Language" name="language" initialValue={config.language}>
             <Select options={languageOptions} />
+          </Form.Item>
+          <Form.Item label="Clear History" name="clear_history">
+            <button onClick={handleClearHistory}>Reset</button>
           </Form.Item>
         </Form>
       )}
-    </main>
+    </>
   );
 };
 

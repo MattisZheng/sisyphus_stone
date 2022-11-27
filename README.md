@@ -10,11 +10,16 @@
 
 ## Build with
 
-- Vite
-- Vitest
 - React
 - TypeScript
+- Vite
+- Vitest
 - Ant Design (https://ant.design)
+- Drag and Drop(TBD)
+  - react-beautiful-dnd
+  - react-dnd
+  - react-dropzone
+  - react-draggable
 
 ## Screen Shot
 

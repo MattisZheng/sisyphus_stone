@@ -1,6 +1,6 @@
 {
   "opens at": "start",
-  "auto collapse after select": true,
+  "auto collapse after select": "checked",
   "theme": "dark",
   "language": "en"
 }
