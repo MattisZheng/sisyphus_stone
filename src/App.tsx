@@ -17,6 +17,7 @@ import missions from './data/missions.json';
 import rewards from './data/rewards.json';
 import goals from './data/goals.json';
 import configs from './data/configs.json';
+import history from './data/history.json';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -30,6 +31,7 @@ function App() {
   setInitFile('rewards', rewards);
   setInitFile('goals', goals);
   setInitFile('configs', configs);
+  setInitFile('history', history);
 
   const config = JSON.parse(localStorage.getItem('configs') || '{}');
   const theme = config.theme || 'light';

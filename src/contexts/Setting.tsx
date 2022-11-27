@@ -80,30 +80,15 @@ const Settings = () => {
     getLocalStorage();
   };
 
-  const handleReset = (e:any) => {
-    e.preventDefault();
-    localStorage.removeItem('configs');
-    setInitFile('configs', configs);
-    getLocalStorage();
-  };
-
   const handleClearHistory = (e: any) => {
     e.preventDefault();
-    localStorage.removeItem('plans');
-    localStorage.removeItem('tasks');
-    localStorage.removeItem('routines');
-    localStorage.removeItem('habits');
-    localStorage.removeItem('missions');
-    localStorage.removeItem('rewards');
-    localStorage.removeItem('goals');
-    // init files
-    setInitFile('plans', plans);
-    setInitFile('tasks', tasks);
-    setInitFile('routines', routines);
-    setInitFile('habits', habits);
-    setInitFile('missions', missions);
-    setInitFile('rewards', rewards);
-    setInitFile('goals', goals);
+    localStorage.setItem('plans', JSON.stringify(plans));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem('routines', JSON.stringify(routines));
+    localStorage.setItem('habits', JSON.stringify(habits));
+    localStorage.setItem('missions', JSON.stringify(missions));
+    localStorage.setItem('rewards', JSON.stringify(rewards));
+    localStorage.setItem('goals', JSON.stringify(goals));
     getLocalStorage();
   };
 
@@ -123,7 +108,7 @@ const Settings = () => {
             saveConfig(allValues);
           }}
           initialValues={config}
-          onFinish={()=>console.log('finish')}
+          onFinish={() => console.log('finish')}
         >
           <Form.Item label="Opens at" name="tab">
             <Select options={tabOptions} />
@@ -140,11 +125,6 @@ const Settings = () => {
           <Form.Item label="Clear History">
             <Button type="primary" onClick={handleClearHistory} danger={true}>
               Clear
-            </Button>
-          </Form.Item>
-          <Form.Item label="Reset to Default">
-            <Button type="default" onClick={handleReset} >
-              Reset
             </Button>
           </Form.Item>
         </Form>
