@@ -40,7 +40,9 @@ const App = () => {
         <SiderContent />
       </Sider>
       <Layout style={{ height: '100vh' }}>
-        <Header>
+
+        <Header style={{ display: 'flex' }}>
+
           <HeaderContent />
         </Header>
         <Content style={{ overflowY: 'scroll' }}>
