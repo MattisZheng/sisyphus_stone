@@ -10,8 +10,7 @@ const HeaderContent = () => {
 
   return (
     <>
-      <h1 style={{ color: 'white' }}>{time}</h1>
-      <p></p>
+      <h1 style={{ color: 'white' }}>{time} points</h1>
     </>
   );
 };

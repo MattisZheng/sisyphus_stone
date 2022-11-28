@@ -35,27 +35,26 @@ const App = () => {
   const [selectedKeys, setSelectedKeys] = useState(['2']);
 
   return (
-    
-      <Layout
-        style={{
-          minHeight: '100vh',
-        }}
-      >
-        <Sider collapsible collapsedWidth="64">
-          <SiderContent selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} />
-        </Sider>
-        <Layout style={{ height: '100vh' }}>
-          <Header>
-            <HeaderContent />
-          </Header>
-          <Content style={{ overflowY: 'scroll' }}>
-            <MainContent selectedKeys={selectedKeys} />
-          </Content>
-          <Footer>
-            <FooterContent />
-          </Footer>
-        </Layout>
+    <Layout
+      style={{
+        minHeight: '100vh',
+      }}
+    >
+      <Sider collapsible collapsedWidth="64">
+        <SiderContent selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} />
+      </Sider>
+      <Layout style={{ height: '100vh' }}>
+        <Header>
+          <HeaderContent />
+        </Header>
+        <Content style={{ overflowY: 'scroll' }}>
+          <MainContent selectedKeys={selectedKeys} />
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>
+          <FooterContent />
+        </Footer>
       </Layout>
+    </Layout>
   );
 };
 
