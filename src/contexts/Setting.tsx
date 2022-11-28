@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Form, Switch, Select, Button } from 'antd';
-// utils
-import setInitFile from '../utils/setInitFile';
 // init file settings
 import plans from '../data/plans.json';
 import tasks from '../data/tasks.json';
@@ -10,7 +8,6 @@ import habits from '../data/habits.json';
 import missions from '../data/missions.json';
 import rewards from '../data/rewards.json';
 import goals from '../data/goals.json';
-import configs from '../data/configs.json';
 
 interface Option {
   value: string;
@@ -63,6 +60,7 @@ const languageOptions: Option[] = [
     value: 'zh',
     disabled: true,
     label: '中文',
+    disabled: true,
   },
 ];
 
