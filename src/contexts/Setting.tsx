@@ -58,6 +58,7 @@ const languageOptions: Option[] = [
   },
   {
     value: 'zh',
+    disabled: true,
     label: '中文',
     disabled: true,
   },

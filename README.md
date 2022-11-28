@@ -101,6 +101,7 @@ v0.0.0
 - [x] v0.07 Local Storage
 - [x] v0.08 State Management
 - [x] v0.09 Settings
+- [ ] v0.10 Deployment
 
 v1.0.0 Main Feature
 

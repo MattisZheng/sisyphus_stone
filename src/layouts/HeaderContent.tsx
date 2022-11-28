@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 
 const HeaderContent = () => {
   const [time, setTime] = useState(dayjs().format('YY.MM.DD HH : mm : ss ddd'));
@@ -10,7 +10,9 @@ const HeaderContent = () => {
 
   return (
     <>
+
       <h1 style={{ color: 'white' }}>{time} points</h1>
+
     </>
   );
 };
