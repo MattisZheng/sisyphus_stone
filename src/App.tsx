@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { ConfigProvider, Layout, theme } from 'antd';
-//
+import { Layout } from 'antd';
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
 import FooterContent from './layouts/FooterContent';
@@ -32,8 +30,6 @@ const App = () => {
   setInitFile('configs', configs);
   setInitFile('history', history);
 
-  const [selectedKeys, setSelectedKeys] = useState(['2']);
-
   return (
     <Layout
       style={{
@@ -41,14 +37,14 @@ const App = () => {
       }}
     >
       <Sider collapsible collapsedWidth="64">
-        <SiderContent selectedKeys={selectedKeys} setSelectedKeys={setSelectedKeys} />
+        <SiderContent />
       </Sider>
       <Layout style={{ height: '100vh' }}>
         <Header>
           <HeaderContent />
         </Header>
         <Content style={{ overflowY: 'scroll' }}>
-          <MainContent selectedKeys={selectedKeys} />
+          <MainContent />
         </Content>
         <Footer style={{ textAlign: 'center' }}>
           <FooterContent />
