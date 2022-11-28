@@ -16,6 +16,7 @@ interface Option {
   value: string;
   label: string;
   children?: Option[];
+  disabled?: boolean;
 }
 const tabOptions: Option[] = [
   {
@@ -60,6 +61,7 @@ const languageOptions: Option[] = [
   },
   {
     value: 'zh',
+    disabled: true,
     label: '中文',
   },
 ];
