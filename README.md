@@ -1,7 +1,5 @@
 # Sisyphus’ Stone
 
-[![pages-build-deployment](https://github.com/MattisZheng/task_manager/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/MattisZheng/task_manager/actions/workflows/pages/pages-build-deployment)
-
 1. [Build with](#build-with)
 2. [Screen Shot](#screen-shot)
 3. [Usage](#usage)
