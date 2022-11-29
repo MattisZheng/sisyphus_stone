@@ -105,9 +105,9 @@ v0.0.0
 
 v1.0.0 Main Feature
 
-- [ ] v1.01 Drag and Drop
-- [ ] v1.02 Clock
-- [ ] v1.03 Countdown
+- [x] v1.01 Clock
+- [x] v1.02 Countdown
+- [ ] v1.03 Drag & Drop
 - [ ] v1.04 Tutorial
 - [ ] v1.05 Notification
 - [ ] v1.06 Visualization
