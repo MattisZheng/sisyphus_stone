@@ -28,7 +28,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/MattisZheng/task_manager.git
+git clone https://github.com/MattisZheng/sisy.git
 npm install
 ```
 
