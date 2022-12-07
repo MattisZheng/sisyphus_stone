@@ -107,22 +107,20 @@ v1.0.0 Main Feature
 
 - [x] v1.01 Clock
 - [x] v1.02 Countdown
-- [ ] v1.03 Drag & Drop
-- [ ] v1.04 Tutorial
-- [ ] v1.05 Notification
-- [ ] v1.06 Visualization
+- [ ] v1.03 Reward
+- [ ] v1.04 History
+- [ ] v1.05 Visualization
+- [ ] v1.06 Drag & Drop
+- [ ] v1.07 Tutorial
+- [ ] v1.08 Notification
 
 v2.0.0 User Experience
 
 - [ ] v2.01 OAuth
 - [ ] v2.02 Sync
 - [ ] v2.03 Server
-- [ ] v2.04 History
-- [ ] v2.05 Calendar
-- [ ] v2.06 Weather
-  - [ ] Get locale
-  - [ ] Settings
-- [ ] v1.13 Reward History
+- [ ] v2.04 Calendar
+- [ ] v2.05 Weather
 - [ ] Memory Control
 
 v2.0.0 Side Features

@@ -1,8 +1,22 @@
-import { Layout } from 'antd';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
+import {
+  LayoutOutlined,
+  TrophyOutlined,
+  UserOutlined,
+  SettingOutlined,
+  CalendarOutlined,
+  GithubOutlined,
+  InfoCircleOutlined,
+} from '@ant-design/icons';
+import User from './contexts/User';
+import Overview from './contexts/Overview';
+import History from './contexts/History';
+import Reward from './contexts/Reward';
+import Setting from './contexts/Setting';
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
 import FooterContent from './layouts/FooterContent';
-import SiderContent from './layouts/SiderContent';
 // utils
 import setInitFile from './utils/setInitFile';
 // init file settings
@@ -37,19 +51,57 @@ const App = () => {
       }}
     >
       <Sider collapsible collapsedWidth="64">
-        <SiderContent />
+        <Menu
+          theme="dark"
+          items={[
+            {
+              key: '1',
+              label: <Link to="/user">User</Link>,
+              icon: <UserOutlined />,
+            },
+            {
+              key: '2',
+              label: <Link to="/overview">Overview</Link>,
+              icon: <LayoutOutlined />,
+            },
+            {
+              key: '3',
+              label: <Link to="/history">History</Link>,
+              icon: <CalendarOutlined />,
+            },
+            {
+              key: '4',
+              label: <Link to="/reward">Reward</Link>,
+              icon: <TrophyOutlined />,
+            },
+            {
+              key: '5',
+              label: <Link to="/setting">Setting</Link>,
+              icon: <SettingOutlined />,
+            },
+          ]}
+        />
       </Sider>
       <Layout style={{ height: '100vh' }}>
-
         <Header style={{ display: 'flex' }}>
-
           <HeaderContent />
         </Header>
         <Content style={{ overflowY: 'scroll' }}>
-          <MainContent />
+          <Routes>
+            <Route path="/user" element={<User />} />
+            <Route path="/overview" element={<Overview />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/reward" element={<Reward />} />
+            <Route path="/setting" element={<Setting />} />
+          </Routes>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          <FooterContent />
+          <a href="https://github.com/mattiszheng/task_manager" target="_blank" style={{ margin: '5px' }}>
+            {<GithubOutlined style={{ fontSize: '24px' }} />}
+          </a>
+          <a href="https://github.com/mattiszheng" target="_blank" style={{ margin: '5px' }}>
+            {<InfoCircleOutlined style={{ fontSize: '24px' }} />}
+          </a>
         </Footer>
       </Layout>
     </Layout>
