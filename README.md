@@ -28,7 +28,7 @@
 ## Installation
 
 ```bash
-git clone https://github.com/MattisZheng/sisy.git
+git clone https://github.com/MattisZheng/sisyphus_stone.git
 npm install
 ```
 
