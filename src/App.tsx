@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import {
   LayoutOutlined,
@@ -9,7 +9,11 @@ import {
   GithubOutlined,
   InfoCircleOutlined,
 } from '@ant-design/icons';
-
+import User from './contexts/User';
+import Overview from './contexts/Overview';
+import History from './contexts/History';
+import Reward from './contexts/Reward';
+import Setting from './contexts/Setting';
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
 import FooterContent from './layouts/FooterContent';
@@ -83,7 +87,13 @@ const App = () => {
           <HeaderContent />
         </Header>
         <Content style={{ overflowY: 'scroll' }}>
-          <MainContent />
+          <Routes>
+            <Route path="/user" element={<User />} />
+            <Route path="/overview" element={<Overview />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/reward" element={<Reward />} />
+            <Route path="/setting" element={<Setting />} />
+          </Routes>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
           <a href="https://github.com/mattiszheng/task_manager" target="_blank" style={{ margin: '5px' }}>
