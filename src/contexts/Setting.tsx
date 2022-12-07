@@ -8,6 +8,7 @@ import habits from '../data/habits.json';
 import missions from '../data/missions.json';
 import rewards from '../data/rewards.json';
 import goals from '../data/goals.json';
+import history from '../data/history.json';
 
 interface Option {
   value: string;
@@ -88,6 +89,7 @@ const Settings = () => {
     localStorage.setItem('missions', JSON.stringify(missions));
     localStorage.setItem('rewards', JSON.stringify(rewards));
     localStorage.setItem('goals', JSON.stringify(goals));
+    localStorage.setItem('history', JSON.stringify(history));
     getLocalStorage();
   };
 

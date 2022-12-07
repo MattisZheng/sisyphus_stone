@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import {
@@ -15,8 +16,6 @@ import History from './contexts/History';
 import Reward from './contexts/Reward';
 import Setting from './contexts/Setting';
 import HeaderContent from './layouts/HeaderContent';
-import MainContent from './layouts/MainContent';
-import FooterContent from './layouts/FooterContent';
 // utils
 import setInitFile from './utils/setInitFile';
 // init file settings
@@ -32,6 +31,34 @@ import history from './data/history.json';
 
 const { Header, Content, Footer, Sider } = Layout;
 
+const MenuItems = [
+  {
+    key: '1',
+    label: <Link to="/user">User</Link>,
+    icon: <UserOutlined />,
+  },
+  {
+    key: '2',
+    label: <Link to="/overview">Overview</Link>,
+    icon: <LayoutOutlined />,
+  },
+  {
+    key: '3',
+    label: <Link to="/history">History</Link>,
+    icon: <CalendarOutlined />,
+  },
+  {
+    key: '4',
+    label: <Link to="/reward">Reward</Link>,
+    icon: <TrophyOutlined />,
+  },
+  {
+    key: '5',
+    label: <Link to="/setting">Setting</Link>,
+    icon: <SettingOutlined />,
+  },
+];
+
 const App = () => {
   // init files
   setInitFile('plans', plans);
@@ -43,6 +70,8 @@ const App = () => {
   setInitFile('goals', goals);
   setInitFile('configs', configs);
   setInitFile('history', history);
+  // read settings
+  const [settings, setSettings] = useState<string[]>([]);
 
   return (
     <Layout
@@ -51,36 +80,7 @@ const App = () => {
       }}
     >
       <Sider collapsible collapsedWidth="64">
-        <Menu
-          theme="dark"
-          items={[
-            {
-              key: '1',
-              label: <Link to="/user">User</Link>,
-              icon: <UserOutlined />,
-            },
-            {
-              key: '2',
-              label: <Link to="/overview">Overview</Link>,
-              icon: <LayoutOutlined />,
-            },
-            {
-              key: '3',
-              label: <Link to="/history">History</Link>,
-              icon: <CalendarOutlined />,
-            },
-            {
-              key: '4',
-              label: <Link to="/reward">Reward</Link>,
-              icon: <TrophyOutlined />,
-            },
-            {
-              key: '5',
-              label: <Link to="/setting">Setting</Link>,
-              icon: <SettingOutlined />,
-            },
-          ]}
-        />
+        <Menu theme="dark" items={MenuItems} />
       </Sider>
       <Layout style={{ height: '100vh' }}>
         <Header style={{ display: 'flex' }}>

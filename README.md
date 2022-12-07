@@ -107,8 +107,8 @@ v1.0.0 Main Feature
 
 - [x] v1.01 Clock
 - [x] v1.02 Countdown
-- [ ] v1.03 Reward
-- [ ] v1.04 History
+- [x] v1.03 Reward
+- [x] v1.04 History
 - [ ] v1.05 Visualization
 - [ ] v1.06 Drag & Drop
 - [ ] v1.07 Tutorial
@@ -121,7 +121,7 @@ v2.0.0 User Experience
 - [ ] v2.03 Server
 - [ ] v2.04 Calendar
 - [ ] v2.05 Weather
-- [ ] Memory Control
+- [ ] v2.06 Performance
 
 v2.0.0 Side Features
 

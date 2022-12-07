@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Alert, Calendar } from 'antd';
-import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 import EditableInput from '../components/EditableInput';
@@ -73,10 +72,10 @@ const History = () => {
 
   return (
     <>
-      <Calendar onSelect={handleSelect} dateCellRender={dateCellRender} />
+      <Calendar onSelect={handleSelect} dateCellRender={dateCellRender} style={{ overflow: 'none' }} />
       {/* edit box */}
       <div>
-        <Alert message={`Selected Date: ${selectedValue.format('YYYY-MM-DD')}`} />
+        <h2>render {selectedValue.format('YYYY-MM-DD')}</h2>
       </div>
     </>
   );
@@ -88,8 +87,6 @@ export default History;
 
 
 const Goals = () => {
-
-
   function handleAdd() {
     let newGoalList = [...goalList, { status: false, title: 'goal' }];
     localStorage.setItem('goals', JSON.stringify(newGoalList));

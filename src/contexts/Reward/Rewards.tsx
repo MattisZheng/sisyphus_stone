@@ -36,6 +36,7 @@ const Rewards = () => {
 
   return (
     <div>
+      <h2>Rewards</h2>
       <table>
         <thead>
           <tr>
