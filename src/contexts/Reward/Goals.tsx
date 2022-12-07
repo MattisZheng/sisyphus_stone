@@ -6,8 +6,10 @@ const Goals = () => {
   const [goalList, setGoalList] = useState<string[]>([]);
 
   function getLocalStorage() {
-    let getData: string = localStorage.getItem('goals');
-    setGoalList(JSON.parse(getData));
+    let getData: string | null = localStorage.getItem('goals');
+    if (getData){
+      setGoalList(JSON.parse(getData));
+    }
   }
 
   function handleAdd() {

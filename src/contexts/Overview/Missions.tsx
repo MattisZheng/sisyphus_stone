@@ -23,7 +23,7 @@ const Missions = () => {
     getLocalStorage();
   }
 
-  function handleDelete(index) {
+  function handleDelete(index:number) {
     let newMissionList = [...missionList];
     newMissionList.splice(index, 1);
     localStorage.setItem('missions', JSON.stringify(newMissionList));

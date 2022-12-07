@@ -7,7 +7,9 @@ const Plans = () => {
 
   function getLocalStorage() {
     let getData: string | null = localStorage.getItem('plans');
-    setPlanList(JSON.parse(getData));
+    if (getData) {
+      setPlanList(JSON.parse(getData));
+    }
   }
 
   function handleAdd() {
@@ -16,14 +18,14 @@ const Plans = () => {
     getLocalStorage();
   }
 
-  function handleUpdate(index: number, col: string, value: any) {
+  function handleUpdate(index: number, col: any, value: any) {
     let newPlanList = [...planList];
     newPlanList[index][col] = value;
     localStorage.setItem('plans', JSON.stringify(newPlanList));
     getLocalStorage();
   }
 
-  function handleDelete(index) {
+  function handleDelete(index: number) {
     let newPlanList = [...planList];
     newPlanList.splice(index, 1);
     localStorage.setItem('plans', JSON.stringify(newPlanList));
