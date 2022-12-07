@@ -1,11 +1,18 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
-import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from '@ant-design/icons';
+import {
+  LayoutOutlined,
+  TrophyOutlined,
+  UserOutlined,
+  SettingOutlined,
+  CalendarOutlined,
+  GithubOutlined,
+  InfoCircleOutlined,
+} from '@ant-design/icons';
 
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
 import FooterContent from './layouts/FooterContent';
-import SiderContent from './layouts/SiderContent';
 // utils
 import setInitFile from './utils/setInitFile';
 // init file settings
@@ -79,7 +86,12 @@ const App = () => {
           <MainContent />
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          <FooterContent />
+          <a href="https://github.com/mattiszheng/task_manager" target="_blank" style={{ margin: '5px' }}>
+            {<GithubOutlined style={{ fontSize: '24px' }} />}
+          </a>
+          <a href="https://github.com/mattiszheng" target="_blank" style={{ margin: '5px' }}>
+            {<InfoCircleOutlined style={{ fontSize: '24px' }} />}
+          </a>
         </Footer>
       </Layout>
     </Layout>
