@@ -1,4 +1,7 @@
-import { Layout } from 'antd';
+import {Link} from 'react-router-dom';
+import { Layout, Menu } from 'antd';
+import { LayoutOutlined, TrophyOutlined, UserOutlined, SettingOutlined, CalendarOutlined } from '@ant-design/icons';
+
 import HeaderContent from './layouts/HeaderContent';
 import MainContent from './layouts/MainContent';
 import FooterContent from './layouts/FooterContent';
@@ -37,12 +40,39 @@ const App = () => {
       }}
     >
       <Sider collapsible collapsedWidth="64">
-        <SiderContent />
+        <Menu
+          theme="dark"
+          items={[
+            {
+              key: '1',
+              label: <Link to="/user">User</Link>,
+              icon: <UserOutlined />,
+            },
+            {
+              key: '2',
+              label: <Link to="/overview">Overview</Link>,
+              icon: <LayoutOutlined />,
+            },
+            {
+              key: '3',
+              label: <Link to="/history">History</Link>,
+              icon: <CalendarOutlined />,
+            },
+            {
+              key: '4',
+              label: <Link to="/reward">Reward</Link>,
+              icon: <TrophyOutlined />,
+            },
+            {
+              key: '5',
+              label: <Link to="/setting">Setting</Link>,
+              icon: <SettingOutlined />,
+            },
+          ]}
+        />
       </Sider>
       <Layout style={{ height: '100vh' }}>
-
         <Header style={{ display: 'flex' }}>
-
           <HeaderContent />
         </Header>
         <Content style={{ overflowY: 'scroll' }}>

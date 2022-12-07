@@ -35,21 +35,18 @@ const getListData = (value: Dayjs) => {
   }
   return listData || [];
 };
-
-const getMonthData = (value: Dayjs) => {
-  if (value.month() === 8) {
-    return 1394;
-  }
-};
-
 const History = () => {
   const [historyList, setHistoryList] = useState<string[]>([]);
+  // read date from history
+  // render value for each date
+
   const [selectedValue, setSelectedValue] = useState(() => dayjs(new Date()));
 
   function getLocalStorage() {
     let getData: string | null = localStorage.getItem('history');
     if (getData) {
       setHistoryList(JSON.parse(getData));
+      console.log('historyList', historyList);
     }
   }
 
@@ -60,7 +57,7 @@ const History = () => {
   function dateCellRender(value: Dayjs) {
     const listData = getListData(value);
     return (
-      <ul className="events">
+      <ul className="events" style={{ listStyleType: 'none', overflow: 'none' }}>
         {listData.map((item) => (
           <li key={item.content}>
             <p>{item.content}</p>
@@ -70,26 +67,17 @@ const History = () => {
     );
   }
 
-  function monthCellRender(value: Dayjs) {
-    const num = getMonthData(value);
-    return num ? (
-      <div className="notes-month">
-        <section>{num}</section>
-        <span>Backlog number</span>
-      </div>
-    ) : null;
-  }
-
   useEffect(() => {
     getLocalStorage();
   }, []);
 
   return (
     <>
-      <Alert message={`Selected Date: ${selectedValue.format('YYYY-MM-DD')}`} />
-      <Calendar onSelect={handleSelect} dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
+      <Calendar onSelect={handleSelect} dateCellRender={dateCellRender} />
       {/* edit box */}
-      <div></div>
+      <div>
+        <Alert message={`Selected Date: ${selectedValue.format('YYYY-MM-DD')}`} />
+      </div>
     </>
   );
 };

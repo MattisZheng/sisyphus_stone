@@ -64,9 +64,7 @@ const Plans = () => {
           })}
         </tbody>
       </table>
-      <button>
-        <PlusOutlined onClick={handleAdd} />
-      </button>
+      <PlusOutlined onClick={handleAdd} />
     </div>
   );
 };
