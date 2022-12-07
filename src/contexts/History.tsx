@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Alert, Calendar } from 'antd';
-import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 import EditableInput from '../components/EditableInput';
@@ -73,10 +72,9 @@ const History = () => {
 
   return (
     <>
-      <Calendar onSelect={handleSelect} dateCellRender={dateCellRender} />
-      {/* edit box */}
+      <Calendar onSelect={handleSelect} dateCellRender={dateCellRender} style={{ overflow: 'none' }} />
       <div>
-        <Alert message={`Selected Date: ${selectedValue.format('YYYY-MM-DD')}`} />
+        <h2>render {selectedValue.format('YYYY-MM-DD')}</h2>
       </div>
     </>
   );
@@ -88,8 +86,6 @@ export default History;
 
 
 const Goals = () => {
-
-
   function handleAdd() {
     let newGoalList = [...goalList, { status: false, title: 'goal' }];
     localStorage.setItem('goals', JSON.stringify(newGoalList));
@@ -103,49 +99,6 @@ const Goals = () => {
     getLocalStorage();
   }
 
-  function handleDelete(index) {
-    let newGoalList = [...goalList];
-    newGoalList.splice(index, 1);
-    localStorage.setItem('goals', JSON.stringify(newGoalList));
-    getLocalStorage();
-  }
-
-  return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Deadline</th>
-          </tr>
-        </thead>
-        <tbody>
-          {goalList.map((goal, index) => {
-            return (
-              <tr key={index}>
-                <td>
-                  <EditableInput index={index} col="title" type="text" value={goal.title} onBlur={handleUpdate} />
-                </td>
-                <td>
-                  <EditableInput index={index} col="description" type="text" value={goal.description} onBlur={handleUpdate} />
-                </td>
-                <td>
-                  <EditableInput index={index} col="deadline" type="date" value={goal.deadline} onBlur={handleUpdate} />
-                </td>
-                <td>
-                  <DeleteOutlined onClick={() => handleDelete(index)} />
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <PlusOutlined onClick={handleAdd} />
-    </div>
-  );
 };
-
-export default Goals;
 
 */

@@ -38,6 +38,7 @@ const Goals = () => {
 
   return (
     <div>
+      <h2>Goals</h2>
       <table>
         <thead>
           <tr>
