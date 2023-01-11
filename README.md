@@ -116,7 +116,7 @@ v1.0.0 Main Feature
 
 v2.0.0 User Experience
 
-- [ ] v2.01 OAuth
+- [ ] v2.01 Auth
 - [ ] v2.02 Sync
 - [ ] v2.03 Server
 - [ ] v2.04 Calendar

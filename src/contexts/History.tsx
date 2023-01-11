@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Alert, Calendar } from 'antd';
+import { Calendar } from 'antd';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 import EditableInput from '../components/EditableInput';
@@ -24,10 +24,6 @@ const getListData = (value: Dayjs) => {
       listData = [
         { type: 'warning', content: 'This is warning event' },
         { type: 'success', content: 'This is very long usual event。。....' },
-        { type: 'error', content: 'This is error event 1.' },
-        { type: 'error', content: 'This is error event 2.' },
-        { type: 'error', content: 'This is error event 3.' },
-        { type: 'error', content: 'This is error event 4.' },
       ];
       break;
     default:

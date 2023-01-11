@@ -10,9 +10,7 @@ const HeaderContent = () => {
 
   return (
     <>
-
       <h1 style={{ color: 'white' }}>{time} points</h1>
-
     </>
   );
 };
